@@ -1,0 +1,1464 @@
+/*
+Generated time: June 18, 2025 14:17
+This file was created by the app developer. Feel free to contact the original developer with any questions. It was minified (compressed) by AVADA. AVADA do NOT own this script.
+*/
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.breadcrumbs {
+  display: none !important;
+}
+
+.media-gallery .media img {
+  object-fit: cover;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+}
+
+.main-menu__content {
+  justify-content: center;
+}
+
+.search__form .search__input {
+  background-color: transparent;
+  border: 1px solid #33024b;
+}
+
+.main-menu {
+  background-color: #71308721;
+}
+
+.main-nav__item--primary,
+.secondary-nav__item {
+  margin: 0 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 13px;
+}
+
+.main-nav__item--toggle .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.countdown__number {
+  font-family: var(--heading-font-family);
+  padding: 0.45em 0.25em;
+  font-size: 26px;
+}
+
+.countdown__unit {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.section__header :is(h1, h2, h3, h4, h5, h6) {
+  color: #260039;
+}
+
+.link {
+  color: #260039;
+}
+
+.cc-collection-list .card__title {
+  color: #260039;
+  font-size: 20px;
+  font-family: var(--body-font-family);
+}
+
+.cc-collection-list .card__title a::after {
+  content: none;
+}
+
+.cc-collection-list .card__title + .text-theme-text {
+  text-decoration: underline;
+  text-transform: capitalize;
+  transition: all 0.4s ease-in-out;
+}
+
+.cc-collection-list .card__title + .text-theme-text span {
+  display: none;
+}
+
+.cc-collection-list .card:focus .card__title + .text-theme-text,
+.cc-collection-list .card:hover .card__title + .text-theme-text {
+  transform: scale(1.03);
+  color: #260039;
+}
+
+.section__heading.heading-light {
+  color: #260039;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+}
+
+.featured-collection-products .slider__item .card--product .card__media a {
+  aspect-ratio: 1;
+  max-height: 250px;
+  width: 100%;
+  display: block;
+  padding: initial !important;
+}
+
+.featured-collection-products .slider__item .card--product .card__media a img {
+  object-fit: cover;
+}
+
+.featured-collection-products
+  .slider__item
+  .card--product
+  .card__info-container {
+  background: #fff;
+  padding: 10px 15px;
+}
+
+.new-collection-2025 .products-grid-container .grid li .card--product {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.25);
+}
+
+product-card.card--product .card__title {
+  min-height: 50px;
+  font-size: 16px;
+  max-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card--product .price .price__default .price__current {
+  font-size: 24px;
+  color: #806643;
+  font-family: var(--heading-font-family);
+}
+
+.card--product:focus .price .price__default .price__current,
+.card--product:hover .price .price__default .price__current {
+  color: #713087;
+}
+
+product-card.card--product .card__title a::after {
+  content: none;
+}
+
+.collection-banner {
+  padding: 40px 0;
+}
+
+.collection-banner .collection-banner__heading {
+  font-size: 24px;
+  color: #806642;
+}
+
+.cc-logo-list .section__header h2 {
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+}
+
+.product-breadcrumbs {
+  display: none;
+}
+
+.product-main .product {
+  display: flex;
+  padding: 50px 0;
+}
+
+.product-main .product .product-info,
+.product-main .products-left-content {
+  width: 50%;
+}
+
+.product-main .product .product-media {
+  width: 100%;
+}
+
+.product-main .product .product-info .product-info__block .product-title {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.product-main .product .product-info .product-info__block > div .media a img {
+  max-height: 14px;
+  object-fit: contain;
+  object-position: left !important;
+}
+
+.product-main
+  .product
+  .product-info
+  .product-info__block
+  .product-info__price
+  .price
+  .price__current {
+  font-family: var(--heading-font-family);
+  font-size: 30px;
+  color: #806642;
+}
+
+.has_dpo_accordion #itoris_dynamicproductoptions {
+  background: 0 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.more-product-options {
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.more-features-box {
+  border: 2px solid #806642;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.more-features-box .content-left {
+  max-width: 55%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.more-features-box .content-left .feature-icon img {
+  max-width: 65px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.more-features-box .content-left .feature-details h4 {
+  color: #806642;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.more-features-box .content-left .feature-details p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.more-features-box .content-left .feature-details p span {
+  display: block;
+  color: #777;
+  font-size: 11px;
+}
+
+.more-features-box .btn-right {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-features-box .btn-right .assembly-price, .more-features-box .btn-right .recycle-price {
+  font-family: var(--heading-font-family);
+  color: #806642;
+  font-size: 22px;
+  text-align: center;
+}
+
+.more-features-box .btn-right .btn,
+.more-features-box .btn-right select {
+  padding: 12px;
+  text-align: center;
+  border-color: #000;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.in-stock {
+  color: #855717;
+  font-size: 14px;
+}
+
+.in-stock svg {
+  max-width: 20px;
+  margin-right: 6px;
+  fill: #855717;
+  position: relative;
+  top: 5px;
+}
+
+.timeline-widget {
+  margin-bottom: 25px;
+}
+
+.timeline-text {
+  text-align: center;
+  padding-top: 15px;
+  color: #333;
+  font-size: 14px;
+}
+
+.my-shipping-timeline {
+  margin-top: 40px;
+  position: relative;
+}
+
+.my-shipping-timeline::before {
+  content: "";
+  position: absolute;
+  top: 36%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #47351c;
+  z-index: 0;
+}
+
+.my-shipping-timeline .step-26032025 {
+  flex: 1;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.my-shipping-timeline .step-26032025::before {
+  display: block;
+  margin: 0 auto 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.step-26032025 .step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #27003f;
+  padding: 12px;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  margin-bottom: 15px;
+}
+
+.step-26032025 .step-title {
+  font-weight: 600;
+  line-height: 1;
+}
+
+.step-26032025 .step-date {
+  color: #806642;
+  font-size: 14px;
+}
+
+.step-26032025 .step-icon img {
+  filter: invert(1);
+}
+
+#addon-drawer,
+#dividebuy-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+  transition: opacity 0.8s ease;
+}
+
+.mattress-drawer-content,
+.dividebuy-drawer-content {
+  background: #fff;
+  width: 600px;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.8s ease;
+  position: relative;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+#addon-drawer.show .mattress-drawer-content,
+#dividebuy-drawer.show .dividebuy-drawer-content {
+  transform: translateX(0);
+}
+
+.mattress-drawer.hidden,
+.dividebuy-drawer.hidden {
+  display: none !important;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 26px;
+  background: 0 0;
+  border: none;
+  cursor: pointer;
+}
+
+.mattress-selection {
+  height: 100%;
+  padding: 30px 20px;
+}
+
+.mattress-selection #matt-form {
+  max-height: calc(100% - 120px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.form-heading {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 30px;
+  color: #000;
+}
+
+.mattress-selection form .mattress-tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0;
+}
+
+.mattress-selection form ul li {
+  width: 100%;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  align-items: start;
+}
+
+.mattress-selection form ul li:focus,
+.mattress-selection form ul li:hover {
+  border-color: #c090dd;
+}
+
+.mattress-selection form ul li img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  max-width: 100px;
+  height: 100%;
+  grid-row: span 2;
+}
+
+.mattress-selection form ul li label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px !important;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+  top: 20px;
+  cursor: pointer;
+}
+
+.mattress-selection form ul li .mattress-price {
+  color: #806642;
+  margin-top: 0;
+  position: relative;
+  top: -10px;
+  left: 35px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.mattress-selection form ul li label input[type="radio"] {
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+}
+
+.more-features-box.selected-mattress-box .content-left {
+  max-width: 80%;
+}
+
+.selected-mattress-box .label-container h5 {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: #999;
+  margin: 0 0 8px;
+  font-weight: 400;
+}
+
+.selected-mattress-box .label-container label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.selected-mattress-box .label-container span {
+  display: block;
+  font-size: 24px;
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  color: #806642;
+}
+
+.selected-mattress-box .remove-container span {
+  cursor: pointer;
+  color: #000;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.mattress-tabs-parent {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.mattress-tabs-parent .mattress-tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #f2f2f2;
+  border-radius: 4px;
+}
+.mattress-tabs-parent .mattress-tab.active {
+  background: #000;
+  color: #fff;
+}
+
+.tab-panel {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tab-panel.active {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.divide-buy-calculation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.divide-buy-calculation img {
+  position: relative;
+  top: 2px;
+  right: 4px;
+}
+
+.tab-button[data-original-text="Delivery Options"],
+.tab-button[data-original-text="Mattress"],
+.tab-button[data-original-text="Recycle Mattress"]{
+  display: none !important;
+}
+
+#assembly-select-box,
+#mattress-select-box,
+#mattress-recycle-box{
+  display: none;
+}
+
+.footer__hr {
+  margin-bottom: 10px !important;
+}
+
+.footer__base,
+.footer__meta {
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 13px;
+  justify-content: center !important;
+}
+
+.footer__base {
+  background: #000;
+  margin-top: 5px;
+}
+
+.cart.form {
+  padding: 30px 0;
+}
+
+#insta-feed h2,
+.instafeed-shopify h2 {
+  font-size: 28px !important;
+}
+
+.customer-images-btn {
+  margin: auto;
+  width: max-content;
+  left: 0;
+  right: 0;
+}
+
+#trustpilot-widget-trustbox-0-wrapper {
+  position: relative !important;
+  z-index: 1 !important;
+  margin: 10px auto 40px !important;
+  max-width: calc(var(--page-width, 1320px) + var(--gutter) * 2);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+.main-products-grid__filters #trustpilot-widget-trustbox-0-wrapper {
+  display: none !important;
+}
+
+#tp-widget-fallback {
+  display: none !important;
+}
+
+#dividebuy-credit-subject {
+  display: none !important;
+}
+
+.card__rte h3 {
+  color: #806642 !important;
+}
+
+#itoris_dynamicproductoptions:not(.custom-dpo-tabs) > h2 {
+  margin: 20px 0 5px;
+  font-size: 18px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.assembly-required,
+.both-delivery-required,
+.mattress-required,
+.rapid-delivery-required {
+  border-color: #cc1616;
+  position: relative;
+}
+
+.assembly-required::before,
+.both-delivery-required::before,
+.mattress-required::before,
+.rapid-delivery-required::before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: -10px;
+  width: 200px;
+  height: 20px;
+  font-size: 12px;
+  color: #fff;
+  background: #cc1616;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+}
+
+.mattress-required::before {
+  content: "Mattress required";
+}
+
+.assembly-required::before {
+  content: "Delivery options required";
+}
+
+.rapid-delivery-required::before {
+  content: "Rapid Delivery required";
+}
+
+.both-delivery-required::before {
+  content: "Delivery options required";
+}
+
+.bed-details-container .specs table tr td:nth-child(2) {
+  display: none;
+}
+
+.cc-main-page .article-content iframe {
+  height: 1620px;
+}
+
+.page-static {
+  margin-bottom: 50px;
+}
+
+.page-static .page__content.reading-width .page-title > h3 {
+  display: none;
+}
+
+#main-content .shopify-section.cc-main-blog {
+  padding: 60px 0;
+}
+
+.footer-two-col {
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+
+.footer-two-col {
+  flex-direction: row;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
+.social-icon-block {
+  gap: 15px;
+}
+
+.social-icon-block a {
+  width: 32px;
+  transition: all 0.5s ease !important;
+}
+
+.social-icon-block a:hover, .social-icon-block a:focus {
+    transform: scale(1.05);
+}
+
+.dividebuy .dividebuy-calculator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cc-main-cart + .cc-apps .dividebuy .dividebuy-calculator {
+  justify-content: center;
+}
+
+.dividebuy-product-tooltip #click_to_more {
+  line-height: 1;
+}
+
+.dividebuy .dividebuy-calculator #dividebuy-text {
+  display: flex !important;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+  margin: 0 !important;
+}
+
+.dividebuy .dividebuy-calculator #dividebuy-text img {
+  position: relative;
+  top: 1px;
+}
+
+.findout_more.dividebuy-open_tooltip {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 !important;
+  text-indent: -9999px; /* hide text */
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='%230078D4'/><text x='12' y='17' font-size='14' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial, sans-serif'>i</text></svg>");
+}
+
+.last-data-tab input.next-btn, .last-data-tab .custom-next-btn {
+  display: none;
+}
+
+.has_dpo_accordion #itoris_dynamicproductoptions .next-btn {
+  margin-top: 15px;
+}
+
+/* ---- Code for new mattress dropdown  */
+
+.mattress-new {
+  font-size: 16px;
+}
+
+.mattress-new .dpo_dd_list_inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.mattress-new .dpo_dd_list_inner tr {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+}
+
+.mattress-new .dpo_dd_list_inner tr td.dpo_dd_list_label {
+  flex: 1;
+}
+
+.mattress-new .dpo_dd_list_inner tr td.dpo_dd_list_preview {
+  height: 100px !important;
+  width: 100px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mattress-new .dpo_dd_list_inner tr td.dpo_dd_list_preview img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  aspect-ratio: 1;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+.mattress-new .dpo_dd_list_inner tr:first-child .dpo_dd_list_preview {
+  display: none;
+}
+
+.mattress-new .dpo_dd_list_inner tr:first-child {
+  padding: 8px 15px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid #ddd;
+  background: no-repeat;
+    color: #999;
+}
+
+.mattress-new .dpo_dd_list_inner tr.disabled {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: default;
+  width: 100%;
+  padding: 2px 20px;
+  background: #ddd;
+  margin: 15px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mattress-new .dpo_dd_list_inner tr.disabled .dpo_dd_list_preview {
+  display: none;
+}
+
+/* ---- Code for new mattress dropdown Ends  */
+
+.bed-recycle > .field > label {
+  display: none !important;
+}
+
+.bed-recycle > .field > label + .control {
+  margin-top: 6px;
+}
+
+/* Code for Order of items on Products Detail Page  */
+@media screen and (min-width: 991px) {
+  /* 0️⃣  Turn the sticky column into a flex stack             */
+    .product-info__sticky{
+      display:flex;
+      flex-direction:column;
+    }
+    
+    /* 1️⃣  Title block – stays where it is                      */
+    .product-info__block--sm.product-info__title{
+      order:0;
+    }
+
+  .product-info__block--sm.product-info__title + .product-info__block{
+      order:1;
+    }
+       
+    /* 3️⃣  PRICE block – should appear right after the “normal” ones */
+    .product-info__block.product-price{
+      order:2;
+    }
+    
+    /* 4️⃣  DivideBuy block (identified by its scripts)            */
+    .product-info__sticky
+      > .product-info__block:has(script[src*="dividebuy"]){
+      order:3;
+      margin-bottom: 5px !important;
+    }
+
+    .klarna-box {
+      order:4;
+      padding-left: 5px;
+    }
+
+
+  .product-info__block.product-price + *, .product-info__block.product-price + .product-options--anchor + .product-info__block.product-options + * {
+    order:5;
+  }
+    
+   .product-info__sticky .timeline-widget {
+    order:6;
+  }
+
+}
+
+.credit-promotion-badge .container.default {
+  padding: 0 !important;
+  border: none !important;
+}
+
+klarna-placement::part(osm-container) { 
+    font-size: 13px !important;
+    padding: 0;
+    border: none; 
+  } 
+
+  klarna-placement::part(osm-badge) path {
+    fill: transparent !important;
+  }
+
+.bed-recycle > .field .control p.no-margin {
+  font-size: 13px !important;
+  color: #222 !important;
+  font-style: normal !important;
+  padding-left: 6px;
+}
+
+.bed-recycle > .field .control p.no-margin span {
+  display: block;
+  color: #777;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.has_dpo_accordion .bed-storage .dpo_swatch .itoris-dynamicoptions-thumbnail-image, 
+.has_dpo_accordion .reinforced-base .dpo_swatch .itoris-dynamicoptions-thumbnail-image, 
+.has_dpo_accordion .bed-btns .dpo_swatch .itoris-dynamicoptions-thumbnail-image
+{
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.has_dpo_accordion .dispose-old-headboard .dpo_swatch .itoris-dynamicoptions-thumbnail-image {
+  max-width: 60px !important;
+}
+
+#trustpilot-widget-trustbox-1-wrapper {
+  position: absolute !important;
+  top: 40px !important;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+
+/* Code for Products orders  */
+
+@media screen and (min-width: 991px) {
+
+  /* A) change the parent (no more column, use wrap) */
+  .product-info__sticky{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction: row;          /* ✅ allows a two-column row */
+    gap:5px;                /* optional spacing */
+  }
+
+  /* B) default: each child takes a full row */
+  .product-info__sticky > :not(.product-options--anchor){
+    flex:1 1 100%;
+  }
+
+  /* C) only DivideBuy + Klarna become half width (2 columns) */
+  .product-info__sticky
+    > .product-info__block:has(script[src*="dividebuy"]),
+  .product-info__sticky
+    > .product-info__block:has(klarna-placement),
+  .product-info__sticky
+    > .product-info__block:has(.klarna-placement),
+  .product-info__sticky
+    > .product-info__block:has(.klarna-credit-promotion),
+  .product-info__sticky
+    > .product-info__block:has([data-klarna]),
+    .klarna-box {
+    flex:1 1 calc(50% - 6px);  /* two columns, accounts for gap */
+    display:flex;               /* optional: center widget */
+    align-items:center;
+    margin:0;                   /* kill extra bottom spacing if any */
+  }
+
+  /* D) mobile: stack them again */
+  @media (max-width: 680px){
+    .product-info__sticky
+      > .product-info__block:has(script[src*="dividebuy"]),
+    .product-info__sticky
+      > .product-info__block:has(klarna-placement),
+    .product-info__sticky
+      > .product-info__block:has(.klarna-placement),
+    .product-info__sticky
+      > .product-info__block:has(.klarna-credit-promotion),
+    .product-info__sticky
+      > .product-info__block:has([data-klarna]){
+      flex-basis:100%;
+    }
+  }
+
+  /* E) make sure the in-page anchor doesn't consume a row */
+  .product-info__sticky > .product-options--anchor{
+    flex:0 0 0;
+    width:0; height:0; margin:0; padding:0;
+  }
+}
+
+/* CSS for Klarna */
+
+.klarna-box{
+  display:flex;
+  flex:1 1 calc(50% - 6px) !important;
+  align-items:center;
+  gap:12px;
+  /* padding:12px 14px; */
+  /* display: none; */
+}
+
+.klarna-box__logo img{
+  max-width:60px;
+  height:auto;
+  display:block;
+}
+
+.klarna-box__text{
+  font-family: 'Poppins', sans-serif;
+  font-size:12px;
+  line-height:1.5;
+  color:#111;
+}
+
+.klarna-box__text strong{
+  font-weight:600;
+}
+
+/* CSS for Klarna Ends */
+
+@media screen and (min-width: 991px) and (max-width: 1170px) {
+  .product-info__sticky > .product-info__block:has(script[src*="dividebuy"]), .product-info__sticky > .product-info__block:has(klarna-placement), .product-info__sticky > .product-info__block:has(.klarna-placement), .product-info__sticky > .product-info__block:has(.klarna-credit-promotion), .product-info__sticky > .product-info__block:has([data-klarna]), .klarna-box {
+    flex: 1 1 calc(100% - 6px) !important;
+  }
+}
+
+.bed-dimensions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.5s;
+  max-width: fit-content;
+  margin: 10px auto 0;
+}
+
+.bed-dimensions img {
+  max-width: 40px;
+}
+
+.bed-dimensions span {
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bed-dimensions:hover {
+  transform: scale(1.1);
+}
+
+.bed-dimensions:hover span {
+  color: #27003f;
+}
+
+
+#bed-dimensions { 
+  scroll-margin-top: 70px; 
+}
+/* optional: enable smooth behavior globally */
+html { 
+  scroll-behavior: smooth !important; 
+}
+
+.has_dpo_accordion #itoris_dynamicproductoptions .legend:not(.open), .has_dpo_accordion #itoris_dynamicproductoptions .legend:not(.passed) {
+  visibility: hidden;
+  height: 0;
+}
+
+.has_dpo_accordion #itoris_dynamicproductoptions .legend.open, .has_dpo_accordion #itoris_dynamicproductoptions .legend.passed {
+  visibility: visible;
+  height: 70px;
+}
+
+.cart-item__info .price__was, .cart-item__total .price__was {
+  display: none;
+}
+
+
+/*---- Responsive Code Starts -----  */
+
+@media screen and (max-width: 1366px) {
+  .mattress-selection #matt-form {
+    padding-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header-top .logo {
+    min-width: 60px;
+  }
+
+  .header__grid {
+    flex-wrap: nowrap;
+  }
+
+  .header-top {
+    width: 70%;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .main-menu {
+    background-color: transparent;
+  }
+
+  .slideshow__text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .text-overlay__block.subheading {
+    margin-bottom: 5px;
+  }
+
+  .text-overlay__heading {
+    font-size: 24px !important;
+  }
+
+  .text-overlay__block {
+    margin-bottom: 0 !important;
+  }
+
+  .text-overlay__buttons .btn--primary {
+    font-size: 12px;
+  }
+
+  .cc-countdown-timer .section {
+    margin: 15px 0;
+  }
+
+  .cc-countdown-timer .section .section__block {
+    margin-bottom: 0;
+  }
+
+  .cc-collection-list .card__title {
+    font-size: 16px;
+  }
+
+  .featured-collection-text {
+    margin-top: 0;
+  }
+
+  .featured-collection-text .grow,
+  .featured-collection-text .section__heading {
+    text-align: center;
+  }
+
+  .divide-buy-calculation {
+    flex-wrap: wrap;
+  }
+
+  .divide-buy-calculation img {
+    top: 0;
+    min-width: 100px;
+    right: auto;
+    left: 0;
+  }
+
+  .product-main .product {
+    flex-direction: column;
+    padding: 10px 0 40px;
+  }
+
+  .product-main .product .product-info,
+  .product-main .products-left-content {
+    width: 100%;
+  }
+
+  .product-main .product .product-info .product-info__sticky {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .has_dpo_options .product-info__price {
+    text-align: center;
+  }
+
+  .product-main .product .product-info .product-info__block .product-title {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-top: 10px;
+  }
+
+  .product-main .product .product-info .product-info__block > div .media a img {
+    object-position: center !important;
+  }
+
+  .shopify-app-block {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .product-main .product .product-info {
+    order: 1;
+  }
+
+  .product-main .products-left-content {
+    order: 9;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline-widget + .product-info__block {
+    order: 8;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline-widget {
+    order: 7;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .more-product-options {
+    order: 7;
+    margin: 20px 0 0;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .more-features-box {
+    flex-direction: column;
+  }
+
+  .more-features-box .btn-right,
+  .more-features-box .content-left {
+    max-width: 100%;
+  }
+
+  /* .more-product-options + .product-info__block {
+    order: 5;
+  }
+ */
+  .product-info__sticky .product-price {
+    order: 4;
+  }
+
+   .product-media + .product-info__block {
+    order: 5;
+  }
+
+  .product-info__sticky .product-price + .product-info__block {
+    order: 6;
+  }
+
+  .product-media {
+    order: 3;
+  } 
+
+  .product-info__title + .product-info__block {
+    order: 2;
+  }
+
+  .product-info__title {
+    order: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-info__add-to-cart {
+    position: fixed;
+    bottom: 60px;
+    width: 100vw;
+    left: 0;
+    padding: 10px;
+    z-index: 99999;
+  }
+
+  .custom-dpo-tabs .fieldset-section .fields .field .options-list {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 15px;
+  }
+
+  .bed-details-container {
+    gap: 20px !important;
+    flex-direction: column;
+  }
+
+  .bed-details-container + .note {
+    margin-top: 0;
+    font-size: 13px;
+  }
+
+  .bed-details-container + .note span {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .media-with-text__text .text-start h2 {
+    text-align: center !important;
+  }
+
+  .carousel .slider .logo-list {
+    grid-template-columns: repeat(5, 80px) !important;
+    justify-content: flex-start !important;
+    align-items: flex-start;
+  }
+
+  .my-shipping-timeline {
+    gap: 20px !important;
+    margin-top: 20px;
+  }
+
+  .my-shipping-timeline .step-26032025 {
+    top: 6px;
+  }
+
+  .section__block.h3 {
+    padding: 0;
+    font-size: 20px;
+  }
+
+  .section .container .container:not(.products-grid-container) {
+    padding: 0;
+  }
+
+  .step-26032025 .step-title {
+    font-size: 14px;
+  }
+
+  .step-26032025 .step-date {
+    font-size: 11px;
+  }
+
+  .specs table td {
+    padding: 8px !important;
+    font-size: 13px !important;
+  }
+
+  .card__rte h3,
+  .section__block.h2 {
+    font-size: 20px !important;
+  }
+
+  #addon-drawer.mattress-drawer {
+    z-index: 999999;
+  }
+
+  .mattress-selection form ul li img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .mattress-selection form ul li label {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .mattress-selection form ul li .mattress-price {
+    font-size: 18px;
+    margin-top: 12px;
+    top: 0;
+  }
+
+  .cc-main-page .article-content iframe {
+    height: 2350px;
+  }
+
+  .slideshow .slideshow__slide .slideshow__text {
+    position: relative;
+  }
+
+  .slideshow .slideshow__slide .slideshow__text::before {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .slideshow .slideshow__slide .slideshow__text .text-overlay h2,
+  .slideshow .slideshow__slide .slideshow__text .text-overlay p {
+    color: #fff;
+  }
+
+  .dividebuy .dividebuy-calculator {
+    justify-content: center;
+  }
+
+  .mattress-tabs-parent {
+    flex-wrap: wrap;
+    overflow-x: auto;
+    justify-content: center;
+  }
+  .mattress-tabs-parent .mattress-tab {
+    min-width: 150px;
+    text-align: center;
+  }
+
+  .cc-icons-with-text .slider__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .product-info__sticky > .product-info__block:has(klarna-placement) {
+    order: 6;
+    padding-top: 12px;
+    display: flex;
+    justify-content:center;
+    display: none;
+  }
+
+  .klarna-box {
+    order: 6;
+    justify-content: center;
+  }
+  
+  
+}
+
+@media screen and (max-width: 767px) {
+  .divide-buy-calculation img {
+    top: -5px;
+  }
+
+  .cc-icons-with-text .slider__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carousel[disable-mobile=true] .slider__grid {
+        grid-auto-flow: row;
+    }
+
+}

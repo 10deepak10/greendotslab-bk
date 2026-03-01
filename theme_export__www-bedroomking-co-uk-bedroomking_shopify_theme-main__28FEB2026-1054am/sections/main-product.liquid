@@ -1,0 +1,3357 @@
+{%- comment -%}theme-check-disable LiquidTag, NestedSnippet, TemplateLength{%- endcomment -%}
+{%- comment -%}Build: bg-info-bg text-info-text{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ 'product.aio.min.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'product-page.aio.min.css' | asset_url }}">
+<meta name="title" content="{{ product.title | escape }}">
+<meta name="description" content="{{ page_description | escape }}">
+{% assign random_number = 'now' | date: '%N' | modulo: 16 | plus: 5 %}
+ {% assign badge_text = section.settings.demand_badge_text | replace: '[number]', random_number %}
+{%- assign messages = section.blocks | where: 'type', 'message' -%}
+{%- if messages -%}
+  <script src="{{ 'product-message.aio.min.js' | asset_url }}" defer="defer"></script>
+  {{ 'product-message.aio.min.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- if product.metafields.spr.reviews -%}
+  {{ 'reviews.aio.min.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- if product.media.size > 0 -%}
+  <link rel="stylesheet" href="{{ 'media-gallery.aio.min.css' | asset_url }}">
+{%- endif -%}
+
+{%- if product.metafields.reviews.rating.value != blank -%}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.getElementById('shopify-product-reviews')) {
+        const link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = "{{ 'reviews.css' | asset_url }}";
+        document.body.appendChild(link);
+      }
+    }, { once: true });
+  </script>
+{%- endif -%}
+
+<script src="{{ 'product-form.aio.min.js' | asset_url }}" defer="defer"></script>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth <= 990) {
+      const productMedia = document.querySelector("#product-media");
+      const ratingBlock = document.querySelector(".product-info__title + .product-info__block");
+      const dpoBlock = document.querySelectorAll(".product-info__block")[2]; // Assuming it's the 3rd block
+      const moreOptions = document.querySelector(".more-product-options");
+
+      // Move product media after rating
+      if (productMedia && ratingBlock && ratingBlock.parentNode) {
+        ratingBlock.parentNode.insertBefore(productMedia, ratingBlock.nextSibling);
+      }
+
+      // Move more-product-options after DPO block
+      if (moreOptions && dpoBlock && dpoBlock.parentNode) {
+        dpoBlock.parentNode.insertBefore(moreOptions, dpoBlock.nextSibling);
+      }
+    }
+  });
+</script>
+
+{%- liquid
+  # constants
+  assign breakpoint_md = 769
+  assign breakpoint_lg = 1024
+
+  assign product_form_id = 'product-form-' | append: section.id
+  assign current_variant = product.selected_or_first_available_variant
+  assign first_3d_model = product.media | where: 'media_type', 'model' | first
+  assign media_ratio = section.settings.media_ratio
+  assign thumb_ratio = section.settings.thumb_ratio
+
+  if media_ratio == 'natural'
+    assign media_ratio = 99
+    for media in product.media
+      if media.preview_image.aspect_ratio < media_ratio
+        assign media_ratio = media.preview_image.aspect_ratio
+      endif
+    endfor
+  endif
+
+  if thumb_ratio == 'natural'
+    assign thumb_ratio = 99
+    for media in product.media
+      if media.preview_image.aspect_ratio < thumb_ratio
+        assign thumb_ratio = media.preview_image.aspect_ratio
+      endif
+    endfor
+  endif
+-%}
+
+{%- style -%}
+  {%- if section.settings.media_layout == 'stacked' -%}
+    @media (max-width:  {{ breakpoint_md | minus: 0.02 }}px) {
+      .media-gallery__main .media-xr-button { display: none; }
+      .active .media-xr-button:not([data-shopify-xr-hidden]) { display: block; }
+    }
+  {%- else -%}
+    .media-gallery__main .media-xr-button { display: none; }
+    .active .media-xr-button:not([data-shopify-xr-hidden]) { display: block; }
+  {%- endif -%}
+
+  {%- if section.settings.media_size == 'large' -%}
+    @media (min-width: {{ breakpoint_lg }}px) {
+      :root { --product-info-width: 400px !important; }
+    }
+  {%- endif -%}
+{%- endstyle -%}
+
+{%- if first_3d_model -%}
+  <link
+    rel="stylesheet"
+    href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
+    media="print"
+    onload="this.media='all'"
+  >
+  <link rel="stylesheet" href="{{ 'model-viewer.aio.min.css' | asset_url }}" media="print" onload="this.media='all'">
+  <script src="{{ 'product-model.aio.min.js' | asset_url }}" defer></script>
+{%- endif -%}
+
+<!-- Drawer -->
+<div id="addon-drawer" class="mattress-drawer hidden">
+  <div class="mattress-drawer-content">
+    <button id="close-addon-drawer" class="close-btn">×</button>
+    <div class="mattress-selection">
+      <h3 class="form-heading">Select Mattress</h3>
+
+      <form id="matt-form" name="" action="#" method="post">
+        <div class="mattress-tab-wrapper">
+          <!-- Tab Buttons -->
+          <div class="mattress-tabs-parent">
+            <a href="#" onclick="return false;" class="mattress-tab active" data-tab="soft">Soft</a>
+            <a href="#" onclick="return false;" class="mattress-tab" data-tab="soft-medium">Soft-Medium</a>
+            <a href="#" onclick="return false;" class="mattress-tab" data-tab="medium-firm">Medium-Firm</a>
+            <a href="#" onclick="return false;" class="mattress-tab" data-tab="firm">Firm</a>
+          </div>
+
+          <!-- Tab Panels -->
+          <div class="mattress-tab-content" id="3ft-selected" style="display: none;">
+            <ul id="tab-soft" class="tab-panel active">
+              <li id="custom-wapo-14-1">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Memory.jpg?v=1663794073"
+                  alt=""
+                >
+                <label for="3ftMattress2"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Full Memory Mattress (3ft)"
+                    id="3ftMattress2"
+                  >
+                  Full Memory Mattress (3ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-14-6">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="3ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="3ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-soft-medium" class="tab-panel">
+              <li id="custom-wapo-14-0">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Pocket.jpg?v=1663794072"
+                  alt="1000 Pocket Luxury Mattress"
+                >
+                <label for="3ftMattress1"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="1000 Pocket Luxury Mattress (3ft)"
+                    id="3ftMattress1"
+                  >
+                  1000 Pocket Luxury Mattress (3ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-14-2">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/orthopaedic_final.jpg?v=1742395530"
+                  alt=""
+                >
+                <label for="3ftMattress3"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Orthopaedic Mattress (3ft)"
+                    id="3ftMattress3"
+                  >
+                  Orthopaedic Mattress (3ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-14-4">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_39896_gel-mattress.jpg?v=1750815472"
+                  alt=""
+                >
+                <label for="3ftMattress5"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Gel 1000 Pocket Mattress with Pillow Top (3ft)"
+                    id="3ftMattress5"
+                  >
+                  Gel 1000 Pocket Mattress with Pillow Top (3ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-14-6">
+                <img
+                 
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="3ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="3ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-medium-firm" class="tab-panel">
+              <li id="custom-wapo-14-5">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_30186_4000-pocket-mattress.jpg?v=1750815483"
+                  alt=""
+                >
+                <label for="3ftMattress6"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="4000 Pocket Mattress (3ft)"
+                    id="3ftMattress6"
+                  >
+                  4000 Pocket Mattress (3ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-14-6">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="3ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="3ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-firm" class="tab-panel">
+              <li id="custom-wapo-14-3">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/pillow_top_final.jpg?v=1742395528"
+                  alt=""
+                >
+                <label for="3ftMattress4"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Luxury Mattress with Pillow Top (3ft)"
+                    id="3ftMattress4"
+
+                  >Luxury Mattress with Pillow Top (3ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+              <li id="custom-wapo-14-6">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="3ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="3ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mattress-tab-content" id="4ft-selected" style="display: none;">
+            <ul id="tab-soft" class="tab-panel active">
+              <li id="custom-wapo-17-1">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Memory.jpg?v=1663794073"
+                  alt=""
+                >
+                <label for="4ftMattress2"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Full Memory Mattress (4ft)"
+                    id="4ftMattress2"
+                  >
+                  Full Memory Mattress (4ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+              <li id="custom-wapo-17-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="4ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="4ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-soft-medium" class="tab-panel">
+              <li id="custom-wapo-17-0">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Pocket.jpg?v=1663794072"
+                  alt="1000 Pocket Luxury Mattress"
+                >
+                <label for="4ftMattress1"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="1000 Pocket Luxury Mattress (4ft)"
+                    id="4ftMattress1"
+                  >
+                  1000 Pocket Luxury Mattress (4ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-17-2">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/orthopaedic_final.jpg?v=1742395530"
+                  alt=""
+                >
+                <label for="4ftMattress3"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Orthopaedic Mattress (4ft)"
+                    id="4ftMattress3"
+                  >
+                  Orthopaedic Mattress (4ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-17-4">
+                <img
+                 
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_39896_gel-mattress.jpg?v=1750815472"
+                  alt=""
+                >
+                <label for="4ftMattress5"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Gel 1000 Pocket Mattress with Pillow Top (4ft)"
+                    id="4ftMattress5"
+                  >
+                  Gel 1000 Pocket Mattress with Pillow Top (4ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-17-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="4ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="4ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-medium-firm" class="tab-panel">
+              <li id="custom-wapo-17-5">
+                <img
+                 
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_30186_4000-pocket-mattress.jpg?v=1750815483"
+                  alt=""
+                >
+                <label for="4ftMattress6"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="4000 Pocket Mattress (4ft)"
+                    id="4ftMattress6"
+                  >
+                  4000 Pocket Mattress (4ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-17-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="4ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="4ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-firm" class="tab-panel">
+              <li id="custom-wapo-17-3">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/pillow_top_final.jpg?v=1742395528"
+                  alt=""
+                >
+                <label for="4ftMattress4"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Luxury Mattress with Pillow Top (4ft)"
+                    id="4ftMattress4"
+                  >
+                  Luxury Mattress with Pillow Top (4ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+              <li id="custom-wapo-17-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="4ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="4ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mattress-tab-content" id="4ft6-selected" style="display: none;">
+            <ul id="tab-soft" class="tab-panel active">
+              <li id="custom-wapo-18-1">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Memory.jpg?v=1663794073"
+                  alt=""
+                >
+                <label for="4ft6Mattress2"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Full Memory Mattress (4ft6)"
+                    id="4ft6Mattress2"
+                  >
+                  Full Memory Mattress (4ft6)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+              <li id="custom-wapo-18-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="4ft6Mattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="4ft6Mattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-soft-medium" class="tab-panel">
+              <li id="custom-wapo-18-0">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Pocket.jpg?v=1663794072"
+                  alt="1000 Pocket Luxury Mattress"
+                >
+                <label for="4ft6Mattress1"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="1000 Pocket Luxury Mattress (4ft6)"
+                    id="4ft6Mattress1"
+                  >
+                  1000 Pocket Luxury Mattress (4ft6)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-18-2">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/orthopaedic_final.jpg?v=1742395530"
+                  alt=""
+                >
+                <label for="4ft6Mattress3"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Orthopaedic Mattress (4ft6)"
+                    id="4ft6Mattress3"
+                  >
+                  Orthopaedic Mattress (4ft6)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-18-4">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_39896_gel-mattress.jpg?v=1750815472"
+                  alt=""
+                >
+                <label for="4ft6Mattress5"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Gel 1000 Pocket Mattress with Pillow Top (4ft6)"
+                    id="4ft6Mattress5"
+                  >
+                  Gel 1000 Pocket Mattress with Pillow Top (4ft6)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-18-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="4ft6Mattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="4ft6Mattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-medium-firm" class="tab-panel">
+              <li id="custom-wapo-18-5">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_30186_4000-pocket-mattress.jpg?v=1750815483"
+                  alt=""
+                >
+                <label for="4ft6Mattress6"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="4000 Pocket Mattress (4ft6)"
+                    id="4ft6Mattress6"
+                  >
+                  4000 Pocket Mattress (4ft6)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-18-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="4ft6Mattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="4ft6Mattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-firm" class="tab-panel">
+              <li id="custom-wapo-18-3">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/pillow_top_final.jpg?v=1742395528"
+                  alt=""
+                >
+                <label for="4ft6Mattress4"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Luxury Mattress with Pillow Top (4ft6)"
+                    id="4ft6Mattress4"
+                  >
+                  Luxury Mattress with Pillow Top (4ft6)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+              <li id="custom-wapo-18-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="4ft6Mattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="4ft6Mattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mattress-tab-content" id="5ft-selected" style="display: none;">
+            <ul id="tab-soft" class="tab-panel active">
+              <li id="custom-wapo-19-1">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Memory.jpg?v=1663794073"
+                  alt=""
+                >
+                <label for="5ftMattress2"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Full Memory Mattress (5ft)"
+                    id="5ftMattress2"
+                  >
+                  Full Memory Mattress (5ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+              <li id="custom-wapo-19-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="5ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="5ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+            <ul id="tab-soft-medium" class="tab-panel">
+              <li id="custom-wapo-19-0">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Pocket.jpg?v=1663794072"
+                  alt="1000 Pocket Luxury Mattress"
+                >
+                <label for="5ftMattress1"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="1000 Pocket Luxury Mattress (5ft)"
+                    id="5ftMattress1"
+                  >
+                  1000 Pocket Luxury Mattress (5ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-19-2">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/orthopaedic_final.jpg?v=1742395530"
+                  alt=""
+                >
+                <label for="5ftMattress3"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Orthopaedic Mattress (5ft)"
+                    id="5ftMattress3"
+                  >
+                  Orthopaedic Mattress (5ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-19-4">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_39896_gel-mattress.jpg?v=1750815472"
+                  alt=""
+                >
+                <label for="5ftMattress5"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Gel 1000 Pocket Mattress with Pillow Top (5ft)"
+                    id="5ftMattress5"
+                  >
+                  Gel 1000 Pocket Mattress with Pillow Top (5ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-19-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="5ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="5ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+            <ul id="tab-medium-firm" class="tab-panel">
+              <li id="custom-wapo-19-5">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_30186_4000-pocket-mattress.jpg?v=1750815483"
+                  alt=""
+                >
+                <label for="5ftMattress6"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="4000 Pocket Mattress (5ft)"
+                    id="5ftMattress6"
+                  >
+                  4000 Pocket Mattress (5ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-19-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="5ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="5ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-firm" class="tab-panel">
+              <li id="custom-wapo-19-3">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/pillow_top_final.jpg?v=1742395528"
+                  alt=""
+                >
+                <label for="5ftMattress4"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Luxury Mattress with Pillow Top (5ft)"
+                    id="5ftMattress4"
+                  >
+                  Luxury Mattress with Pillow Top (5ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+              <li id="custom-wapo-19-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="5ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="5ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mattress-tab-content" id="6ft-selected" style="display: none;">
+            <ul id="tab-soft" class="tab-panel active">
+              <li id="custom-wapo-20-1">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Memory.jpg?v=1663794073"
+                  alt=""
+                >
+                <label for="6ftMattress2"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Full Memory Mattress (6ft)"
+                    id="6ftMattress2"
+                  >
+                  Full Memory Mattress (6ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+              <li id="custom-wapo-20-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="6ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="6ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-soft-medium" class="tab-panel">
+              <li id="custom-wapo-20-0">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/Pocket.jpg?v=1663794072"
+                  alt="1000 Pocket Luxury Mattress"
+                >
+                <label for="6ftMattress1"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="1000 Pocket Luxury Mattress (6ft)"
+                    id="6ftMattress1"
+                  >
+                  1000 Pocket Luxury Mattress (6ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-20-2">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/orthopaedic_final.jpg?v=1742395530"
+                  alt=""
+                >
+                <label for="6ftMattress3"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Orthopaedic Mattress (6ft)"
+                    id="6ftMattress3"
+                  >
+                  Orthopaedic Mattress (6ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-20-4">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_39896_gel-mattress.jpg?v=1750815472"
+                  alt=""
+                >
+                <label for="6ftMattress5"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Gel 1000 Pocket Mattress with Pillow Top (6ft)"
+                    id="6ftMattress5"
+                  >
+                  Gel 1000 Pocket Mattress with Pillow Top (6ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-20-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="6ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="6ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-medium-firm" class="tab-panel">
+              <li id="custom-wapo-20-5">
+                <img
+                  loading="lazy"
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dpo_custom_option_30186_4000-pocket-mattress.jpg?v=1750815483"
+                  alt=""
+                >
+                <label for="6ftMattress6"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="4000 Pocket Mattress (6ft)"
+                    id="6ftMattress6"
+                  >
+                  4000 Pocket Mattress (6ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+
+              <li id="custom-wapo-20-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="6ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="6ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+
+            <ul id="tab-firm" class="tab-panel">
+              <li id="custom-wapo-20-3">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/pillow_top_final.jpg?v=1742395528"
+                  alt=""
+                >
+                <label for="6ftMattress4"
+                  ><input
+                    type="radio"
+                    name="mattress"
+                    value="Luxury Mattress with Pillow Top (6ft)"
+                    id="6ftMattress4"
+                  >
+                  Luxury Mattress with Pillow Top (6ft)</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+              <li id="custom-wapo-20-6">
+                <img
+                  width=""
+                  height=""
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/not_required.jpg?v=1709648077"
+                  alt=""
+                >
+                <label for="6ftMattress7"
+                  ><input type="radio" name="mattress" value="Not Required" id="6ftMattress7">Not Required</label
+                >
+                <div class="mattress-price"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Mattress Drawer Ends -->
+
+<!-- Divide Buy Drawer Starts -->
+
+<!-- Divide Buy Drawer Ends -->
+
+<div class="container">
+  <div class="product js-product" data-section="{{ section.id }}">
+    <div class="products-left-content">
+      <div id="product-media" class="product-media product-media--{{ section.settings.media_layout }}">
+        {%- if product.media.size > 0 -%}
+          {% render 'media-gallery',
+            product: product,
+            current_variant: current_variant,
+            media_ratio: media_ratio,
+            media_crop: section.settings.media_crop,
+            thumb_ratio: thumb_ratio,
+            thumb_crop: section.settings.thumb_crop,
+            first_3d_model: first_3d_model,
+            zoom: section.settings.hover_zoom
+          %}
+        {%- else -%}
+          <div class="media relative">
+            {{ 'image' | placeholder_svg_tag: 'media__placeholder' }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="more-product-options">
+        <div class="more-features-box" id="mattress-select-box">
+          <div class="content-left">
+            <div class="feature-icon">
+              <img
+                loading="lazy"
+                width=""
+                height=""
+                src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/mattress-icon-minified.svg?v=1745324831"
+                alt=""
+              >
+            </div>
+            <div class="feature-details">
+              <h4>Add Mattress & Save</h4>
+              <p>
+                Complete your setup by adding a mattress with your bed - choose from <b> Premium Options </b> tailored
+                to fit.
+              </p>
+            </div>
+          </div>
+
+          <div class="btn-right">
+            <button id="open-addon-drawer" class="btn btn--primary w-full">Select Mattress</button>
+          </div>
+        </div>
+
+        <div id="selected-mattress" class="more-features-box selected-mattress-box" style="display: none;">
+          <div class="content-container content-left">
+            <div id="selected-mattress-img" class="image-container feature-icon">
+              <img loading="lazy" height="" width="" src="" alt="Selected Mattress">
+            </div>
+            <div class="label-container feature-details">
+              <h5>Your Mattress Choice</h5>
+              <label id="selected-mattress-label"></label>
+              <span id="selected-label-price"></span>
+            </div>
+          </div>
+          <div class="remove-container">
+            <span href="javascript:void(0)" target="_self" id="remove-selected-mattress">Remove</span>
+          </div>
+        </div>
+
+        <div class="more-features-box assembly-options" id="assembly-select-box">
+          <div class="content-left">
+            <div class="feature-icon">
+              <img
+                loading="lazy"
+                width=""
+                height=""
+                src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/assembly-icon-1.png?v=1745381582"
+                alt=""
+              >
+            </div>
+            <div class="feature-details">
+              <h4>Delivery Options</h4>
+              {% if collection.handle == 'mattresses' or request.path contains 'mattress' %}
+                <p>Choose how your mattress arrives — tailored delivery options to suit your home and convenience.</p>
+              {% elsif collection.handle == 'accessories' or template contains 'product.accessories' %}
+                <p>Flexible delivery for accessories — designed to fit your schedule and space seamlessly.</p>
+              {% else %}
+                <p>
+                  Enjoy your new bed hassle-free — we’ll handle the heavy lifting, setup, and cleanup, so you don’t have
+                  to.
+                </p>
+              {% endif %}
+            </div>
+          </div>
+          <div class="btn-right">
+            <span class="assembly-price">£0.00</span>
+            <select id="delivery-options">
+              <option value="doorstep" data-price="0.00">Doorstep - Ground Floor</option>
+            </select>
+            <select id="rapid-delivery-options">
+              <option value="doorstep" data-price="0.00">Doorstep - Ground Floor</option>
+            </select>
+          </div>
+        </div>
+
+        {% unless collection.handle == 'accessories' or template contains 'product.accessories' %}
+          <div class="more-features-box recycle-options" id="mattress-recycle-box">
+            <div class="content-left">
+              <div class="feature-icon">
+                {% if collection.handle == 'mattresses' or request.path contains 'mattress' %}
+                  <img
+                    loading="eager"
+                    width=""
+                    height=""
+                    src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/recycle-mattress.svg?v=1750646903"
+                    alt=""
+                  >
+
+                {% else %}
+                  <img
+                    loading="eager"
+                    width=""
+                    height=""
+                    src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/recycle-bed.svg?v=1750646903"
+                    alt=""
+                  >
+                {% endif %}
+              </div>
+              <div class="feature-details">
+                {% if collection.handle == 'mattresses' or request.path contains 'mattress' %}
+                  <h4>Add Mattress Recycling</h4>
+                  <p>Have your old mattress collected for recycling by our delivery driver.</p>
+
+                {% else %}
+                  <h4>Recycle Your Bed</h4>
+                  <p>
+                    We can collect and recycle your old bed when bringing the new one.
+                    <span><b>Please note</b>, we don't disassemble your old bed</span>
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+            <div class="btn-right">
+              <span id="recycling-price" class="recycle-price">£0.00</span>
+              <button id="add-mattress-recycle" class="btn btn--primary w-full">Add</button>
+              <button id="remove-mattress-recycle" class="btn btn--secondary w-full" style="display:none;">
+                Remove
+              </button>
+            </div>
+          </div>
+        {% endunless %}
+      </div>
+      <!-- More Product Options Ends -->
+    </div>
+
+    <div
+      class="product-info{% if section.settings.stick_on_scroll %} product-info--sticky{% endif %}"
+      {% if section.settings.stick_on_scroll %}
+        data-sticky-height-elems="#product-media,.cc-main-product + .cc-product-details .container"
+      {% endif %}
+    >
+      {%- if section.settings.stick_on_scroll -%}
+        <script src="{{ 'sticky-scroll-direction.aio.min.js' | asset_url }}" defer="defer"></script>
+        <sticky-scroll-direction data-min-sticky-size="md">
+          <div class="product-info__sticky">
+      {%- endif -%}
+
+      {%- assign has_variant_picker = false -%}
+      {%- if section.settings.sticky_atc_panel -%}
+        <a class="product-options--anchor" id="product-info" rel="nofollow"></a>
+      {%- endif -%}
+
+
+      
+      {%- assign current_variant = product.selected_or_first_available_variant -%}
+        {%- if current_variant -%}
+          {%- assign installment_cents = current_variant.price | divided_by: 3 -%}
+
+          <div class="klarna-box" id="klarna-box" data-initial-price="{{ current_variant.price }}">
+            <div class="klarna-box__logo">
+              <svg part="osm-badge" role="img" xmlns="http://www.w3.org/2000/svg" width="71.25" height="30" viewBox="0 0 71.25 30" aria-label="Klarna" version="2.1" <title="" id="osm-klarna-title">Klarna badge
+              &gt;
+                <g clip-path="url(#a)">
+                  <path fill="#FFA8CD" d="M62.7688 0H8.48123C3.79718 0 0 3.79718 0 8.48123V21.5188C0 26.2028 3.79718 30 8.48123 30H62.7688c4.684 0 8.4812-3.7972 8.4812-8.4812V8.48123C71.25 3.79718 67.4528 0 62.7688 0Z"></path>
+                  <path fill="#0B051D" d="M57.412 19.1418c-1.2436 0-2.2134-1.0286-2.2134-2.2776 0-1.2491.9698-2.2776 2.2134-2.2776 1.2441 0 2.2135 1.0285 2.2135 2.2776 0 1.249-.9694 2.2776-2.2135 2.2776Zm-.6215 2.4062c1.0608 0 2.4145-.4041 3.1645-1.9837l.0731.0367c-.329.8633-.329 1.3776-.329 1.5062v.202h2.6704v-8.8901h-2.6704v.2021c0 .1286 0 .6428.329 1.5061l-.0731.0368c-.75-1.5797-2.1037-1.9838-3.1645-1.9838-2.543 0-4.3355 2.0205-4.3355 4.6839 0 2.6633 1.7925 4.6838 4.3355 4.6838Zm-8.9822-9.3677c-1.2073 0-2.1586.4225-2.9268 1.9838l-.0732-.0368c.3292-.8633.3292-1.3775.3292-1.5061v-.2021h-2.6708v8.8901h2.744v-4.6838c0-1.2307.7134-2.0021 1.8659-2.0021 1.1526 0 1.7193.6612 1.7193 1.9837v4.7022H51.54v-5.6573c0-2.0205-1.5731-3.4716-3.7317-3.4716Zm-9.3112 1.9838-.0731-.0368c.3293-.8633.3293-1.3775.3293-1.5061v-.2021h-2.6708v8.8901h2.7439l.0183-4.2797c0-1.249.6586-2.0021 1.7379-2.0021.2926 0 .5305.0367.8048.1102v-2.7185c-1.2073-.2571-2.2866.2021-2.8903 1.745Zm-8.7257 4.9777c-1.244 0-2.2135-1.0286-2.2135-2.2776 0-1.2491.9695-2.2776 2.2135-2.2776 1.2439 0 2.2134 1.0285 2.2134 2.2776 0 1.249-.9695 2.2776-2.2134 2.2776Zm-.622 2.4062c1.061 0 2.4147-.4041 3.1647-1.9837l.0732.0367c-.3293.8633-.3293 1.3776-.3293 1.5062v.202h2.6708v-8.8901H32.058v.2021c0 .1286 0 .6428.3293 1.5061l-.0732.0368c-.75-1.5797-2.1037-1.9838-3.1647-1.9838-2.5428 0-4.3355 2.0205-4.3355 4.6839 0 2.6633 1.7927 4.6838 4.3355 4.6838Zm-8.1588-.2388h2.744V8.45166h-2.744V21.3092ZM18.9784 8.45166h-2.7988c0 2.29594-1.4086 4.35314-3.5489 5.82264l-.8415.5878V8.45166H8.88062V21.3092h2.90858v-6.3736l4.8111 6.3736h3.5489L15.521 15.211c2.1037-1.5245 3.4757-3.894 3.4574-6.75934Z"></path>
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M0 0h71.25v30H0z"></path>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="klarna-box__text">
+              <span>
+                3 payments of
+                <strong>
+                  {%- render 'price-as-money', price: installment_cents -%}
+                </strong>
+                 at 0% interest with Klarna
+              </span>
+            </div>
+          </div>
+        {%- endif -%}
+
+
+
+
+
+
+
+
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            <div class="product-info__block" {{ block.shopify_attributes }}>
+              {% render block %}
+            </div>
+
+          {%- when 'vendor-sku' -%}
+            {%- if block.settings.show_vendor or block.settings.show_sku -%}
+              <div
+                class="product-info__block product-info__block--sm product-vendor-sku text-sm"
+                {{ block.shopify_attributes }}
+              >
+                {%- if block.settings.show_vendor and product.vendor != blank -%}
+                  {%- liquid
+                    assign vendor_handle = product.vendor | handle
+                    if collections[vendor_handle].handle == vendor_handle
+                      assign vendor_url = collections[vendor_handle].url
+                    else
+                      assign vendor_url = product.vendor | url_for_vendor
+                    endif
+                  -%}
+                  <span class="product-vendor">{{ product.vendor | link_to: vendor_url }}</span>
+                {%- endif -%}
+
+                {%- if block.settings.show_sku and current_variant.sku != blank -%}
+                  <span class="product-sku">
+                    {%- if block.settings.show_vendor and product.vendor != blank %} &nbsp;|&nbsp; {% endif -%}
+                    <span>{{ 'products.product.sku' | t }}</span>
+                    <span class="product-sku__value">{{ current_variant.sku }}</span>
+                  </span>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+          {%- when 'title' -%}
+            <div class="product-info__block product-info__block--sm product-info__title" {{ block.shopify_attributes }}>
+              <h1 class="product-title h3">{{ product.title | escape }}</h1>
+              {% comment %} <div class="demand-badge rounded-full font-recoleta px-4 py-1"
+                style="
+                  background-color: {{ section.settings.demand_badge_bg }};
+                  color: {{ section.settings.demand_badge_text_color }};
+                "
+              >
+                <span class="demand-text">
+                  {{ badge_text }}
+                </span>
+              </div> {% endcomment %}
+            </div>
+
+          {%- when 'price' -%}
+            <div class="product-info__block product-info__block--sm product-price" {{ block.shopify_attributes }}>
+              <div class="product-info__price">
+                {% render 'price', product: product, use_variant: true %}
+              </div>
+
+              {%- if block.settings.show_tax_and_shipping -%}
+                {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+                  <div class="product-policies text-sm rte">
+                    {%- if cart.taxes_included -%}
+                      {{ 'products.product.include_taxes' | t }}
+                    {%- endif -%}
+                    {%- if shop.shipping_policy.body != blank -%}
+                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+
+              {% comment %}
+              {%- assign instalments_form_id = 'instalments-form-' | append: section.id -%}
+              {%- form 'product', product, class: 'js-instalments-form  text-sm mt-2', id: instalments_form_id -%}
+                <input type="hidden" name="id" value="{{ current_variant.id }}">
+                {{ form | payment_terms }}
+              {%- endform -%}
+              {% endcomment %}
+
+            </div>
+
+          {%- when 'rating' -%}
+            {%- if product.metafields.reviews.rating.value != blank -%}
+              <div
+                class="product-info__block product-info__block--sm product-info__rating"
+                {{ block.shopify_attributes }}
+              >
+                {% render 'rating',
+                  rating_value: product.metafields.reviews.rating.value,
+                  rating_count: product.metafields.reviews.rating_count
+                %}
+              </div>
+            {%- endif -%}
+
+          {%- when 'variant-picker' -%}
+            {%- unless product.has_only_default_variant -%}
+              {%- assign has_variant_picker = true -%}
+              {%- if section.settings.sticky_atc_panel and product.available -%}
+                <a class="product-options--anchor" id="variants" rel="nofollow"></a>
+              {%- endif -%}
+              <div class="product-info__block product-options" {{ block.shopify_attributes }}>
+                {% render 'variant-picker',
+                  product: product,
+                  product_form_id: product_form_id,
+                  block: block,
+                  media_ratio: media_ratio,
+                  swatch_crop: section.settings.media_crop
+                %}
+              </div>
+            {%- endunless -%}
+
+            {%- if block.settings.show_backorder_text -%}
+              <div class="product-info__block product-backorder">
+                {% render 'backorder', product: product, variant: current_variant %}
+              </div>
+            {%- endif -%}
+
+          {%- when 'inventory-status' -%}
+            {% render 'product-inventory', product: product, current_variant: current_variant, block: block %}
+
+          {%- when 'buy-buttons' -%}
+            <div class="product-info__block" {{ block.shopify_attributes }}>
+              <product-form>
+                <div class="alert mb-8 bg-error-bg text-error-text js-form-error text-start" role="alert" hidden></div>
+                {%- form 'product',
+                  product,
+                  class: 'js-product-form js-product-form-main',
+                  id: product_form_id,
+                  novalidate: 'novalidate'
+                -%}
+                  {%- liquid
+                    assign enable_dynamic_checkout = false
+                    if block.settings.enable_dynamic_checkout and product.selling_plan_groups == empty
+                      unless product.template_suffix contains 'preorder'
+                        assign enable_dynamic_checkout = true
+                      endunless
+                    endif
+                  -%}
+
+                  <input type="hidden" name="id" value="{{ current_variant.id }}" disabled>
+                  <div class="product-info__add-to-cart flex{% if enable_dynamic_checkout %} qty-input--secondary-btn{% endif %}">
+                    <!--
+                      {%- if block.settings.show_qty_selector -%}
+                        {% render 'quantity-input', layout_style: "combined" %}
+                      {%- else -%}
+                        <input type="hidden" name="quantity" value="1">
+                      {%- endif -%}
+                    -->
+
+                    <div class="product-info__add-button">
+                      {%- capture add_to_cart_text -%}
+                        {%- if product.template_suffix contains 'preorder' -%}
+                          {{- 'products.product.preorder' | t -}}
+                        {%- else -%}
+                          {{- 'products.product.add_to_cart' | t -}}
+                        {%- endif -%}
+                      {%- endcapture -%}
+
+                      <button
+                        type="submit"
+                        id="cart-to-add"
+                        data-add-to-cart-text="{{ add_to_cart_text | escape }}"
+                        class="btn {% if enable_dynamic_checkout %}btn--secondary{% else %}btn--primary{% endif %} w-full"
+                        name="add"
+                        {% if current_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        {%- if current_variant.available -%}
+                          {{- add_to_cart_text -}}
+                        {%- else -%}
+                          {{- 'products.product.sold_out' | t -}}
+                        {%- endif -%}
+                      </button>
+                    </div>
+                  </div>
+
+                  {%- if enable_dynamic_checkout -%}
+                    {{ form | payment_button }}
+                  {%- endif -%}
+                {%- endform -%}
+              </product-form>
+
+              {%- if block.settings.show_pickup_availability -%}
+                {% render 'pickup-availability', current_variant: current_variant %}
+              {%- endif -%}
+            </div>
+
+            <!-- timeline widget -->
+            <div class="timeline-widget">
+
+              <a href="#bed-dimensions" class="bed-dimensions">
+                  <img height="" width="" src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/bed-dimensions.svg?v=1758365602" alt="">
+                  <span>Click to View All Dimensions</span>
+              </a>
+              <div class="timeline-text">
+                Order Now and Enjoy FREE* Delivery to your doorstep between
+                <strong>
+                  {{ 'now' | date: '%s' | plus: 604800 | date: '%b %d' }} –
+                  {{ 'now' | date: '%s' | plus: 1209600 | date: '%b %d' }}
+                </strong>
+          <p>EXPRESS delivery available at checkout</p>
+              </div>
+              <div class="my-shipping-timeline" style="display: flex; gap: 40px;">
+                <!-- Ordered -->
+                <div class="step-26032025" style="text-align: center;">
+                  <div class="step-icon">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/ordered.svg?v=1745342743"
+                      alt="Ordered Icon"
+                      style="width:40px;height:auto;"
+                      height=""
+                      width=""
+                    >
+                  </div>
+                  <div class="step-title">Ordered</div>
+                  <div class="step-date">{{ 'now' | date: '%b %d' }}</div>
+                </div>
+                <!-- Order Ready -->
+                <div class="step-26032025" style="text-align: center;">
+                  <div class="step-icon">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/shipped.svg?v=1745342742"
+                      alt="Shipped Icon"
+                      style="width:40px;height:auto;"
+                      height=""
+                      width=""
+                    >
+                  </div>
+                  <div class="step-title">Order Ready</div>
+                  <div class="step-date">
+                    {{ 'now' | date: '%s' | plus: 259200 | date: '%b %d' }} –
+                    {{ 'now' | date: '%s' | plus: 518400 | date: '%b %d' }}
+                  </div>
+                </div>
+                <!-- Delivered -->
+                <div class="step-26032025" style="text-align: center;">
+                  <div class="step-icon">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/delivered.svg?v=1745342743"
+                      alt="Delivered Icon"
+                      style="width:40px;height:auto;"
+                      height=""
+                      width=""
+                    >
+                  </div>
+                  <div class="step-title">Delivered</div>
+                  <div class="step-date">
+                    {{ 'now' | date: '%s' | plus: 604800 | date: '%b %d' }} –
+                    {{ 'now' | date: '%s' | plus: 1209600 | date: '%b %d' }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- timeline widget -->
+
+            <!-- Divide Buy -->
+
+            <!--
+              <div class="divide-buy-text">
+                <img loading="lazy"
+                  src="https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dividebuy-logo.webp?v=1745426939"
+                  width="60px"
+                  height=""
+                  alt="Monthly Finance"
+                >
+                <p class="divide-buy-calculation">
+                  Pay <b>£{{ product.price | money_without_currency | remove: ',' | divided_by: 12.0 | round }}</b> /
+                  Month, 0% credit
+                </p>
+              </div>
+            -->
+
+          {%- when 'complementary' -%}
+            <div class="product-info__block" {{ block.shopify_attributes }}>
+              {%- liquid
+                if block.settings.layout == 'carousel'
+                  assign grid_classes = 'grid grid-flow-col auto-cols-1 gap-x-theme'
+                endif
+              -%}
+              {%- render 'recommendations',
+                intent: 'complementary',
+                products_to_show: block.settings.products_to_show,
+                heading: block.settings.heading,
+                layout: block.settings.layout,
+                grid_classes: grid_classes
+              -%}
+            </div>
+
+          {%- when 'collapsible-content' -%}
+            <details-disclosure {{ block.shopify_attributes }}>
+              <details
+                class="disclosure disclosure--row"
+                {% if block.settings.open %}
+                  open
+                {% endif %}
+              >
+                <summary>
+                  <div class="flex justify-between items-center">
+                    <h2 class="disclosure__title product-info__disclosure font-body font-bold text-body flex flex-auto items-center mb-0">
+                      {%- if block.settings.icon != 'none' -%}
+                        {% render 'icon', icon: block.settings.icon, width: 22, height: 22 %}
+                      {%- endif -%}
+                      {{- block.settings.heading | default: block.settings.page.title -}}
+                    </h2>
+                    <span class="disclosure__toggle">
+                      {%- if settings.disclosure_toggle == 'plus' -%}
+                        {% render 'icon-plus' %}
+                      {%- else -%}
+                        {% render 'icon-chevron-down' %}
+                      {%- endif -%}
+                    </span>
+                  </div>
+                </summary>
+                <div class="disclosure__panel has-motion">
+                  <div class="disclosure__content rte">
+                    {{ block.settings.text }}
+                    {{ block.settings.page.content }}
+                  </div>
+                </div>
+              </details>
+            </details-disclosure>
+
+          {%- when 'product-signup' -%}
+            {%- liquid
+              assign show_block = true
+              if block.settings.unavailable_only and product.available == true
+                assign show_block = false
+              endif
+            -%}
+            {%- if show_block -%}
+              <div class="product-info__block product-signup" {{ block.shopify_attributes }}>
+                {%- if block.settings.heading != blank -%}
+                  <p class="h6">{{ block.settings.heading | escape }}</p>
+                {%- endif -%}
+
+                {%- if block.settings.text != blank -%}
+                  <div class="rte mb-4">{{ block.settings.text }}</div>
+                {%- endif -%}
+
+                {%- assign id = 'product-signup' -%}
+                {%- form 'contact', id: id, class: 'form' -%}
+                  <input type="hidden" name="return_to" value="{{ product.url }}?contact_posted=true">
+                  <input type="hidden" name="contact[Message]" value="Customer has completed the product signup form.">
+                  <input type="hidden" name="contact[Product]" value="{{ product.id }}">
+                  <input type="hidden" name="contact[Product Title]" value="{{ product.title | escape }}">
+
+                  <div class="form__field">
+                    <label class="label visually-hidden" for="{{ id }}">{{- 'product_signup.label' | t -}}</label>
+                    <div class="input-with-button">
+                      <input
+                        type="email"
+                        class="input w-full focus-inset"
+                        id="{{ id }}"
+                        name="contact[email]"
+                        value="{{ form.email }}"
+                        placeholder="{{ 'product_signup.placeholder' | t }}"
+                        autocomplete="email"
+                        {%- if form.posted_successfully? %}
+                          aria-describedby="{{ id }}-success"
+                        {%- elsif form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ id }}-error"
+                          autofocus
+                        {%- endif %}
+                        aria-required="true"
+                        required
+                      >
+                      <button class="btn focus-inset has-ltr-icon">
+                        <span class="visually-hidden">{{- 'product_signup.button_label' | t -}}</span>
+                        {% render 'icon-arrow-right' %}
+                      </button>
+                    </div>
+
+                    {%- if form.errors -%}
+                      <p class="form__field-error" id="{{ id }}-error">
+                        {{ form.errors.translated_fields.email | capitalize }}
+                        {{ form.errors.messages.email }}
+                      </p>
+                    {%- endif -%}
+                  </div>
+
+                  {%- if form.posted_successfully? -%}
+                    <div class="alert bg-success-bg text-success-text" id="{{ id }}-success" tabindex="-1" autofocus>
+                      {{ 'product_signup.success' | t }}
+                    </div>
+                  {%- endif -%}
+                {%- endform -%}
+              </div>
+
+              {% if block.settings.divider %}
+                <hr class="mt-8 mb-8">
+              {% endif %}
+            {%- endif -%}
+
+          {%- when 'newsletter-signup' -%}
+            <div class="product-info__block" {{ block.shopify_attributes }}>
+              {%- if block.settings.heading != blank -%}
+                <p class="h6">{{ block.settings.heading | escape }}</p>
+              {%- endif -%}
+
+              {%- if block.settings.text != blank -%}
+                <div class="rte mb-4">{{ block.settings.text }}</div>
+              {%- endif -%}
+
+              {% render 'newsletter-signup',
+                id: 'product-newsletter-signup',
+                tags: 'product page',
+                arrow_button: true
+              %}
+            </div>
+
+          {%- when 'share' -%}
+            <div class="product-info__block" {{ block.shopify_attributes }}>
+              <div class="social-share flex items-center">
+                <p class="social-share__heading mb-0 font-bold">{{ 'general.social.share_heading' | t }}:</p>
+                {% render 'social-share', share_title: product.title, share_url: product.url, share_image: product %}
+              </div>
+            </div>
+
+          {%- when 'richtext' -%}
+            {%- if block.settings.text != blank -%}
+              <div class="product-info__block rte" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </div>
+            {%- endif -%}
+
+          {%- when 'image' -%}
+            <div class="product-info__block" {{ block.shopify_attributes }}>
+              {%- if block.settings.title -%}
+                <p class="h4">{{ block.settings.title }}</p>
+              {%- endif -%}
+
+              <div class="flex {{ block.settings.image_align }}">
+                <div class="media relative" style="width: {{ block.settings.image_width }}px;">
+                  {%- if block.settings.image != blank -%}
+                    {%- if block.settings.url != blank -%}
+                      <a href="{{ block.settings.url }}">
+                    {%- endif -%}
+                    {% render 'image',
+                      image: block.settings.image,
+                      src_width: block.settings.image_width,
+                      quality: 1,
+                      srcset_2x: true
+                    %}
+                    {%- if block.settings.url != blank -%}
+                      </a>
+                    {%- endif -%}
+                  {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'media__placeholder' }}
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+
+          {%- when 'pop-up' -%}
+            <div class="product-info__block" {{ block.shopify_attributes }}>
+              <modal-opener class="no-js-hidden" data-modal="modal-{{ block.id }}">
+                <button type="button" class="{{ block.settings.link_style }}" aria-haspopup="dialog">
+                  {{- block.settings.link_text -}}
+                </button>
+              </modal-opener>
+              <a href="{{ block.settings.page.url }}" class="link js-hidden">{{ block.settings.link_text }}</a>
+            </div>
+
+          {%- when 'custom-liquid' -%}
+            <div class="product-info__block" {{ block.shopify_attributes }}>
+              {{ block.settings.custom_liquid }}
+            </div>
+
+          {%- when 'divider' -%}
+            <hr
+              class="{{ block.settings.spacing }}{% unless block.settings.show_line %} invisible{% endunless %}"
+              {{ block.shopify_attributes }}
+            >
+
+          {%- when 'message' -%}
+            {%- if block.settings.title != blank and block.settings.show_over_media == false -%}
+              <product-message
+                class="product-message product-message--info product-message--out has-motion relative"
+                style="--bg-color: {{ block.settings.bg_color }};--text-color: {{ block.settings.text_color }};"
+                {{ block.shopify_attributes }}
+                {% if block.settings.close == 'persistent' %}
+                  data-persistent-close="true"
+                {% endif %}
+                data-block-id="{{ block.id }}"
+              >
+                <div class="product-message__inner">
+                  {%- if block.settings.icon != 'none' -%}
+                    {% render 'icon', icon: block.settings.icon, width: 32, height: 32 %}
+                  {%- endif -%}
+
+                  <div class="rte rte--inherit-heading-color">{{ block.settings.title }}</div>
+
+                  {%- if block.settings.close != 'none' -%}
+                    <button type="button" class="product-message__close tap-target text-current js-close-message">
+                      <span class="visually-hidden">{{ 'accessibility.close' | t }}</span>
+                      {% render 'icon-close' %}
+                    </button>
+                  {%- endif -%}
+                </div>
+              </product-message>
+            {%- endif -%}
+
+          {%- when 'description' -%}
+            {%- if block.settings.show_as_collapsible_content -%}
+              <details-disclosure {{ block.shopify_attributes }}>
+                <details
+                  class="disclosure disclosure--row"
+                  {% if block.settings.open %}
+                    open
+                  {% endif %}
+                >
+                  <summary>
+                    <div class="flex justify-between items-center">
+                      <h2 class="disclosure__title product-info__disclosure font-body font-bold text-body flex flex-auto items-center mb-0">
+                        {%- if block.settings.icon != 'none' -%}
+                          {% render 'icon', icon: block.settings.icon, width: 22, height: 22 %}
+                        {%- endif -%}
+                        {{ 'products.product.description' | t }}
+                      </h2>
+                      <span class="disclosure__toggle">
+                        {%- if settings.disclosure_toggle == 'plus' -%}
+                          {% render 'icon-plus' %}
+                        {%- else -%}
+                          {% render 'icon-chevron-down' %}
+                        {%- endif -%}
+                      </span>
+                    </div>
+                  </summary>
+                  <div class="disclosure__panel has-motion">
+                    <div class="disclosure__content rte">
+                      {{ product.description | replace: '<img loading="lazy"', '<img loading="lazy"' }}
+                    </div>
+                  </div>
+                </details>
+              </details-disclosure>
+            {%- else -%}
+              <div
+                class="product-info__block product-info__block--sm rte product-description"
+                {{ block.shopify_attributes }}
+              >
+                {{ product.description | replace: '<img loading="lazy"', '<img loading="lazy"' }}
+              </div>
+            {%- endif -%}
+
+          {%- when 'product-labels' -%}
+            {%- capture variant_labels -%}
+              {%- for variant in product.variants -%}
+                {%- liquid
+                  assign variant_label = blank
+                  capture variant_label
+                    render 'product-label', product: product, variant: variant, is_product_card: false, limit: 99
+                  endcapture
+                -%}
+                {%- if variant_label != blank -%}
+                  <div class="variant-label js-variant-label" hidden data-variant-id="{{ variant.id }}">
+                    {{ variant_label }}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endcapture -%}
+
+            {%- if variant_labels != blank -%}
+              <variant-label
+                class="block product-info__block product-info__block--sm"
+                data-current-variant-id="{{ current_variant.id }}"
+              >
+                {{ variant_labels }}
+              </variant-label>
+              <script src="{{ 'variant-label.aio.min.js' | asset_url }}" defer="defer"></script>
+            {%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
+
+      {%- if section.settings.stick_on_scroll -%}
+        </div>
+        </sticky-scroll-direction>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+<script
+  type="text/javascript"
+  src="https://node1.itoris.com/dpo/storefront/include.js?shop=bedroomking.myshopify.com"
+></script>
+{%- render 'product-popups' -%}
+
+{%- if section.settings.sticky_atc_panel and product.available -%}
+  <link
+    rel="stylesheet"
+    href="{{ 'sticky-atc-panel.aio.min.css' | asset_url }}"
+    media="print"
+    onload="this.media='all'"
+  >
+  <script src="{{ 'sticky-atc-panel.aio.min.js' | asset_url }}" defer="defer"></script>
+
+  <sticky-atc-panel class="sticky-atc-panel sticky-atc-panel--out fixed bottom-0 {{ section.settings.sticky_atc_position }} invisible{% if section.settings.sticky_atc_mobile == false %} hidden md:block{% endif %}">
+    <div class="card card--row card--related card--sticky-atc relative flex items-center">
+      {%- if product.featured_media -%}
+        <div class="card__media{% if settings.blend_product_images %} image-blend{% endif %}">
+          {%- liquid
+            assign image_width = 44
+            if product.featured_media.preview_image.aspect_ratio >= 1
+              assign image_width = 56
+            endif
+          -%}
+          {% render 'image', image: product.featured_media.preview_image, src_width: image_width, srcset_2x: true %}
+        </div>
+      {%- endif -%}
+
+      <div class="card__info">
+        <p class="sticky-atc-panel__heading h6 regular-text text-current">
+          {{ product.title | escape | truncate: 70 }}
+        </p>
+
+        {%- render 'price', product: product -%}
+      </div>
+
+      <div class="card__buttons">
+        {%- liquid
+          if has_variant_picker
+            assign anchor = 'variants'
+          else
+            assign anchor = 'product-info'
+          endif
+        -%}
+        {%- if product.has_only_default_variant -%}
+          <a href="#{{ anchor }}" rel="nofollow" class="btn btn--secondary btn--sm">
+            {{- 'products.product.view_details' | t -}}
+          </a>
+        {%- else -%}
+          <a class="btn btn--secondary btn--sm" href="#{{ anchor }}" rel="nofollow">
+            {{- 'products.product.choose_options' | t -}}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </sticky-atc-panel>
+{%- endif -%}
+
+{%- if first_3d_model -%}
+  <script type="application/json" id="product-json-{{ product.id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+{%- endif -%}
+
+{% render 'structured-data-product', product: product, current_variant: current_variant %}
+
+<script>
+(function(){
+  var PRICE_SELECTOR = '#product-price';  // 👈 Only use this node
+
+  function extractMoneyToken(text){
+    if (!text) return null;
+    var re = /-?\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})|-?\d+(?:[.,]\d{2})|-?\d+/g;
+    var matches = text.replace(/\s+/g,' ').trim().match(re);
+    return matches && matches.length ? matches[matches.length - 1] : null;
+  }
+
+  function moneyTokenToCents(token){
+    if (!token) return null;
+    var hasDot   = token.indexOf('.') > -1;
+    var hasComma = token.indexOf(',') > -1;
+    var decSep = '.';
+
+    if (hasDot && hasComma) {
+      decSep = token.lastIndexOf('.') > token.lastIndexOf(',') ? '.' : ',';
+    } else if (hasComma) {
+      decSep = /,\d{2}$/.test(token) ? ',' : '.';
+    }
+
+    var normalized = token;
+    if (decSep === ',') {
+      normalized = normalized.replace(/\./g,'').replace(',', '.');
+    } else {
+      normalized = normalized.replace(/,/g,'');
+    }
+
+    var value = parseFloat(normalized);
+    if (!isFinite(value)) return null;
+    return Math.round(value * 100);
+  }
+
+  function formatMoney(cents){
+    try {
+      if (typeof Shopify !== 'undefined' && Shopify.formatMoney) {
+        return Shopify.formatMoney(cents, {{ shop.money_format | json }});
+      }
+    } catch(e){}
+    var currency = {{ shop.currency | json }};
+    return (cents/100).toLocaleString(undefined, { style:'currency', currency:currency });
+  }
+
+  function readDisplayedPriceCents(){
+    var el = document.querySelector(PRICE_SELECTOR);
+    if (!el) return null;
+    var token = extractMoneyToken(el.textContent || '');
+    return moneyTokenToCents(token);
+  }
+
+  function updateKlarnaBox(){
+    var total = readDisplayedPriceCents();
+    if (total == null) return;
+
+    var box = document.getElementById('klarna-box');
+    if (!box) return;
+
+    var textEl = box.querySelector('.klarna-box__text');
+    if (!textEl) return;
+
+    var perInstallment = Math.round(total / 3);
+    textEl.innerHTML = 'Pay later in 30 days or <strong>' + formatMoney(perInstallment) + '</strong> in 3 monthly installments';
+
+    if (window.KlarnaOnsiteService && typeof window.KlarnaOnsiteService.push === 'function') {
+      window.KlarnaOnsiteService.push({ event: 'refresh-placements' });
+    }
+  }
+
+  // Trigger updates
+  updateKlarnaBox(); // on load
+
+  document.addEventListener('variant:change', updateKlarnaBox);
+
+  // Listen to any DOM changes in the price container
+  if ('MutationObserver' in window) {
+    var priceEl = document.querySelector(PRICE_SELECTOR);
+    if (priceEl) {
+      new MutationObserver(updateKlarnaBox)
+        .observe(priceEl, { childList:true, characterData:true, subtree:true });
+    }
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Product",
+  "class": "cc-main-product product-main",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "stick_on_scroll",
+      "label": "Stick product info on scroll",
+      "info": "Applies to large screens only.",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Sticky 'Add to cart' prompt"
+    },
+    {
+      "type": "paragraph",
+      "content": "Shows a small prompt to scroll the page back to the product form."
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_atc_panel",
+      "label": "Enable sticky 'Add to cart' prompt",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "sticky_atc_position",
+      "label": "Position on large screens",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "sticky-atc-panel--center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "default": "end"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_atc_mobile",
+      "label": "Show on mobile",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+    },
+    {
+      "type": "select",
+      "id": "media_layout",
+      "label": "Layout on large screens",
+      "info": "Stacked works best when all the product images are the same size. Mobile will always display a slider.",
+      "options": [
+        {
+          "value": "stacked",
+          "label": "Stacked"
+        },
+        {
+          "value": "slider",
+          "label": "Slider"
+        }
+      ],
+      "default": "slider"
+    },
+    {
+      "type": "select",
+      "id": "media_size",
+      "label": "Media width",
+      "info": "Media will be full width on mobile.",
+      "options": [
+        {
+          "value": "default",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "media_ratio",
+      "label": "Media aspect ratio",
+      "info": "Natural should only be used when images are the same dimensions.",
+      "options": [
+        {
+          "value": "natural",
+          "label": "Natural"
+        },
+        {
+          "value": "1.33",
+          "label": "Landscape (4:3)"
+        },
+        {
+          "value": "1.77",
+          "label": "Landscape (16:9)"
+        },
+        {
+          "value": "1",
+          "label": "Square"
+        },
+        {
+          "value": "0.75",
+          "label": "Portrait"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "select",
+      "id": "media_crop",
+      "label": "Media crop",
+      "info": "Only applies if the \"Media Shape\" is not \"Natural\".",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select",
+      "id": "hover_zoom",
+      "label": "Zoom on hover",
+      "info": "Only applies on large screens and when the original image is large enough.",
+      "default": "large",
+      "options": [
+        {
+          "value": "off",
+          "label": "Off"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "original",
+          "label": "Original image"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Enable video looping",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Stacked Layout"
+    },
+    {
+      "type": "radio",
+      "id": "stacked_scroll",
+      "label": "Scroll to variant media",
+      "options": [
+        {
+          "value": "never",
+          "label": "Never"
+        },
+        {
+          "value": "change",
+          "label": "When the variant is changed"
+        },
+        {
+          "value": "always",
+          "label": "When the variant is changed or the page loads"
+        }
+      ],
+      "default": "always"
+    },
+    {
+      "type": "checkbox",
+      "id": "underline_active",
+      "label": "Underline active media",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Slider Layout"
+    },
+    {
+      "type": "select",
+      "id": "media_thumbs",
+      "label": "Show thumbnails",
+      "options": [
+        {
+          "value": "never",
+          "label": "Never"
+        },
+        {
+          "value": "desktop",
+          "label": "Large screens only"
+        },
+        {
+          "value": "always",
+          "label": "Always"
+        }
+      ],
+      "default": "desktop"
+    },
+    {
+      "type": "select",
+      "id": "thumb_ratio",
+      "label": "Thumbnail shape",
+      "options": [
+        {
+          "value": "natural",
+          "label": "Natural"
+        },
+        {
+          "value": "1.33",
+          "label": "Landscape"
+        },
+        {
+          "value": "1",
+          "label": "Square"
+        },
+        {
+          "value": "0.75",
+          "label": "Portrait"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "select",
+      "id": "thumb_crop",
+      "info": "Only applies if the \"Thumbnail shape\" is not \"Natural\"",
+      "label": "Thumb crop",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select",
+      "id": "media_arrows",
+      "label": "Show arrows",
+      "options": [
+        {
+          "value": "never",
+          "label": "Never"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile only"
+        },
+        {
+          "value": "desktop",
+          "label": "Large screens only"
+        },
+        {
+          "value": "always",
+          "label": "Always"
+        }
+      ],
+      "default": "desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_slide_count",
+      "label": "Show slide count",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Media border",
+      "info": "Set to transparent to remove",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Media background",
+      "info": "When using 'Blend product images' (Theme Settings > Colors > Color blending), the color specified there will override this.",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "header",
+      "content": "Multiple variant images"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_media_grouping",
+      "label": "Show media only associated with the selected variant",
+      "info": "Other variants' media will be hidden",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "media_grouping_option",
+      "label": "Variant option label",
+      "info": "The label used to switch between images",
+      "default": "Color,Colour,Couleur,Farbe"
+    },
+    {
+      "type": "paragraph",
+      "content": "If your store displays multiple languages, include all translations separated by a comma, e.g. Color,Couleur,Farbe"
+    },
+    {
+      "type": "paragraph",
+      "content": "Arrange product media by this option (all 'red' media together, then all 'blue' media together, for example). The first media in each group should be assigned to a variant. [Read more](https://cleancanvas.co.uk/support/enterprise/settings/grouped-variant-images)"
+    },
+    {
+      "type": "text",
+      "id": "demand_badge_text",
+      "label": "Demand Badge Text",
+      "default": "In Demand! [number] sold in 7 Days"
+    },
+    {
+      "type": "color",
+      "id": "demand_badge_bg",
+      "label": "Badge Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "demand_badge_text_color",
+      "label": "Badge Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "buy-buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_qty_selector",
+          "label": "Show quantity selector",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_dynamic_checkout",
+          "label": "Show dynamic checkout button",
+          "info": "Using the payment methods available on your store, customers see their preferred option, like PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pickup_availability",
+          "label": "Show pickup availability",
+          "info": "Show customers where they can pick up the product. [Learn more](https://help.shopify.com/en/manual/shipping/setting-up-and-managing-your-shipping/local-methods/local-pickup)",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "collapsible-content",
+      "name": "Collapsible content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Collapsible content"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "briefcase",
+              "label": "Briefcase"
+            },
+            {
+              "value": "calendar",
+              "label": "Calendar"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "check_mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "check_mark_in_circle",
+              "label": "Check mark in circle"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "credit_card",
+              "label": "Credit card"
+            },
+            {
+              "value": "dollar_sign",
+              "label": "Dollar sign"
+            },
+            {
+              "value": "dryer",
+              "label": "Dryer"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "feather",
+              "label": "Feather"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "iron",
+              "label": "Iron"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "leather",
+              "label": "Leather"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "map_pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "pants",
+              "label": "Pants"
+            },
+            {
+              "value": "percent",
+              "label": "Percent"
+            },
+            {
+              "value": "plane",
+              "label": "Plane"
+            },
+            {
+              "value": "price_tag",
+              "label": "Price tag"
+            },
+            {
+              "value": "question_mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "scissors",
+              "label": "Scissors"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            },
+            {
+              "value": "shoe",
+              "label": "Shoe"
+            },
+            {
+              "value": "silhouette",
+              "label": "Silhouette"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "washing",
+              "label": "Washing"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Content"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Content from page"
+        },
+        {
+          "type": "checkbox",
+          "id": "open",
+          "label": "Open by default",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "Custom Liquid"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_line",
+          "label": "Show line",
+          "default": true
+        },
+        {
+          "type": "radio",
+          "id": "spacing",
+          "label": "Spacing",
+          "options": [
+            {
+              "value": "mt-8 mb-8",
+              "label": "Default"
+            },
+            {
+              "value": "mt-12 mb-12",
+              "label": "Large"
+            }
+          ],
+          "default": "mt-8 mb-8"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 80,
+          "max": 1000,
+          "step": 10,
+          "unit": "px",
+          "label": "Width",
+          "default": 200
+        },
+        {
+          "type": "select",
+          "id": "image_align",
+          "label": "Alignment",
+          "options": [
+            {
+              "value": "justify-start",
+              "label": "Left"
+            },
+            {
+              "value": "justify-center",
+              "label": "Center"
+            },
+            {
+              "value": "justify-end",
+              "label": "Right"
+            }
+          ],
+          "default": "justify-start"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "inventory-status",
+      "name": "Inventory status",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Inventory colors and thresholds can be changed in \"Theme Settings > Product Inventory\"."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_indicator_bar",
+          "label": "Show inventory indicator bar",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Urgency messages"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_urgency_message",
+          "label": "Show urgency message",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "text_very_low",
+          "label": "Text when inventory is very low",
+          "default": "<p>- Almost gone!</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "text_low",
+          "label": "Text when inventory is low",
+          "default": "<p>- Hurry while stocks last!</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "text_normal",
+          "label": "Text when inventory is normal"
+        },
+        {
+          "type": "richtext",
+          "id": "text_no_stock",
+          "label": "Text when out of stock"
+        }
+      ]
+    },
+    {
+      "type": "product-signup",
+      "name": "Product sign-up",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "You will receive an email every time someone fills in this form."
+        },
+        {
+          "type": "checkbox",
+          "id": "unavailable_only",
+          "label": "Only show when the product is not available",
+          "info": "For example, when all variants have 0 stock. Note, email alerts will NOT be automatically sent to the customer when the product becomes available - you will need to do this.",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Sign up to be the first to know when it's here</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "divider",
+          "label": "Show dividing line below",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "newsletter-signup",
+      "name": "Newsletter sign-up",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Subscribe to our newsletter"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Sign up for exclusive offers.</p>"
+        },
+        {
+          "type": "paragraph",
+          "content": "Customers who subscribe will have an account created for them. [Learn more](https://help.shopify.com/en/manual/customers/manage-customers)"
+        }
+      ]
+    },
+    {
+      "type": "pop-up",
+      "name": "Pop-up",
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text",
+          "default": "Pop-up link"
+        },
+        {
+          "type": "select",
+          "id": "link_style",
+          "label": "Link style",
+          "options": [
+            {
+              "value": "link",
+              "label": "Link"
+            },
+            {
+              "value": "btn btn--primary",
+              "label": "Primary button"
+            },
+            {
+              "value": "btn btn--secondary",
+              "label": "Secondary button"
+            }
+          ],
+          "default": "link"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Content"
+        },
+        {
+          "id": "page",
+          "type": "page",
+          "label": "Content from page"
+        }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_tax_and_shipping",
+          "label": "Show tax and shipping information",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "Product rating",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "To display a rating, add a product rating app. [Learn more](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-features#featured-product-rating)"
+        }
+      ]
+    },
+    {
+      "type": "complementary",
+      "name": "Complementary products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "To select complementary products, add the Search & Discovery app. [Learn more](https://help.shopify.com/manual/online-store/search-and-discovery/product-recommendations)"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Goes well with"
+        },
+        {
+          "type": "range",
+          "id": "products_to_show",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 4,
+          "label": "Maximum products to show",
+          "info": "Out of stock products will not be shown."
+        },
+        {
+          "type": "radio",
+          "id": "layout",
+          "label": "Layout",
+          "options": [
+            {
+              "value": "carousel",
+              "label": "Carousel"
+            },
+            {
+              "value": "list",
+              "label": "List"
+            }
+          ],
+          "default": "carousel"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "Rich text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Rich text"
+        }
+      ]
+    },
+    {
+      "type": "share",
+      "name": "Share",
+      "limit": 1
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1
+    },
+    {
+      "type": "variant-picker",
+      "name": "Variant picker",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "selector_style",
+          "label": "Selector style",
+          "info": "Swatches may not show as a dropdown, depending on the settings in Theme Settings > Swatches > Variant pickers.",
+          "options": [
+            {
+              "value": "buttons",
+              "label": "Buttons"
+            },
+            {
+              "value": "dropdown",
+              "label": "Dropdown"
+            }
+          ],
+          "default": "buttons"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_dynamic_availability",
+          "label": "Show availability in selectors",
+          "default": true,
+          "info": "Availability of variants will be shown in option selectors and update each time one is changed."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_backorder_text",
+          "label": "Show backorder text",
+          "info": "Only shows for products which use Shopify inventory tracking and are available to purchase when out of stock.",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Size chart"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_size_chart",
+          "label": "Enable size chart",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "size_chart_variant",
+          "label": "Option name",
+          "info": "The label to show the link beside.",
+          "default": "Size"
+        },
+        {
+          "type": "page",
+          "id": "size_chart_page",
+          "label": "Page containing the size chart."
+        }
+      ]
+    },
+    {
+      "type": "vendor-sku",
+      "name": "Vendor / SKU",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_vendor",
+          "label": "Show vendor",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_sku",
+          "label": "Show SKU",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "name": "Flash message",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "briefcase",
+              "label": "Briefcase"
+            },
+            {
+              "value": "calendar",
+              "label": "Calendar"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "check_mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "check_mark_in_circle",
+              "label": "Check mark in circle"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "credit_card",
+              "label": "Credit card"
+            },
+            {
+              "value": "dollar_sign",
+              "label": "Dollar sign"
+            },
+            {
+              "value": "dryer",
+              "label": "Dryer"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "feather",
+              "label": "Feather"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "iron",
+              "label": "Iron"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "leather",
+              "label": "Leather"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "map_pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "pants",
+              "label": "Pants"
+            },
+            {
+              "value": "percent",
+              "label": "Percent"
+            },
+            {
+              "value": "plane",
+              "label": "Plane"
+            },
+            {
+              "value": "price_tag",
+              "label": "Price tag"
+            },
+            {
+              "value": "question_mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "scissors",
+              "label": "Scissors"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            },
+            {
+              "value": "shoe",
+              "label": "Shoe"
+            },
+            {
+              "value": "silhouette",
+              "label": "Silhouette"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "washing",
+              "label": "Washing"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Message",
+          "default": "<p>Product message</p>",
+          "info": "Use metafields to have different messages per product. [Read more](https://cleancanvas.co.uk/support/enterprise/settings/custom-product-message)"
+        },
+        {
+          "type": "select",
+          "id": "close",
+          "label": "Close button",
+          "options": [
+            {
+              "value": "none",
+              "label": "Not visible"
+            },
+            {
+              "value": "once",
+              "label": "Close this message"
+            },
+            {
+              "value": "persistent",
+              "label": "Close this message forever"
+            }
+          ],
+          "default": "once"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_over_media",
+          "label": "Show over media",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "visibility_duration",
+          "min": 3,
+          "max": 15,
+          "step": 1,
+          "unit": "s",
+          "label": "Seconds to show message",
+          "info": "Only applies when the message shows over media.",
+          "default": 7
+        },
+        {
+          "type": "header",
+          "content": "Style"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background",
+          "default": "#e4edfa"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text",
+          "default": "#1a66d2"
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_as_collapsible_content",
+          "label": "Show as collapsible content",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Collapsible content"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "briefcase",
+              "label": "Briefcase"
+            },
+            {
+              "value": "calendar",
+              "label": "Calendar"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "check_mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "check_mark_in_circle",
+              "label": "Check mark in circle"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "credit_card",
+              "label": "Credit card"
+            },
+            {
+              "value": "dollar_sign",
+              "label": "Dollar sign"
+            },
+            {
+              "value": "dryer",
+              "label": "Dryer"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "feather",
+              "label": "Feather"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "iron",
+              "label": "Iron"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "leather",
+              "label": "Leather"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "map_pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "pants",
+              "label": "Pants"
+            },
+            {
+              "value": "percent",
+              "label": "Percent"
+            },
+            {
+              "value": "plane",
+              "label": "Plane"
+            },
+            {
+              "value": "price_tag",
+              "label": "Price tag"
+            },
+            {
+              "value": "question_mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "scissors",
+              "label": "Scissors"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            },
+            {
+              "value": "shoe",
+              "label": "Shoe"
+            },
+            {
+              "value": "silhouette",
+              "label": "Silhouette"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "washing",
+              "label": "Washing"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "checkbox",
+          "id": "open",
+          "label": "Open by default",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "product-labels",
+      "name": "Product labels",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "See settings in \"Theme Settings > Product labels\"."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

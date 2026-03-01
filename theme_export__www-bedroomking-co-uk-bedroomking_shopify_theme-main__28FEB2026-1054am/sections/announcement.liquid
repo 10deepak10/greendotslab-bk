@@ -1,0 +1,275 @@
+
+{%- liquid
+  assign show_localization = false
+  if section.settings.enable_country_selector or section.settings.enable_language_selector
+    assign show_localization = true
+  endif
+-%}
+
+{%- if section.settings.link1 or section.settings.link2 or show_localization or section.blocks.size > 0 -%}
+  {{ 'announcement.aio.min.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'announcement.aio.min.js' | asset_url }}" defer="defer"></script>
+
+  {%- style -%}
+    
+      .announcement {
+        color: #ffffff;
+        background-color: #713087;
+      }
+      
+      .marquee {
+        --gap: 4rem;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: var(--gap);
+      }
+    
+      .marquee__content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        gap: var(--gap);
+        min-width: 100%;
+      }
+      
+      .announcement-bar__message.center p {
+      	color: #ffffff;
+      	margin: 8px 0;
+        font-size: 13px;
+      }
+
+    .announcement-bar__message.center p em {
+      color: #A4C840;
+      font-style: normal;
+      font-weight: 600;
+    }
+      
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(calc(-100% - var(--gap)));
+        }
+      }
+      
+      @media (prefers-reduced-motion: reduce) {
+        .marquee__content {
+          animation-play-state: paused !important;
+        }
+      }
+      
+      /* Enable animation */
+      .enable-animation .marquee__content {
+        animation: scroll 25s linear infinite;
+      }
+      
+      /* Pause on hover */
+      .marquee--hover-pause:hover .marquee__content {
+        animation-play-state: paused;
+      }
+      
+      .marquee--fit-content {
+        max-width: fit-content;
+      }
+      
+      
+      .marquee--pos-absolute .marquee__content:last-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      
+      .enable-animation .marquee--pos-absolute .marquee__content:last-child {
+        animation-name: scroll-abs;
+      }
+      
+      @keyframes scroll-abs {
+        from {
+          transform: translateX(calc(100% + var(--gap)));
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+      ul.marquee__content {
+          margin: 0;
+      }
+    
+  {%- endstyle -%}
+
+  {%- if show_localization -%}
+    <script src="{{ 'custom-select.aio.min.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+  <announcement-bar class="announcement block text-body-{{ section.settings.text_type_scale }}" data-slide-delay="{{- section.settings.read_time | times: 1000 -}}">
+    <div class="">
+      <div class="flex">
+        <div class="announcement__col--left{% if section.blocks.size > 1 %} announcement__slider{% endif %}"{% if section.blocks.size > 1 %} aria-roledescription="carousel" aria-live="off"{% endif %}>
+         {%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'announcement' -%}
+      <div class="announcement-bar gradient" role="region"  {{ block.shopify_attributes }}>
+        {%- if block.settings.message_one != blank -%}
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
+          {%- endif -%}
+              <div class="marquee enable-animation marquee--hover-pause">
+
+  <ul style="list-style: none" class="marquee__content">
+      <li class="announcement-bar__message {{ block.settings.text_alignment }}">
+                  {{- block.settings.message_one  -}}
+                 
+                </li>
+      <li class="announcement-bar__message {{ block.settings.text_alignment }}">
+                  {{- block.settings.message_two -}}
+                  
+                </li>
+       <li class="announcement-bar__message {{ block.settings.text_alignment }}">
+                  {{- block.settings.message_three -}}
+                  
+                </li>
+      <li class="announcement-bar__message {{ block.settings.text_alignment }}">
+                  {{- block.settings.message_four  -}}
+                  
+                </li>
+      
+    
+  </ul>
+
+        <ul style="list-style: none" aria-hidden="true" class="marquee__content">
+                <li class="announcement-bar__message {{ block.settings.text_alignment }}">
+                  {{- block.settings.message_one -}}
+                </li>
+            <li class="announcement-bar__message {{ block.settings.text_alignment }}">
+                  {{- block.settings.message_two -}}
+                
+                </li>
+              <li class="announcement-bar__message {{ block.settings.text_alignment }}">
+                  {{- block.settings.message_three -}}
+                
+                </li>
+            <li class="announcement-bar__message {{ block.settings.text_alignment }}">
+                  {{- block.settings.message_four -}}
+                  
+                </li>
+          
+        </ul>
+
+              </div>
+          {%- if block.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+  {%- endcase -%}
+{%- endfor -%}
+        </div>
+
+        {% if section.settings.link1 or section.settings.link2 or show_localization %}
+          <div class="announcement__col--right hidden md:flex md:items-center">
+            {%- if section.settings.link1 or section.settings.link2 -%}
+              {%- if section.settings.link1 -%}
+                <a href="{{ section.settings.link1 }}" class="js-announcement-link font-bold{% if section.settings.link2 == blank and show_localization == false %} no-spacer{% endif %}">
+                  {%- if section.settings.link1_label != blank -%}
+                    {{- section.settings.link1_label | escape -}}
+                  {%- else -%}
+                    {{- section.settings.link1 -}}
+                  {%- endif -%}
+                </a>
+              {%- endif -%}
+
+              {%- if section.settings.link2 -%}
+                <a href="{{ section.settings.link2 }}" class="js-announcement-link font-bold{% unless show_localization %} no-spacer{% endunless %}">
+                  {%- if section.settings.link2_label != blank -%}
+                    {{- section.settings.link2_label | escape -}}
+                  {%- else -%}
+                    {{- section.settings.link2 -}}
+                  {%- endif -%}
+                </a>
+              {%- endif -%}
+            {%- endif -%}
+
+            {%- if show_localization -%}
+              <div class="announcement__localization">
+                {% render 'localization-form', id: 'nav-localization', hide_labels: true %}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </announcement-bar>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement",
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "message_one",
+          "label": "Announcement one"
+        },
+             {
+          "type": "richtext",
+          "id": "message_two",
+          "label": "Announcement two"
+        },
+           {
+          "type": "richtext",
+          "id": "message_three",
+          "label": "Announcement three"
+        },
+           {
+          "type": "richtext",
+          "id": "message_four",
+          "label": "Announcement four"
+        },
+          
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center",
+          "label": "tCenter"
+        },
+   
+        {
+          "type": "number",
+          "id": "speed",
+          "label": "Animation Speed"
+        }
+      ]
+    }
+    
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}

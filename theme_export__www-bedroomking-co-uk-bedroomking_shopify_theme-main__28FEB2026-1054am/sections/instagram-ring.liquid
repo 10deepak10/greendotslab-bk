@@ -1,0 +1,158 @@
+{%- liquid
+ 
+    assign carousel = true
+    assign grid_classes = 'grid-flow-col auto-cols-2 sm:auto-cols-3 md:auto-cols-4 lg:auto-cols-5 xl:auto-cols-6'
+    assign circle_image = true
+    assign image_ratio = 1
+-%}
+
+<div class="section">
+  {%- if section.settings.title != blank -%}
+    <div class="container">
+      <div class="section__header items-center flex{% if section.settings.heading_align == 'text-center' %} flex-col text-center{% elsif section.settings.heading_align == 'text-end' %} flex-row-reverse flex-wrap{% else %} flex-row flex-wrap{% endif %} gap-x-theme">
+          <h2 class="h4 mb-0 flex-auto {{ section.settings.heading_align }}">
+            {{- section.settings.title | escape -}}
+          </h2>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if carousel -%}
+    <carousel-slider class="carousel block" inactive>
+      <div class="container relative">
+        <div class="slider" id="slider-{{ section.id }}">
+          {%- endif -%}
+
+    <div class="container">
+      <ul class="{% if carousel %}slider__grid {% endif %}grid {{ grid_classes }} gap-x-theme gap-y-10" role="list">
+        {%- for block in section.blocks -%}
+          <li{% if carousel %} class="slider__item"{% endif %}{% if settings.animations_enabled != "disabled" %} data-cc-animate data-cc-animate-delay="{{ forloop.index | times: 0.07 }}s"{% endif %}>
+            {% render 'influencer-card',
+              influencer: block.settings.influencer,
+              image: block.settings.influencer_image,
+              image_ratio: image_ratio,
+              circle_image: circle_image,
+              url: block.settings.influencer_link,
+              name:  block.settings.influencer_name
+            %}
+          </li>
+        {%- else -%}
+          {%- for i in (1..section.settings.products_to_show) -%}
+            <li{% if carousel %} class="slider__item"{% endif %}{% if settings.animations_enabled != "disabled" %} data-cc-animate data-cc-animate-delay="{{ forloop.index | times: 0.07 }}s"{% endif %}>
+              {% render 'influencer-card', image_ratio: image_ratio, circle_image: circle_image,url: block.settings.influencer_link,name:  block.settings.influencer_name %}
+            </li>
+          {%- endfor -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+
+  {%- if carousel -%}
+        </div>
+        {%- if settings.slider_show_arrows != 'never' -%}
+          <div class="slider-nav absolute top-middle end {% if settings.slider_show_arrows == 'hover' %}slider-nav--show-on-hover no-hover-hidden {% endif %}hidden md:block no-js-hidden">
+            <button type="button" class="slider-nav__btn tap-target btn {{ settings.slider_button_style }} has-ltr-icon" name="next" aria-controls="slider-{{ section.id }}">
+              <span class="visually-hidden">{{ 'general.slider.next' | t }}</span>
+              {% render 'icon-chevron-right' %}
+            </button>
+            <button type="button" class="slider-nav__btn tap-target btn {{ settings.slider_button_style }} has-ltr-icon" name="prev" aria-controls="slider-{{ section.id }}">
+              <span class="visually-hidden">{{ 'general.slider.previous' | t }}</span>
+              {% render 'icon-chevron-left' %}
+            </button>
+          </div>
+        {%- endif -%}
+      </div>
+    </carousel-slider>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Influencers list",
+  "tag": "section",
+  "class": "cc-collection-list",
+  "max_blocks": 16,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Instagram Influencers list"
+    },
+    {
+      "type": "select",
+      "id": "heading_align",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "text-start",
+          "label": "Left"
+        },
+        {
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-end",
+          "label": "Right"
+        }
+      ],
+      "default": "text-start"
+    }
+   
+  ],
+  "blocks": [
+    {
+      "type": "influencer",
+      "name": "Influencer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "influencer_name",
+          "label": "Influencer Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "influencer_image",
+          "label": "Influencer Image",
+          "info": "Replaces the collection image"
+        },
+        {
+          "type": "text",
+          "id": "influencer_link",
+          "label": "Influencer Link"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Influencer list",
+      "blocks": [
+        {
+          "type": "influencer"
+        },
+        {
+          "type": "influencer"
+        },
+        {
+          "type": "influencer"
+        },
+        {
+          "type": "influencer"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer",
+      "aside"
+    ]
+  }
+}
+{% endschema %}

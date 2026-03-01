@@ -1,0 +1,69 @@
+{%- comment -%}
+  Parameters:
+  - influencer {Object} - Influencer object.
+  - image {Object} - Image object (optional).
+  - image_ratio {Number} - Aspect ratio for the image (optional).
+  - circle_image {Boolean} - Whether the influencer card is a circle or not
+
+  Usage:
+  {% render 'influencer-card', influencer: influencer %}
+{%- endcomment -%}
+{%- liquid
+ 
+
+  if image_ratio == nil
+    if section.settings.card_image_ratio == 'shortest' or section.settings.card_image_ratio == 'tallest' or section.settings.card_image_ratio == 'circle' or circle_image
+      assign image_ratio = 1
+    else
+      assign image_ratio = section.settings.card_image_ratio
+    endif
+  elsif image_ratio == 0 or image_ratio == 99
+    assign image_ratio = 1
+  endif
+
+  unless circle_image
+    if settings.coll_card_image_ratio == 'circle'
+      assign circle_image = true
+    endif
+  endunless
+-%}
+
+<div class="card hover:grow-media relative flex flex-col card__collection">
+  <div class="card__media relative{% if circle_image %} card__media--circle{% endif %}">
+    <a href="{{ url }}"  class="media block relative" tabindex="-1" style="padding-top: {{ 1 | divided_by: image_ratio | times: 100 }}%;">
+      {%- if influencer != empty and image != blank -%}
+        {%- capture sizes %}{% render 'sizes-attribute', grid: true, min: 1, sm: 2, lg: 3, xl: 4 %}{% endcapture -%}
+        {%- liquid
+          if settings.coll_card_image_fit == 'contain'
+            assign class = 'img-fit img-fit--contain'
+          else
+            assign class = 'img-fit ' | append: settings.coll_image_align
+          endif
+        -%}
+        {% render 'image',
+          image: image,
+          widths: '320, 460, 600, 700, 800, 900, 1200',
+          src_width: 460,
+          src_placeholder: true,
+          sizes: sizes,
+          class: class,
+          disable_focal_point: true
+        %}
+      {%- else -%}
+        {%- capture placeholder_name -%}collection-{{ 'now' | date: '%N' | modulo: 6 | plus: 1 }}{%- endcapture -%}
+        {{ placeholder_name | placeholder_svg_tag: 'media__placeholder img-fit' }}
+      {%- endif -%}
+    </a>
+  </div>
+  <div class="card__info relative {% if circle_image %}text-center{% else %}{{ settings.coll_text_align }}{% endif %}">
+    <p class="card__title h6 mb-2 last:mb-0">
+      {%- if influencer != blank -%}
+        <a href="{{ url }}" class="card-link text-current">{{ name }}</a>
+      {%- else -%}
+        <a href="{{ url }}" class="card-link text-current">{{ name }}</a>
+      {%- endif -%}
+    </p>
+
+   
+  </div>
+</div>

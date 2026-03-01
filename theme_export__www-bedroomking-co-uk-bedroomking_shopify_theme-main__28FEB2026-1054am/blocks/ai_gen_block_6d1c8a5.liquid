@@ -1,0 +1,388 @@
+{% doc %}
+  @prompt
+    create me a flash sale banner which needs to be thin and it should show text that sale ends today, user should be able to clikc and copy the code and it should have a timer which resets each day , remove the copy button, just make the code itself a link, the count down timer needs to reset automatically when it ends 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-flash-sale-banner-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+    padding: 12px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-flash-sale-banner__container-{{ ai_gen_id }} {
+    max-width: 1260px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .ai-flash-sale-banner__text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .ai-flash-sale-banner__code-{{ ai_gen_id }} {
+    background-color: {{ block.settings.code_background_color }};
+    color: {{ block.settings.code_text_color }};
+    padding: 6px 12px;
+    border-radius: {{ block.settings.border_radius }}px;
+    font-family: monospace;
+    font-size: {{ block.settings.code_size }}px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .ai-flash-sale-banner__code-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.code_hover_color }};
+  }
+
+  .ai-flash-sale-banner__code-{{ ai_gen_id }}.copied {
+    background-color: {{ block.settings.success_color }};
+  }
+
+  .ai-flash-sale-banner__timer-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: {{ block.settings.timer_size }}px;
+    font-weight: 700;
+  }
+
+  .ai-flash-sale-banner__timer-label-{{ ai_gen_id }} {
+    font-weight: 600;
+  }
+
+  .ai-flash-sale-banner__timer-value-{{ ai_gen_id }} {
+    background-color: {{ block.settings.timer_background_color }};
+    color: {{ block.settings.timer_text_color }};
+    padding: 4px 8px;
+    border-radius: {{ block.settings.border_radius }}px;
+    min-width: 30px;
+    text-align: center;
+    font-family: monospace;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-flash-sale-banner__container-{{ ai_gen_id }} {
+      gap: 12px;
+    }
+
+    .ai-flash-sale-banner__text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+
+    .ai-flash-sale-banner__code-{{ ai_gen_id }} {
+      font-size: {{ block.settings.code_size | times: 0.9 }}px;
+    }
+
+    .ai-flash-sale-banner__timer-{{ ai_gen_id }} {
+      font-size: {{ block.settings.timer_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<flash-sale-banner-{{ ai_gen_id }}
+  class="ai-flash-sale-banner-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-flash-sale-banner__container-{{ ai_gen_id }}">
+    {% if block.settings.sale_text != blank %}
+      <div class="ai-flash-sale-banner__text-{{ ai_gen_id }}">
+        {{ block.settings.sale_text }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.discount_code != blank %}
+      <button
+        class="ai-flash-sale-banner__code-{{ ai_gen_id }}"
+        data-code="{{ block.settings.discount_code }}"
+        aria-label="Click to copy discount code"
+      >
+        {{ block.settings.discount_code }}
+      </button>
+    {% endif %}
+
+    {% if block.settings.show_timer %}
+      <div class="ai-flash-sale-banner__timer-{{ ai_gen_id }}">
+        <span class="ai-flash-sale-banner__timer-label-{{ ai_gen_id }}">{{ block.settings.timer_label }}</span>
+        <span class="ai-flash-sale-banner__timer-value-{{ ai_gen_id }}" data-timer-hours>00</span>
+        <span>:</span>
+        <span class="ai-flash-sale-banner__timer-value-{{ ai_gen_id }}" data-timer-minutes>00</span>
+        <span>:</span>
+        <span class="ai-flash-sale-banner__timer-value-{{ ai_gen_id }}" data-timer-seconds>00</span>
+      </div>
+    {% endif %}
+  </div>
+</flash-sale-banner-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FlashSaleBanner{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.codeButton = this.querySelector('.ai-flash-sale-banner__code-{{ ai_gen_id }}');
+        this.timerHours = this.querySelector('[data-timer-hours]');
+        this.timerMinutes = this.querySelector('[data-timer-minutes]');
+        this.timerSeconds = this.querySelector('[data-timer-seconds]');
+      }
+
+      connectedCallback() {
+        if (this.codeButton) {
+          this.setupCopyButton();
+        }
+
+        if (this.timerHours && this.timerMinutes && this.timerSeconds) {
+          this.startTimer();
+        }
+      }
+
+      setupCopyButton() {
+        this.codeButton.addEventListener('click', () => {
+          const code = this.codeButton.getAttribute('data-code');
+          
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(code).then(() => {
+              this.showCopiedState();
+            }).catch(() => {
+              this.fallbackCopy(code);
+            });
+          } else {
+            this.fallbackCopy(code);
+          }
+        });
+      }
+
+      fallbackCopy(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        
+        try {
+          document.execCommand('copy');
+          this.showCopiedState();
+        } catch (err) {
+          console.error('Failed to copy:', err);
+        }
+        
+        document.body.removeChild(textArea);
+      }
+
+      showCopiedState() {
+        const originalText = this.codeButton.textContent;
+        this.codeButton.classList.add('copied');
+        this.codeButton.textContent = '{{ block.settings.copied_text }}';
+        
+        setTimeout(() => {
+          this.codeButton.classList.remove('copied');
+          this.codeButton.textContent = originalText;
+        }, 2000);
+      }
+
+      startTimer() {
+        this.updateTimer();
+        this.timerInterval = setInterval(() => {
+          this.updateTimer();
+        }, 1000);
+      }
+
+      updateTimer() {
+        const now = new Date();
+        const endOfDay = new Date();
+        endOfDay.setHours(23, 59, 59, 999);
+        
+        let timeLeft = endOfDay - now;
+        
+        if (timeLeft <= 0) {
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          tomorrow.setHours(23, 59, 59, 999);
+          timeLeft = tomorrow - now;
+        }
+        
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        this.timerHours.textContent = String(hours).padStart(2, '0');
+        this.timerMinutes.textContent = String(minutes).padStart(2, '0');
+        this.timerSeconds.textContent = String(seconds).padStart(2, '0');
+      }
+
+      disconnectedCallback() {
+        if (this.timerInterval) {
+          clearInterval(this.timerInterval);
+        }
+      }
+    }
+
+    customElements.define('flash-sale-banner-{{ ai_gen_id }}', FlashSaleBanner{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Flash sale banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "sale_text",
+      "label": "Sale text",
+      "default": "Flash Sale - Ends Today!"
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Discount code",
+      "default": "FLASH20"
+    },
+    {
+      "type": "text",
+      "id": "copied_text",
+      "label": "Copied confirmation text",
+      "default": "Copied!"
+    },
+    {
+      "type": "header",
+      "content": "Timer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_timer",
+      "label": "Show countdown timer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "timer_label",
+      "label": "Timer label",
+      "default": "Ends in:"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ff580d"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Code style"
+    },
+    {
+      "type": "color",
+      "id": "code_background_color",
+      "label": "Code background",
+      "default": "#2a2b2a"
+    },
+    {
+      "type": "color",
+      "id": "code_text_color",
+      "label": "Code text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "code_hover_color",
+      "label": "Code hover background",
+      "default": "#1a1b1a"
+    },
+    {
+      "type": "color",
+      "id": "success_color",
+      "label": "Success background",
+      "default": "#2c7e3f"
+    },
+    {
+      "type": "range",
+      "id": "code_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Code size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Timer style"
+    },
+    {
+      "type": "color",
+      "id": "timer_background_color",
+      "label": "Timer background",
+      "default": "#2a2b2a"
+    },
+    {
+      "type": "color",
+      "id": "timer_text_color",
+      "label": "Timer text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "timer_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Timer size",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "Flash sale banner"
+    }
+  ]
+}
+{% endschema %}

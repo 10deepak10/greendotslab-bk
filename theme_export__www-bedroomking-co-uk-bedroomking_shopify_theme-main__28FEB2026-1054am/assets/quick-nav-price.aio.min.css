@@ -1,0 +1,5 @@
+/*
+Generated time: June 18, 2025 14:17
+This file was created by the app developer. Feel free to contact the original developer with any questions. It was minified (compressed) by AVADA. AVADA do NOT own this script.
+*/
+.quick-nav__price{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.19, 1, .22, 1)}.quick-nav__price .price-range{padding-bottom:calc(4 * var(--space-unit))}.quick-nav__price .price-range__input-wrapper>.input::placeholder{color:currentColor}.quick-nav__price .price-range__sliders{margin:calc(3 * var(--space-unit)) 3px 0}.quick-nav__price .price-range__slider-input{left:0}

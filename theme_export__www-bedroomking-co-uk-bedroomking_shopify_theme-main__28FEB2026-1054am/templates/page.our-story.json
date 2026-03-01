@@ -1,0 +1,811 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_page_title": true,
+        "heading_align": "text-center"
+      }
+    },
+    "background_video_PKq9Tk": {
+      "type": "background-video",
+      "blocks": {
+        "heading_i8qN6b": {
+          "type": "heading",
+          "settings": {
+            "heading": "Bedroomking",
+            "heading_size": "h1",
+            "heading_h1": false
+          }
+        },
+        "text_VDa3ME": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From a Spare Room in Yorkshire to Thousands of Bedrooms Across the UK. Some businesses are born from spreadsheets. Ours started in a small bedroom — quite literally.</p>",
+            "enlarge_text": true
+          }
+        },
+        "button_9CaK6P": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn btn--secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_i8qN6b",
+        "text_VDa3ME",
+        "button_9CaK6P"
+      ],
+      "name": "Background video",
+      "settings": {
+        "video_shopify": "shopify://files/videos/VID-20250625-WA0073.mp4",
+        "video_external": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_description": "",
+        "video_height": "md",
+        "overlay_text_align": "text-center",
+        "overlay_position": "justify-center items-center",
+        "mob_center_text": true,
+        "color_scheme": "white",
+        "transparent_content_color": "#ffffff",
+        "tint_color": "#000000",
+        "tint_opacity": 40,
+        "lazyload": true,
+        "prevent_animation": false
+      }
+    },
+    "media_with_text_Q8n9Pe": {
+      "type": "media-with-text",
+      "blocks": {
+        "text_jfdGgy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Back in 2011, I was helping my sister redecorate her flat in<a href=\"https://en.wikipedia.org/wiki/Wakefield\"> <span style=\"text-decoration:underline\">Wakefield</span></a>. Money was tight, space was even tighter, and we’d spent hours browsing websites, showrooms, and catalogues looking for a decent bed. Everything seemed overpriced, underwhelming, or both.</p><p>Eventually, frustrated with the lack of options, we did something that would quietly change the course of my life: we built our own. Not from scratch exactly — we repurposed an old frame, added our headboard design, sourced upholstery fabric from a market in Leeds, and stitched the pieces together over a weekend.</p><p>That bed? It looked far better than anything we’d seen online. And it worked. It was simple, stylish, affordable, and — most importantly — made with care.</p><p>At the time, I didn’t think I’d just built the prototype of Bedroom King. But looking back, that moment planted a seed that never stopped growing.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "text_jfdGgy"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_21_81f33339-94fd-4596-b037-a0eef3092bbb.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_HzgtkC": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_NMWzhG": {
+          "type": "heading",
+          "settings": {
+            "heading": "An Idea That Refused to Go Away",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_GMiD98": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Over the next few months, word got out. Friends asked me to make beds for their flats. My uncle asked for a custom-sized base. A neighbour wanted a drawer option. There was a demand — but more than that, there was a shared frustration.</p><p>Everyone I spoke to seemed to have the same problem:</p><p>“Why is it so hard to find a good bed that doesn’t cost a fortune?”</p><p>That stuck with me. At the time, I was working full-time in logistics, but I began building beds on weekends. I spent nights researching fabrics, frames, and mechanisms. I learned about Ottoman lifts, slatted bases, and reinforced corners. I started experimenting with frames that could hold up to years of real use — kids jumping on them, people moving house, the odd spilled coffee.</p><p>Soon, the garage was full. Then the spare room. Then my mate’s unit across town.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_NMWzhG",
+        "text_GMiD98"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_9.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "right",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_AVnqbD": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_mcRbNi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Building Something That Lasts",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_RTW8a7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We officially launched<a href=\"https://www.bedroomking.co.uk/\"> <span style=\"text-decoration:underline\">Bedroom King</span></a> in 2013, with just three models: a standard divan, a velvet ottoman, and a storage bed with drawers.</p><p>I remember the first real online sale. It came from Sheffield. A couple had seen one of our Facebook posts and messaged late at night:</p><p>“Hi, can you make this in king size with a taller headboard?”</p><p>We could. We did.</p><p>What followed were months of long days, weekend deliveries, and sourcing locally wherever we could. We didn’t have massive capital, but we had something more valuable: genuine care. Every bed that left our tiny workshop had been built and tested by someone who understood what it was like to live in a real home, with kids, pets, small rooms, and tighter budgets.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_mcRbNi",
+        "text_RTW8a7"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_20_d4b0eed0-a69f-4a34-a9b2-4b7ff28fbe88.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_4LWTLa": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_pHDa3N": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why the Name “Bedroom King”?",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_z37UwY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Funny story — we didn’t plan to be called Bedroom King. The original name idea was “York Beds Co.”, but it didn’t stick. It sounded a bit too formal. Too forgettable.</p><p>One evening, while sketching out ideas with my brother, we joked:</p><p>“If we’re making beds fit for royalty, let’s just call it Bedroom King.”</p><p>It made us laugh. But the more we said it, the more it worked. It was bold, confident, and a bit cheeky — much like the brand we were trying to build.</p><p>We registered the domain that night. And we never looked back.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pHDa3N",
+        "text_z37UwY"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_26.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "right",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "rich_text_mR4NAf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PWYaTa": {
+          "type": "heading",
+          "settings": {
+            "heading": "Growing with Our Customers",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_LKhwDY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>By 2016, we’d outgrown our first unit. Then our second. What started with a few beds a month turned into a few beds a day, then dozens. We hired more staff — most from local families, friends, and referrals.</p><p>We didn’t just grow in size. We grew in understanding.</p><p></p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_PWYaTa",
+        "text_LKhwDY"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
+    "testimonials_my3bYC": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_q8kYYH": {
+          "type": "testimonial",
+          "name": "We started noticing patterns:",
+          "settings": {
+            "testimonial": "<p></p><ul><li>Young couples needed extra storage without compromising on looks.</li><li>Older customers wanted no-fuss assembly and firm support.</li><li>Families needed durability and easy-to-clean fabrics.</li></ul><p></p>",
+            "author": "",
+            "author_info": "",
+            "show_star_rating": false,
+            "star_rating": 5
+          }
+        },
+        "testimonial_pD767P": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Author information",
+            "show_star_rating": true,
+            "star_rating": 5
+          }
+        },
+        "testimonial_gRi6tT": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Author information",
+            "show_star_rating": true,
+            "star_rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_q8kYYH",
+        "testimonial_pD767P",
+        "testimonial_gRi6tT"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "heading": "We started noticing patterns:",
+        "show_quotes": true,
+        "testimonial_size": "h3",
+        "text_position": "justify-center",
+        "text_align": "text-center justify-center",
+        "nav_style": "slideshow_nav_lines",
+        "transition": "slide-fade",
+        "autoplay": false,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "default",
+        "full_width": true
+      }
+    },
+    "rich_text_zj6bPC": {
+      "type": "rich-text",
+      "blocks": {
+        "text_BHeFhE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This shaped how we designed our beds. Every headboard was tweaked. Every drawer runner was tested. We even adjusted fabric shades after one customer told us her grey bed looked “a little too blue in sunlight.” These weren’t complaints — they were insights. We listened, and we improved.</p><p> </p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "text_BHeFhE"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
+    "media_with_dynamic_text_qNLAkC": {
+      "type": "media-with-dynamic-text",
+      "blocks": {
+        "heading_9depYL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Quality, Not Quantity",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_8YiAEG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Even as demand grew, we refused to become a warehouse brand that just “shipped boxes.”</p><p>We kept our assembly team in-house. We trained each new joiner personally. We built partnerships with UK suppliers — some just down the road — so we could control quality and support local economies.</p><p>We made a decision: if something wasn’t right, we’d fix it. No questions. No long waits. Just a real person, on the phone, ready to help. That’s still our promise today.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9depYL",
+        "text_8YiAEG"
+      ],
+      "name": "Media with dynamic text",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_3.png",
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "image_banner_LRtC7X": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_Rnp8rW": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Pandemic Years: A True Test",
+            "heading_size": "h1",
+            "heading_h1": false
+          }
+        },
+        "text_pNKJN4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>When COVID hit, the world paused. But people still needed beds. They needed them more than ever — for comfort, for home offices, for kids growing faster than expected.</p><p>We worked with a skeleton crew and kept operations safe. We took thousands of calls from customers stuck at home. We adapted quickly, launching new delivery options, sourcing additional fabrics when supply chains failed, and expanding our online support.</p><p>It wasn’t easy. But it reminded us why we exist: to bring comfort, quality, and honesty into people’s homes.</p>",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_Rnp8rW",
+        "text_pNKJN4"
+      ],
+      "name": "Image banner",
+      "settings": {
+        "image_desktop": "shopify://shop_images/Untitled_design_11_f48557a5-11d5-46c2-a2b3-618052ea1452.png",
+        "url": "",
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "overlay_position": "justify-center items-center",
+        "overlay_text_align": "text-center",
+        "mob_center_text": false,
+        "mobile_stacked": false,
+        "color_scheme": "white",
+        "full_width": true,
+        "transparent_content_color": "#ffffff",
+        "tint_color": "#000000",
+        "tint_opacity": 60,
+        "prevent_animation": false
+      }
+    },
+    "rich_text_AJFNrX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_G8TUp6": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Bedroom King Means Today",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_bR3fbY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re no longer just a Yorkshire startup, but we still think like one. We still obsess over feedback. We still test every new model. We still argue (in a good way!) over fabric shades and drawer depth.</p><p>We’ve helped thousands of people across the UK get a better night’s sleep, make more space in their homes, and feel good about where they spend one-third of their lives.</p><p>And we’re not done yet.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_G8TUp6",
+        "text_bR3fbY"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
+    "multi_column_Y7ajNV": {
+      "type": "multi-column",
+      "blocks": {
+        "column_aPEhBQ": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Panel-Storage-Bed-Ottoman.png",
+            "media_scale": 80,
+            "heading": "Ottoman Beds",
+            "text": "<p>Our ottoman beds are the best-selling models for a reason. In modern UK homes where space is tight and storage is precious, our lift-up ottoman frames offer a practical and beautiful solution.</p><p>Each gas-lift mechanism is reinforced to support daily use. Customers often ask: “Will this last for years?” Our answer is simple — yes, because we build them to.</p><p>Instead of thin particleboard bases, we use solid wood or reinforced boards. We also offer both front-lift and side slider designs, depending on room layout.</p><p><strong>Popular finishes:</strong></p><ul><li>Plush Velvet in silver, steel, and mink</li><li>Naples Fabric for a matt, clean look</li><li>Crushed Velvet for customers who want glamour</li></ul><p>Every ottoman is made to order, allowing you to choose the size, headboard, and finish that best suits your home.</p>",
+            "button_label": "Ottoman Beds",
+            "button_link": "shopify://collections/king-size-bed-with-storage"
+          }
+        },
+        "column_x6CbxY": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Panel-Cream-Divan-Bed_1.webp",
+            "media_scale": 80,
+            "heading": "Divan Bed",
+            "text": "<p>Divan bases are classic for a reason. Ours features durable timber frames, optional drawers, and solid platform tops. Unlike flatpack bases from budget brands, Bedroom King divans come pre-built in sections for easier delivery and longer life.</p><p><strong>Why people love them:</strong></p><ul><li>Great for guest rooms and smaller spaces</li><li>Optional storage drawers that don’t compromise design</li><li>Compatible with all Bedroom King headboards</li></ul><p>These are the workhorses of our range—simple, stylish, and built to last.</p>",
+            "button_label": "Divan Bed",
+            "button_link": "shopify://collections/3ft-single-divan-bed-frame"
+          }
+        },
+        "column_VJMCkV": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Oversized-Headboard-Bedframe-Grey.png",
+            "media_scale": 80,
+            "heading": "Custom Headboards",
+            "text": "<p>A headboard should be more than an afterthought. Ours are designed as statement pieces, whether you're looking for subtle elegance or bold luxury.</p><p><strong>Choose from:</strong></p><ul><li>Panelled headboards</li><li>Wingback designs</li><li>Button-tufted Chesterfield style</li><li>Horizontal lines for a modern look</li></ul><p>Height, fabric, and design are all customisable. You can even request samples to match your wall paint or bedding.</p>",
+            "button_label": "Custom Headboards",
+            "button_link": "https://www.bedroomking.co.uk/products/replacement-headboard-split-headboard-only"
+          }
+        }
+      },
+      "block_order": [
+        "column_aPEhBQ",
+        "column_x6CbxY",
+        "column_VJMCkV"
+      ],
+      "name": "Product Deep Dive",
+      "settings": {
+        "title": "Product Deep Dive",
+        "heading_align": "text-center",
+        "button_label": "",
+        "button_link": "",
+        "layout": "carousel",
+        "column_size": "medium",
+        "column_align": "left",
+        "image_ratio": "1",
+        "color_scheme": "1",
+        "button_style": "btn btn--secondary"
+      }
+    },
+    "media_with_text_KbrXfT": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_QYfj6W": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sizes & Fit – British Beds, Perfectly Sized",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_LCgFMW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We offer all standard UK sizes:</p><ul><li>Single (3ft)</li><li>Small Double (4ft)</li><li>Double (4ft 6in)</li><li>King (5ft)</li><li>Super King (6ft)</li></ul><p>Because every bed is made to order, we can also accommodate bespoke sizes. Need an extra-short bed for a loft conversion? Or a low-profile frame for older relatives? No problem.</p><p>Our customers regularly tell us this flexibility is what sets us apart.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QYfj6W",
+        "text_LCgFMW"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_23.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_y9Tz6y": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_F9CtCF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Upholstery & Materials",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_yJ8t6K": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We handpick every material for comfort, longevity, and style. Our current fabric lineup includes:</p><ul><li>Plush Velvet</li><li>Naples</li><li>Crushed Velvet</li><li>Linen</li><li>Chenille</li></ul><p>Each one is available in a curated palette of 5-10 shades. We rotate options seasonally, based on customer feedback, design trends, and supplier innovations.</p><p>Want to feel the difference? We offer free swatch samples shipped to your door.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_F9CtCF",
+        "text_yJ8t6K"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_22_f6b69557-a840-4e9a-b28d-7b5c72889925.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "right",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "slideshow_YTaDRK": {
+      "type": "slideshow",
+      "name": "Slideshow",
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 40,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "multi_column_P87nMx": {
+      "type": "multi-column",
+      "blocks": {
+        "column_rfUFim": {
+          "type": "column",
+          "settings": {
+            "enable_media": false,
+            "media_scale": 100,
+            "heading": "Sophie & Mark from Birmingham",
+            "text": "<p>“We downsized last year and were worried about storage. The bedroom King’s ottoman bed in silver plush has honestly transformed our space. It’s comfortable, solid, and so spacious underneath. Delivery was quick, and the guys even helped move our old bed out.”<br/><br/></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_Kf7L7W": {
+          "type": "column",
+          "settings": {
+            "enable_media": false,
+            "media_scale": 100,
+            "heading": "Harpreet from Leicester",
+            "text": "<p>“The build quality is next-level. You can feel it in the base when you sit. And their customer service? Best I’ve had in years. I changed my mind about the fabric, and they sorted it with no fuss.”</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_YLpdnH": {
+          "type": "column",
+          "settings": {
+            "enable_media": false,
+            "media_scale": 100,
+            "heading": "Rachel from Brighton",
+            "text": "<p>“I run an Airbnb and needed something stylish but hard-wearing. Their divan base with a wingback headboard gets compliments in almost every review. It’s been 18 months and still looks brand new.”</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_rfUFim",
+        "column_Kf7L7W",
+        "column_YLpdnH"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "title": "Real Voices: What Our Customers Say",
+        "heading_align": "text-center",
+        "button_label": "",
+        "button_link": "",
+        "layout": "carousel",
+        "column_size": "medium",
+        "column_align": "left",
+        "image_ratio": "1",
+        "color_scheme": "1",
+        "button_style": "btn btn--secondary"
+      }
+    },
+    "media_with_text_FG3EXg": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_acakr7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Collaborations & Community",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_qdMgbx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re proud of our British roots, and that pride extends into how we give back and collaborate.</p><p>In 2023, we partnered with a local shelter initiative in West Yorkshire to donate 50 beds and mattresses to housing support programs. These weren’t clearance items—they were custom-built for comfort and dignity.</p><p><strong>We’ve also collaborated with:</strong></p><ul><li>Independent interior designers to curate headboard trends for our seasonal collections.</li><li>Local upholsterers in Sheffield to train apprentices in traditional techniques.</li><li>British textile innovators to test new eco-conscious fabrics, like recycled polyester blends and plant-dyed linens.</li></ul><p>These partnerships help us stay connected to the community and stay ahead of sustainable trends.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_acakr7",
+        "text_qdMgbx"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_14.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "image_banner_7Kn8Nd": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_fCc94X": {
+          "type": "heading",
+          "settings": {
+            "heading": "Where We’re Headed Next",
+            "heading_size": "h1",
+            "heading_h1": false
+          }
+        },
+        "text_nAWfhp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>As we grow, our mission remains the same: build better beds, honestly.</p><p><strong>Why Bedroom King Is Built to Last</strong></p><p>In a market saturated with fast furniture and fleeting trends, Bedroom King stands for longevity—in our builds, our service, and our values.</p><p>We aren’t trying to sell the most beds. We’re trying to sell the ones that matter most to you. Whether that’s a chic velvet frame for your first home, a sturdy divan for the kids’ room, or a custom piece for an unusual layout, our team is ready to build it with care.</p><p>We listen. We adapt. We evolve. And we do it all without losing sight of the Yorkshire workshop where it began.</p><p>Because at the end of the day, we’re not just in the business of beds. We’re in the business of better sleep, better homes, and better choices.</p><p>From our family to yours—thank you for making Bedroom King part of your story.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_fCc94X",
+        "text_nAWfhp"
+      ],
+      "name": "Image banner",
+      "settings": {
+        "image_desktop": "shopify://shop_images/Untitled_design_13_42cda0ff-020c-4c52-b5dd-8f227777ecbd.png",
+        "url": "",
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "overlay_position": "justify-center items-center",
+        "overlay_text_align": "text-center",
+        "mob_center_text": false,
+        "mobile_stacked": false,
+        "color_scheme": "white",
+        "full_width": true,
+        "transparent_content_color": "#ffffff",
+        "tint_color": "#da6a1f",
+        "tint_opacity": 30,
+        "prevent_animation": false
+      }
+    },
+    "rich_text_6LQCnn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_echhrh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Building Something That Lasts",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_MeCEax": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_echhrh",
+        "text_MeCEax"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
+    "image_banner_k84tLn": {
+      "type": "image-banner",
+      "name": "Image banner",
+      "settings": {
+        "image_desktop": "shopify://shop_images/image_11.png",
+        "url": "",
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "overlay_position": "justify-center items-center",
+        "overlay_text_align": "text-center",
+        "mob_center_text": false,
+        "mobile_stacked": false,
+        "color_scheme": "white",
+        "full_width": true,
+        "transparent_content_color": "#ffffff",
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "prevent_animation": false
+      }
+    },
+    "rich_text_ntwGmP": {
+      "type": "rich-text",
+      "name": "Rich text",
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "background_video_PKq9Tk",
+    "media_with_text_Q8n9Pe",
+    "media_with_text_HzgtkC",
+    "media_with_text_AVnqbD",
+    "media_with_text_4LWTLa",
+    "rich_text_mR4NAf",
+    "testimonials_my3bYC",
+    "rich_text_zj6bPC",
+    "media_with_dynamic_text_qNLAkC",
+    "image_banner_LRtC7X",
+    "rich_text_AJFNrX",
+    "multi_column_Y7ajNV",
+    "media_with_text_KbrXfT",
+    "media_with_text_y9Tz6y",
+    "slideshow_YTaDRK",
+    "multi_column_P87nMx",
+    "media_with_text_FG3EXg",
+    "image_banner_7Kn8Nd",
+    "rich_text_6LQCnn",
+    "image_banner_k84tLn",
+    "rich_text_ntwGmP"
+  ]
+}

@@ -1,0 +1,47 @@
+<script src="https://angus.finance-calculator.co.uk/js/imm.js"></script>
+<script>
+const promo = new Imm.Promo({
+  apiKey: '8a6e6ef1df61f265d13b4c7bd9fde6c8',
+  cartCalc: {
+    description: '{% for item in cart.items %}{{ item.title | remove:'"' }}|||{% endfor %}',
+    insertion: 'after',
+    element: '.cart__summary button.btn',
+    amount: '{{ cart.total_price | money_without_currency | remove: ","}}',
+    financeFilter: getImmFinanceFilter()
+  }
+});
+
+   function getImmFinanceFilter(){
+   var tags = [];
+   var financeTags = [];
+   var financeFilter;
+   {% for item in cart.items %}
+   var itemQuantity = {{ item.quantity }};
+   var i;
+   for (i = 0; i < itemQuantity; i++) {
+     {% for tag in item.product.tags %}
+          tags.push('{{ tag | remove: "'" }}');
+      {% endfor %}
+   }
+   {% endfor %}
+   if(tags){
+       tags.forEach(function(tagName){
+         if(tagName.indexOf('Finance Option') != -1 || tagName.indexOf('imm-exclude') != -1){
+           financeTags.push(tagName);
+         };
+       });
+   }
+    if(financeTags.includes('imm-exclude')) {
+      return 'imm-exclude';
+    }
+   if(financeTags.length === {{ cart.item_count }} && financeTags.filter(immArrUnique).length === 1 ){
+      financeFilter = financeTags[0];
+   } else {
+     financeFilter = 'ALL';
+   }
+   return financeFilter;
+   }
+   function immArrUnique(value, index, self) {
+   return self.indexOf(value) === index;
+   }
+</script>

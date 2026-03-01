@@ -1,0 +1,371 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_title": true,
+        "show_product_count": false,
+        "show_collection_description": true,
+        "text_align": "items-center text-center",
+        "collection_image": "natural",
+        "use_product_image": false,
+        "text_width": "standard",
+        "color_scheme": "default"
+      }
+    },
+    "logo_list_a7kiKt": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_4rAgz6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/3ft.webp",
+            "url": "shopify://collections/3ft-single-bed-with-storage",
+            "logo_width": 120,
+            "text": "3ft Single"
+          }
+        },
+        "logo_XRHYD3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/4ft.webp",
+            "url": "shopify://collections/4ft-small-double-bed-with-storage",
+            "logo_width": 120,
+            "text": "4ft Small Double"
+          }
+        },
+        "logo_tV9G4X": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/46-Double.webp",
+            "url": "shopify://collections/4ft6-double-bed-with-storage",
+            "logo_width": 120,
+            "text": "4ft6 Double"
+          }
+        },
+        "logo_ddrFhw": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/46-Double.webp",
+            "url": "shopify://collections/5ft-king-size-bed-with-storage",
+            "logo_width": 120,
+            "text": "5ft King Size"
+          }
+        },
+        "logo_Y9Nrp4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/6ft-super-king.webp",
+            "url": "shopify://collections/6ft-super-king-bed-with-storage",
+            "logo_width": 120,
+            "text": "6ft Super King"
+          }
+        }
+      },
+      "block_order": [
+        "logo_4rAgz6",
+        "logo_XRHYD3",
+        "logo_tV9G4X",
+        "logo_ddrFhw",
+        "logo_Y9Nrp4"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".section--padded,.section--padded-default {padding: 0px;}",
+        ".cc-logo-list .carousel .slider .logo-list {justify-content: center;}",
+        ".cc-logo-list {background-color: #f9f9f9; padding: 20px; margin: 25px 0;}",
+        ".cc-logo-list .carousel .slider .logo-list .slider__item .logo-list__logo a img {transition: transform 0.3s ease-in-out;}",
+        ".cc-logo-list .carousel .slider .logo-list .slider__item .logo-list__logo a img:hover {transform: scale(1.2);}"
+      ],
+      "settings": {
+        "title": "Shop by Bed Size",
+        "heading_align": "text-center",
+        "button_label": "",
+        "button_link": "",
+        "layout": "carousel",
+        "spacing": 40,
+        "logo_grid_align": "justify-center",
+        "color_scheme": "none",
+        "full_width": true
+      }
+    },
+    "collection-products": {
+      "type": "main-collection-products",
+      "settings": {
+        "products_per_page": 50,
+        "card_size_mobile": "small",
+        "card_size": "medium",
+        "show_layout_toggle": true,
+        "enable_filtering": true,
+        "filters_open_lg": true,
+        "stick_on_scroll": true,
+        "show_filter_counts": true,
+        "expand_filters": false,
+        "max_filter_options": 7,
+        "enable_sorting": true,
+        "show_feat_sort_opt": true,
+        "sort_first": true
+      }
+    },
+    "175578000097f6f61f": {
+      "type": "apps",
+      "blocks": {
+        "avada_seo_suite_avada_after_collection_block_jJk3EF": {
+          "type": "shopify://apps/avada-seo-suite/blocks/avada-after-collection-block/15507c6e-1aa3-45d3-b698-7e175e033440",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "avada_seo_suite_avada_after_collection_block_jJk3EF"
+      ],
+      "settings": {
+        "full_width": false
+      }
+    },
+    "faq_7ya8Ft": {
+      "type": "faq",
+      "blocks": {
+        "question_pRqaVX": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Purchase a bed online from Bedroomking",
+            "text": "<p>We provide comfy, high-quality beds and bed frames that will make your bedroom a place to have a good night's sleep. We have a wide range of storage options, like an ottoman metal gas lift bed storage that helps your bedroom stay clutter-free. At Bedroomking, you'll find every bed size imaginable, from a cosy single bed to a luxurious super king size bed. </p>"
+          }
+        },
+        "question_NWgQDg": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Which types of bed frames are available?",
+            "text": "<p>We have beds that come in all shapes and sizes to suit different needs and preferences. Here are some of the most common types of beds:</p><p><strong>Upholstered Bed Frames – </strong></p><p><a href=\"https://www.bedroomking.co.uk/collections/upholstered-fabric-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/upholstered-fabric-beds\">Upholstered bed frames</a> are bed frames with an added layer of comfort and style. We have luxurious upholstered bed frames in all sizes and tall headboards from floor to ceiling. High-quality upholstery can protect your bed frame from scratches and everyday wear and tear. </p><p><strong>Wingback Bed Frames –</strong></p><p>Wingback bed is a type of bed that features a headboard with \"wings\" that extend upward and outward from the head of the bed. Wingback bed frames come in various bed storage options like divan base storage, ottoman gas lift or metal slated gas lift storage. See our collection of Single, Double, King Size and Super King <a href=\"https://www.bedroomking.co.uk/collections/wingback-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/wingback-beds\">wingback Beds</a> with storage options.</p><p><strong>Sleigh Bed Frames – </strong></p><p>A Sleigh bed is a type of bed frame characterized by its gracefully curved headboard and footboard, resembling the runners of a sleigh. <a href=\"https://www.bedroomking.co.uk/collections/sleigh-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/sleigh-beds\">The Sleigh beds</a> are designed classically, with a sturdy wooden frame<br/>covered in handcrafted foam and upholstered in one of our luxury fabrics. We offer sleigh beds with storage in a variety of bed sizes like single, double, king size and super king.</p><p><strong>Divan Beds –</strong></p><p>Unlike a traditional bed frame with slats, a divan bed has a solid platform base, typically made from wood and upholstered in fabric. Our divan beds can be bought as a mattress and bed set, and they include a complimentary 26\" headboard. Available in Single divan beds and double divan beds. View our selection of handcrafted <a href=\"https://www.bedroomking.co.uk/collections/divan-bed-sets\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/divan-bed-sets\">divan beds</a> with 2 drawers or 4 drawer options and choices for an extra-strong divan base. </p><p><strong>TV Beds –</strong></p><p>A TV bed is a luxurious and space-saving twist on the classic bed frame. The key feature of TV beds is a compartment built into the footboard of the bed specifically designed to house a TV. Shop through our range of luxury <a href=\"https://www.bedroomking.co.uk/collections/tv-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/tv-beds\">TV Beds</a> with an ottoman storage option. </p><p><strong>Kids Beds –</strong></p><p>Kid's beds come in smaller sizes than adult beds. We have a safety side rails option for children’s beds. Free mattress supplied with selected children’s beds. Shop now through our range of boys and girls <a href=\"https://www.bedroomking.co.uk/collections/childrens-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/childrens-beds\">luxury kid's beds</a>.</p>"
+          }
+        },
+        "question_aaD8pj": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Which bed frame sizes are available?",
+            "text": "<p><a href=\"https://www.bedroomking.co.uk/collections/3ft-single-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/3ft-single-beds\"><strong>Single Beds</strong></a><strong> </strong>– <em>90cm wide and 190cm long</em></p><p><a href=\"https://www.bedroomking.co.uk/collections/4ft-small-double\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/4ft-small-double\"><strong>Small Double Beds</strong></a> – <em>120cm wide and 190cm long</em></p><p><a href=\"https://www.bedroomking.co.uk/collections/4ft6-double-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/4ft6-double-beds\"><strong>Double Beds</strong></a> – <em>135cm wide and 190cm long</em></p><p><a href=\"https://www.bedroomking.co.uk/collections/5ft-king-size-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/5ft-king-size-beds\"><strong>King Size Beds</strong></a> – <em>150cm wide and 200cm long</em></p><p><a href=\"https://www.bedroomking.co.uk/collections/6ft-super-king-size-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/6ft-super-king-size-beds\"><strong>Super King Bed Size</strong></a> - <em>180cm wide and 200cm long</em></p><p><em>Check out our </em><a href=\"https://www.bedroomking.co.uk/blogs/storage-beds-all-you-need-to-know/uk-beds-and-mattress-size-guide\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/blogs/storage-beds-all-you-need-to-know/uk-beds-and-mattress-size-guide\"><em>UK Beds & Mattress Size Guide</em></a><em> to get more details on sizes.</em></p>"
+          }
+        },
+        "question_TXcWUN": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "How to find a perfect bed frame?",
+            "text": "<p>Your bed frame is the foundation of a restful night's sleep, but with so many options on the market, choosing the right one can feel overwhelming. Below are a few pointers you need to consider.</p><p><strong>Size: </strong>Measure your <a href=\"https://www.bedroomking.co.uk/collections/mattresses\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/mattresses\">mattress</a> and available bedroom space. Do you need a single, double, king-size, or super king size bed?</p><p><strong>Support:</strong> For optimal comfort and back health, choose a sturdy frame with a supportive slat system.</p><p><strong>Storage:</strong> Maximize space with a <a href=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Divan-Drawer-Storage-Beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Divan-Drawer-Storage-Beds\">divan bed featuring built-in drawers</a> or an <a href=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Ottoman-Divan-Gas-Lift-Storage-Beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Ottoman-Divan-Gas-Lift-Storage-Beds\">ottoman bed with a lift-up base</a> for hidden storage.</p><p><strong>Style: </strong>Match your existing décor! From sleek metal frames to plush upholstered options, there's a bed frame to complement any style, from modern minimalist to classic and luxurious.</p>"
+          }
+        },
+        "question_TrjQ7a": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Which types of storage beds are available?",
+            "text": "<p>We have a variety of styles of beds that you can choose from to fit your decor and preferences. These bed frames with storage are some of the most well-liked we have.</p><ul><li><a href=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Divan-Drawer-Storage-Beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Divan-Drawer-Storage-Beds\"><strong>Divan storage beds with drawers:</strong></a> Divan storage beds with drawers are a popular space-saving option in the UK. They combine a comfortable bed base with built-in drawers for extra storage. This makes them ideal for smaller bedrooms or for anyone who needs more space to tuck away clothes, bedding, or other belongings. Divan storage beds come with 2 drawers or 4 drawer's options. Explore our range of divan storage beds with drawers.</li><li><a href=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Ottoman-Divan-Gas-Lift-Storage-Beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Ottoman-Divan-Gas-Lift-Storage-Beds\"><strong>Ottoman divan gas lift storage beds:</strong></a> Ottoman divan beds, also known as gas lift storage beds in the UK, are lifesavers for maximising space in your bedroom. Imagine a bed base that lifts to reveal a hidden bed storage compartment underneath! That's the magic of an ottoman divan bed. Gas pistons make opening and closing the storage beds smooth and effortless. These beds are perfect for storing anything from extra bedding and seasonal clothes to luggage and out-of-season shoes. They come in all standard UK bed sizes (single, double, king size, super king size etc) and offer a stylish look to complement your bedroom. Explore our range of ottoman divan gas lift storage beds.</li><li><a href=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Metal-Gas-Lift-Storage-Beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Metal-Gas-Lift-Storage-Beds\"><strong>Metal gas lift storage beds:</strong> </a>These storage beds are built with a durable metal frame for lasting support. Gas pistons make lifting the bed base easy and reveal a hidden storage underneath. Metal gas lift storage beds are available in various bed sizes like singles, double, king size, and more to perfectly fit in your bedroom. Explore our wide range of metal gas lift storage beds.</li></ul>"
+          }
+        },
+        "question_QQVBBB": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "What are the benefits of a storage bed?",
+            "text": "<p>Storage beds offer several advantages that can improve your bedroom's functionality. Here's a breakdown of their key benefits:</p><p><strong>Maximised Space:</strong> Storage beds utilise the often-wasted space beneath the <a href=\"https://www.bedroomking.co.uk/collections/mattresses\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/mattresses\">mattress</a>. This creates additional storage compartments for out-of-season clothes, blankets, or even toys in a child's room. By utilising this space, you can potentially free up floor space for other furniture or create a more spacious feel in a compact room.</p><p><strong>Decluttering:</strong> Storage beds help combat clutter by providing dedicated storage areas to put away belongings. This helps in creating a more organised and visually appealing bedroom environment.</p><p><strong>Cleanliness Keeper:</strong> Unlike exposed storage under a regular bed, storage compartments keep items protected from dust. This can be especially beneficial for allergy sufferers or those who simply prefer a cleaner sleeping environment.</p><p><strong>Design Versatility:</strong> Storage beds come in various styles, from platform <a href=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Divan-Drawer-Storage-Beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/ottoman-beds/Divan-Drawer-Storage-Beds\">beds with drawers</a> to ottomans with lift-up bases. This allows you to choose a bed that complements your existing bedroom decor and provides the storage solution you need.</p><p><strong>Potential Cost Savings:</strong> By incorporating storage into your <a href=\"https://www.bedroomking.co.uk/collections/all-bed-frames\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/all-bed-frames\">bed frame</a>, you might reduce the need for additional dressers, saving on overall furniture costs.</p>"
+          }
+        },
+        "question_raimwf": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Which materials are available for storage beds?",
+            "text": "<p>Our storage beds are available in Plain Plush Velvet and Naples fabric material.</p><ul><li><strong>Plain Plush Velvet: </strong>Plain plush velvet comes in a wide variety of colours, making it a versatile fabric that can complement many design styles. While plush velvet is soft, it can also be durable, as it is made with high-quality materials.</li><li><strong>Naples:</strong> It has a thick, velvety texture with a soft and pleasant feel. Naples fabric has a distinct corduroy-like pattern consisting of parallel cords or stripes running along the fabric. The benefits of Naples material are that it is easy to clean, tear-resistance, and comes in a variety of colours.  </li></ul><p><strong> </strong></p>"
+          }
+        },
+        "question_Qrhaka": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "What are the benefits of a divan bedframe?",
+            "text": "<p><a href=\"https://www.bedroomking.co.uk/collections/divan-bed-sets\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/divan-bed-sets\">Divan bed frames</a> offer several advantages over traditional bed frames, particularly in terms of storage, space-saving, and potentially better sleep:</p><ul><li>Storage: A big advantage of divan beds is the built-in storage they typically offer. They often come with drawers or compartments underneath the base, providing a great way to declutter your bedroom and keep things like clothes, linens, or shoes out of sight.</li><li>Space-saving: Unlike some bed frames, divans are compact, taking up minimal extra space beyond your mattress. This is ideal for maximising floor space in smaller bedrooms.</li><li>Supportive surface: Divan beds typically have a solid, flat surface instead of slats. This can extend the life of your <a href=\"https://www.bedroomking.co.uk/collections/mattresses\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/mattresses\">mattress</a> and potentially provide a more even, supportive sleep experience.</li></ul>"
+          }
+        },
+        "question_FDpPNK": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "How long should a divan bed last?",
+            "text": "<p>A standard divan bed typically has a lifespan of approximately 10 years or more. Opting for a divan base can be a wise decision for a long-lasting bed due to its minimal joining parts, which reduces wear and tear.</p>"
+          }
+        },
+        "question_H3DHCB": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Are your beds easy to assemble?",
+            "text": "<p>Yes, we provide step-by-step <a href=\"https://www.bedroomking.co.uk/pages/bed-assembly-instructions\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/pages/bed-assembly-instructions\">assembly instructions</a> for all bed types.</p><p> </p>"
+          }
+        },
+        "question_aggYyH": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "How do I care for and maintain my bed frame?",
+            "text": "<p>Below are some guidelines for preserving your bed frame:<br/><br/>1. Protect wooden surfaces from water rings by using coasters.<br/><br/>2. Regularly dust with a soft, dry cloth.<br/><br/>3. Vacuum upholstered areas weekly with the low setting and attachments.<br/><br/>4. Quickly blot spills with a clean, absorbent cloth.<br/><br/>5. Schedule professional cleaning once annually.<br/><br/>6. Avoid placing the bed frame near heat sources or direct sunlight.<br/><br/>7. Follow the manufacturer's care instructions for specific maintenance tips.<br/><br/>By maintaining your<a href=\"https://www.bedroomking.co.uk/collections/all-bed-frames\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/all-bed-frames\"> bed frame</a> properly, you can extend its lifespan significantly.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_pRqaVX",
+        "question_NWgQDg",
+        "question_aaD8pj",
+        "question_TXcWUN",
+        "question_TrjQ7a",
+        "question_QQVBBB",
+        "question_raimwf",
+        "question_Qrhaka",
+        "question_FDpPNK",
+        "question_H3DHCB",
+        "question_aggYyH"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Your Questions, Our Answers",
+        "heading_align": "text-center",
+        "color_scheme": "2",
+        "full_width": true
+      }
+    },
+    "rich_text_Ni4fD7": {
+      "type": "rich-text",
+      "name": "Rich text",
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
+    "0d77e4cc-828f-4ec5-9dff-8310f9c65e9d": {
+      "type": "logo-list",
+      "blocks": {
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/div.jpg",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Klarna_Payment_Badge_svg.webp",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-5": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/paypal-credit-logo-524CC275C4-seeklogo.com.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/CP_logo_badge_6328x2204_blackmint_png.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-4": {
+          "type": "logo",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Logo_Grape-black.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-7": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/shop.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-8": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Google-Pay-logo.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/apple-pay-og-twitter.jpg",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-1",
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-2",
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-5",
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-3",
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-4",
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-7",
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-8",
+        "template--21260530942255__0d77e4cc-828f-4ec5-9dff-8310f9c65e9d-logo-6"
+      ],
+      "custom_css": [
+        ".logo-list {justify-content: center;}"
+      ],
+      "settings": {
+        "title": "Payment options (apply at checkout)",
+        "heading_align": "text-start",
+        "button_label": "",
+        "button_link": "",
+        "layout": "carousel",
+        "spacing": 40,
+        "logo_grid_align": "justify-center",
+        "color_scheme": "none",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "logo_list_a7kiKt",
+    "collection-products",
+    "175578000097f6f61f",
+    "faq_7ya8Ft",
+    "rich_text_Ni4fD7",
+    "0d77e4cc-828f-4ec5-9dff-8310f9c65e9d"
+  ]
+}

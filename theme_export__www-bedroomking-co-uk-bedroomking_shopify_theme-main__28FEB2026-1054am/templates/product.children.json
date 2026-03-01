@@ -1,0 +1,886 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor-sku": {
+          "type": "vendor-sku",
+          "disabled": true,
+          "settings": {
+            "show_vendor": true,
+            "show_sku": true
+          }
+        },
+        "product_labels_WJD7WK": {
+          "type": "product-labels",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "359a2cd2-446e-46eb-b4eb-88936e6d0316": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Interest_options_new.png",
+            "image_width": 1000,
+            "image_align": "justify-start",
+            "url": "https://uk.trustpilot.com/review/bedroomking.co.uk"
+          }
+        },
+        "d6af27bf-4aec-41fc-ab17-8878c0a5daa1": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "divider-0": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "spacing": "mt-8 mb-8"
+          }
+        },
+        "variant-picker": {
+          "type": "variant-picker",
+          "disabled": true,
+          "settings": {
+            "selector_style": "dropdown",
+            "enable_dynamic_availability": false,
+            "show_backorder_text": false,
+            "enable_size_chart": false,
+            "size_chart_variant": "Size",
+            "size_chart_page": ""
+          }
+        },
+        "divider-1": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "spacing": "mt-8 mb-8"
+          }
+        },
+        "buy-buttons": {
+          "type": "buy-buttons",
+          "settings": {
+            "show_qty_selector": true,
+            "enable_dynamic_checkout": false,
+            "show_pickup_availability": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false
+          }
+        },
+        "dividebuy_spread_the_cost_dividebuyproduct_JqpfWM": {
+          "type": "shopify://apps/dividebuy-spread-the-cost/blocks/dividebuyproduct/3ea5bc0e-1a15-490b-b431-d3ea9a2cd3da",
+          "settings": {
+            "finproms_text": "or_from",
+            "include_cart_total": true,
+            "alignment": "center",
+            "tooltip-alignment": "center",
+            "top_margin": 0,
+            "bottom_margin": 0,
+            "alignment-mobile": "center",
+            "top_margin_mobile": 0,
+            "bottom_margin_mobile": 0,
+            "price_dom_element_selector": ".price .price__current"
+          }
+        },
+        "message-1": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "icon": "clock",
+            "title": "<p><strong>Popular right now<br/></strong>Lots of people have looked at this recently</p>",
+            "close": "once",
+            "show_over_media": true,
+            "visibility_duration": 4,
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
+          }
+        },
+        "message-2": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "icon": "price_tag",
+            "title": "<p><strong>Selling fast!<br/></strong>Grab yours while you can</p>",
+            "close": "once",
+            "show_over_media": true,
+            "visibility_duration": 5,
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
+          }
+        },
+        "collapsible-content-1": {
+          "type": "collapsible-content",
+          "disabled": true,
+          "settings": {
+            "heading": "Care information",
+            "icon": "heart",
+            "text": "<p>Display general product information or specific product information using metafields.</p>",
+            "page": "",
+            "open": false
+          }
+        },
+        "collapsible-content-2": {
+          "type": "collapsible-content",
+          "disabled": true,
+          "settings": {
+            "heading": "Delivery and Shipping",
+            "icon": "truck",
+            "text": "<p>Add some general information about your delivery and shipping policies.</p>",
+            "page": "",
+            "open": false
+          }
+        },
+        "message-3": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "title": "<p>Add a stand out message for your customers</p>",
+            "close": "once",
+            "show_over_media": false,
+            "visibility_duration": 7,
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
+          }
+        }
+      },
+      "block_order": [
+        "vendor-sku",
+        "product_labels_WJD7WK",
+        "title",
+        "359a2cd2-446e-46eb-b4eb-88936e6d0316",
+        "d6af27bf-4aec-41fc-ab17-8878c0a5daa1",
+        "divider-0",
+        "variant-picker",
+        "divider-1",
+        "buy-buttons",
+        "price",
+        "dividebuy_spread_the_cost_dividebuyproduct_JqpfWM",
+        "message-1",
+        "message-2",
+        "collapsible-content-1",
+        "collapsible-content-2",
+        "message-3"
+      ],
+      "settings": {
+        "stick_on_scroll": true,
+        "sticky_atc_panel": true,
+        "sticky_atc_position": "end",
+        "sticky_atc_mobile": false,
+        "media_layout": "slider",
+        "media_size": "default",
+        "media_ratio": "1",
+        "media_crop": "none",
+        "hover_zoom": "off",
+        "enable_video_looping": false,
+        "stacked_scroll": "always",
+        "underline_active": true,
+        "media_thumbs": "desktop",
+        "thumb_ratio": "1",
+        "thumb_crop": "none",
+        "media_arrows": "desktop",
+        "show_slide_count": true,
+        "border_color": "#eeeeee",
+        "bg_color": "#f4f4f4",
+        "enable_media_grouping": false,
+        "media_grouping_option": "Color,Colour,Couleur,Farbe",
+        "demand_badge_text": "In Demand! [number] sold in 7 Days",
+        "demand_badge_bg": "#000000",
+        "demand_badge_text_color": "#ffffff"
+      }
+    },
+    "details": {
+      "type": "product-details",
+      "blocks": {
+        "5110cdff-395e-47de-8487-7b078bd790c4": {
+          "type": "richtext",
+          "settings": {
+            "text": "<h5>Bed Information</h5>{{ product.metafields.custom.bed_features | metafield_tag }}"
+          }
+        },
+        "1ad86b18-90d1-43da-9348-eea609da4102": {
+          "type": "custom-liquid",
+          "settings": {
+            "custom_liquid": "<style>\ntable.GeneratedTable {\n  width: 100%;\n  background-color: #ffffff;\n  border-collapse: collapse;\n  border-width: 1px;\n  border-color: #000000;\n  border-style: solid;\n  color: #000000;\n}\n\ntable.GeneratedTable td, table.GeneratedTable th {\n  border-width: 1px;\n  border-color: #3D147E;\n  border-style: solid;\n  padding: 3px;\n}\n\ntable.GeneratedTable thead {\n  background-color: #3D147E;\n color: #FFFFFF;\n}\n</style>\n{% if product.metafields.custom.size_table_true == true %}\n\n  <h5>Bed Frame Size</h5>\n<table class=\"GeneratedTable\">\n  <thead>\n    <tr>\n      <th>BED SIZE</th>\n      <th>FRAME LENGTH</th>\n      <th>HEADBOARD WIDTH</th>\n      <th>FOOTBOARD HEIGHT</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>3FT</td>\n      <td>{{product.metafields.custom.single_frame_length}}</td>\n      <td>{{product.metafields.custom.single_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n    <tr>\n      <td>4FT</td>\n      <td>{{product.metafields.custom.sdouble_frame_length}}</td>\n      <td>{{product.metafields.custom.sdouble_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n    <tr>\n      <td>4FT6</td>\n      <td>{{product.metafields.custom.double_frame_length}}</td>\n      <td>{{product.metafields.custom.double_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n    <tr>\n      <td>5FT</td>\n      <td>{{product.metafields.custom.king_frame_length}}</td>\n      <td>{{product.metafields.custom.king_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n    <tr>\n      <td>6FT</td>\n      <td>{{product.metafields.custom.super_frame_length}}</td>\n      <td>{{product.metafields.custom.super_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n  </tbody>\n</table>\n{% endif %}"
+          }
+        },
+        "tabs": {
+          "type": "tabs",
+          "settings": {
+            "style": "collapsible",
+            "show_description": true,
+            "show_specification": false,
+            "show_reviews": false,
+            "open_first": false,
+            "spec_metafields": "",
+            "spec_right_align": false,
+            "spec_show_empty_metafields": true,
+            "spec_empty_field_text": "-",
+            "tab_1_title": "Fabric Gallery",
+            "tab_1_text": "<p>Want to view our full range of materials <a href=\"/pages/swatch-material-gallery\" target=\"_blank\" title=\"Swatch Material Gallery\">click here </a></p>",
+            "tab_1_page": "",
+            "tab_2_title": "",
+            "tab_2_text": "",
+            "tab_2_page": "",
+            "tab_3_title": "",
+            "tab_3_text": "",
+            "tab_3_page": ""
+          }
+        },
+        "payment-methods": {
+          "type": "payment-methods",
+          "disabled": true,
+          "settings": {
+            "title": "Payment & Security",
+            "title1": "Payment methods",
+            "show_payment_icons": true,
+            "text1": "<p>Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.</p>",
+            "title2": "",
+            "text2": ""
+          }
+        },
+        "dec40431-6474-4e6a-8a2b-792a3235e028": {
+          "type": "custom-liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<h5>Fabric Gallery</h5>\n<p>Browse through our material gallery, <a href=\"/products/request-a-swatch\" target=\"_blank\">We advise ordering swatch samples before purchasing, Click to Order Samples</a></p>\n<div class=\"xo-gallery\" data-id=\"1\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "5110cdff-395e-47de-8487-7b078bd790c4",
+        "1ad86b18-90d1-43da-9348-eea609da4102",
+        "tabs",
+        "payment-methods",
+        "dec40431-6474-4e6a-8a2b-792a3235e028"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "slideshow_3xGt3p": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_jg7nUX": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/bedroom_king_1800900_1_5b948848-09d0-450f-8ca3-264f3e6a5596.png",
+            "image_mobile": "shopify://shop_images/1_8522a5c1-f29d-4cb0-9264-43917ce16e75.png",
+            "url": "",
+            "overlay_position": "justify-center items-center",
+            "overlay_text_align": "text-center",
+            "mob_center_text": false,
+            "subheading": "",
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": "h0",
+            "heading_h1": false,
+            "text": "",
+            "enlarge_text": false,
+            "button_1_label": "",
+            "button_1_link": "",
+            "button_1_style": "btn btn--primary",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "btn btn--primary",
+            "transparent_content_color": "#ffffff",
+            "countdown_show": false,
+            "countdown_end_date": "",
+            "countdown_end_time": "",
+            "countdown_end_text": "",
+            "enlarge_end_text": false,
+            "countdown_hide_on_end": false,
+            "use_custom_colors": false,
+            "count_color": "#ffffff",
+            "bg_color": "#070707",
+            "bg_grad": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_jg7nUX"
+      ],
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "slideshow_z4dcA8": {
+      "type": "slideshow",
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 40,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "rich_text_AGkJeQ": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_MLwCGR": {
+          "type": "subheading",
+          "settings": {
+            "text": "The Ultimate Sleeping Experience"
+          }
+        },
+        "heading_j7n9qq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Key Features of BedroomKing Children's Beds",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_MLwCGR",
+        "heading_j7n9qq"
+      ],
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "1",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
+    "media_with_text_WPqEA8": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_LAf9jF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Durable Construction",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_Bmhq8A": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Built to withstand the adventures of childhood, our Children's Bed Frame features sturdy construction and durable materials. Rest assured that your child's bed will stand the test of time, providing a safe and comfortable haven for years to come.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_LAf9jF",
+        "text_Bmhq8A"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/6_451ab27a-1482-4f4d-a149-531ef0e5634c.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_bLj6hP": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_p9yUtg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Easy Assembly",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_WbUdW9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Enjoy hassle-free setup with our Children's Bed Frames, which come with easy-to-follow assembly instructions. Spend less time assembling and more time creating cherished memories with your child in their new dream bed.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_p9yUtg",
+        "text_WbUdW9"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/3_ec6d971c-391a-4d67-a112-ddadd1da12de.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "right",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_nzXhVD": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_qbEdVX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Space-Saving Solutions",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_mEyWxW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Make the most of limited space with our ottoman children bed frames, which feature built-in storage compartments beneath the mattress. These space-saving solutions are perfect for small bedrooms or shared spaces, offering functionality without sacrificing style.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_qbEdVX",
+        "text_mEyWxW"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/5_1c10d4b6-51fe-46cf-8152-a838a1a72ddd.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_zA7ffG": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_k3Y9gW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Safety Side Panels",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_zki7GL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ensure your child's safety and peace of mind with our Child's bed with side panels. These panels provide added security, preventing your little one from rolling out of bed during the night, giving you and your child a worry-free sleep.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_k3Y9gW",
+        "text_zki7GL"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/2_23efea80-c9da-42b8-bd2b-78f5ba579e62.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "right",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "slideshow_zhCNGn": {
+      "type": "slideshow",
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 40,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "multi_column_cttUWz": {
+      "type": "multi-column",
+      "blocks": {
+        "column_AkybqK": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/5_1_824f3e07-a36a-40c0-b89b-880fe7478dee.png",
+            "media_scale": 100,
+            "heading": "",
+            "text": "<h2>Storage Features</h2><p>Maximize space in your child's bedroom with our Children Bed with storage. Whether it's toys, books, or clothes, our Ottoman children bed offers convenient and discreet storage to keep the room tidy and organized.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_yjHVLq": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/8_37da0333-7c4b-4872-aca6-b4852ecf80f3.png",
+            "media_scale": 100,
+            "heading": "",
+            "text": "<h2>Various Size Options</h2><p>Find the perfect fit for your child's bedroom with our range of sizes, including king size children bed frame. Whether your child prefers a cozy nook or a spacious retreat, our bed frames offer options to suit various room sizes and layouts.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_AkybqK",
+        "column_yjHVLq"
+      ],
+      "settings": {
+        "title": "",
+        "heading_align": "text-center",
+        "button_label": "",
+        "button_link": "",
+        "layout": "grid",
+        "column_size": "large",
+        "column_align": "center",
+        "image_ratio": "1",
+        "color_scheme": "1",
+        "button_style": "btn btn--secondary"
+      }
+    },
+    "testimonials_gqj4az": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_TzXcDf": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>My daughter adores her new Children's Bed Frame! The integrated drawers are a lifesaver for keeping her toys organized, and the safety side panels give me peace of mind. Highly recommend!</p>",
+            "author": "Emily J.",
+            "author_info": "",
+            "show_star_rating": true,
+            "star_rating": 5
+          }
+        },
+        "testimonial_NCyTGX": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>We decided on the king size Children's Bed Frame for our son's room, and it's been a hit. The themed design ignites his imagination, and the mattress strikes the perfect balance of comfort and support.</p>",
+            "author": "Noah B.",
+            "author_info": "",
+            "show_star_rating": true,
+            "star_rating": 5
+          }
+        },
+        "testimonial_67pE4w": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>As a parent, safety is paramount, and I'm impressed by the sturdy build and safety features of the Children's Bed Frame. Plus, assembly was a breeze!</p>",
+            "author": "Harper L.",
+            "author_info": "",
+            "show_star_rating": true,
+            "star_rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_TzXcDf",
+        "testimonial_NCyTGX",
+        "testimonial_67pE4w"
+      ],
+      "settings": {
+        "heading": "CUSTOMER RAVES",
+        "show_quotes": true,
+        "testimonial_size": "h4",
+        "text_position": "justify-center",
+        "text_align": "text-center justify-center",
+        "nav_style": "slideshow_nav_lines",
+        "transition": "slide-fade",
+        "autoplay": false,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "1",
+        "full_width": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "YOU MAY ALSO LIKE",
+        "heading_align": "text-center",
+        "layout": "carousel",
+        "card_size_mobile": "small",
+        "card_size": "small",
+        "products_to_show": 8
+      }
+    },
+    "faq_ptYJVC": {
+      "type": "faq",
+      "blocks": {
+        "question_TR3QLm": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Are the Children's Bed Frames equipped with safety features?",
+            "text": "<p>Absolutely! Our Children's Bed Frames come with safety side panels to ensure your child sleeps securely throughout the night.</p>"
+          }
+        },
+        "question_VFQFB7": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "What sizes are available for Children's Bed Frames?",
+            "text": "<p>Our Children's Bed Frames come in various sizes, including king size options, to accommodate different age groups and room sizes.</p>"
+          }
+        },
+        "question_d4yYft": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Do you offer Children's Bed Frames with storage options?",
+            "text": "<p>Yes, we offer Children's Bed Frames with integrated drawers, providing convenient storage solutions for toys, clothes, and other items.</p>"
+          }
+        },
+        "question_TUtDVE": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Does it come with a mattress?",
+            "text": "<p>Yes, we offer child's bed with a free mattress option to provide a complete sleep solution for your child's bedroom.</p>"
+          }
+        },
+        "question_UBARiJ": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "How easy is it to assemble the Children's Bed Frame?",
+            "text": "<p>Our Children's Bed Frames come with <a href=\"https://www.bedroomking.co.uk/pages/bed-assembly-instructions\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/pages/bed-assembly-instructions\">easy-to-follow assembly</a> instructions, making the setup process simple and hassle-free.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_TR3QLm",
+        "question_VFQFB7",
+        "question_d4yYft",
+        "question_TUtDVE",
+        "question_UBARiJ"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "heading_align": "text-center",
+        "color_scheme": "1",
+        "full_width": true
+      }
+    },
+    "slideshow_6YXE6A": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8PEBdg": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Gift_Banner_Size_2_403fd383-dd50-4704-9c7f-14cc8a8c08a0.png",
+            "image_mobile": "shopify://shop_images/Gift_Banner_Size_2_1_909bf778-b4d1-4cb4-9f34-a35be2a5bd39.png",
+            "url": "",
+            "overlay_position": "justify-center items-center",
+            "overlay_text_align": "text-center",
+            "mob_center_text": false,
+            "subheading": "",
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": "h0",
+            "heading_h1": false,
+            "text": "",
+            "enlarge_text": false,
+            "button_1_label": "",
+            "button_1_link": "",
+            "button_1_style": "btn btn--primary",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "btn btn--primary",
+            "transparent_content_color": "#ffffff",
+            "countdown_show": false,
+            "countdown_end_date": "",
+            "countdown_end_time": "",
+            "countdown_end_text": "",
+            "enlarge_end_text": false,
+            "countdown_hide_on_end": false,
+            "use_custom_colors": false,
+            "count_color": "#ffffff",
+            "bg_color": "#070707",
+            "bg_grad": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_8PEBdg"
+      ],
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "e81cc025-861b-40e6-b6ca-44d73ec164c7": {
+      "type": "logo-list",
+      "blocks": {
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/dividebuy-logo-full-colour-rgb.png",
+            "url": "",
+            "logo_width": 150,
+            "text": ""
+          }
+        },
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Klarna_Payment_Badge_svg.webp",
+            "url": "",
+            "logo_width": 150,
+            "text": ""
+          }
+        },
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/CP_logo_badge_6328x2204_blackmint_png.png",
+            "url": "",
+            "logo_width": 150,
+            "text": ""
+          }
+        },
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/shop.png",
+            "url": "",
+            "logo_width": 150,
+            "text": ""
+          }
+        },
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-7": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Google-Pay-logo.png",
+            "url": "",
+            "logo_width": 150,
+            "text": ""
+          }
+        },
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-5": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/apple-pay-og-twitter.jpg",
+            "url": "",
+            "logo_width": 150,
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-1",
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-2",
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-3",
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-6",
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-7",
+        "template--21260531532079__e81cc025-861b-40e6-b6ca-44d73ec164c7-logo-5"
+      ],
+      "settings": {
+        "title": "",
+        "heading_align": "text-center",
+        "button_label": "",
+        "button_link": "",
+        "layout": "grid",
+        "spacing": 40,
+        "logo_grid_align": "justify-center",
+        "color_scheme": "none",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "details",
+    "slideshow_3xGt3p",
+    "slideshow_z4dcA8",
+    "rich_text_AGkJeQ",
+    "media_with_text_WPqEA8",
+    "media_with_text_bLj6hP",
+    "media_with_text_nzXhVD",
+    "media_with_text_zA7ffG",
+    "slideshow_zhCNGn",
+    "multi_column_cttUWz",
+    "testimonials_gqj4az",
+    "recommendations",
+    "faq_ptYJVC",
+    "slideshow_6YXE6A",
+    "e81cc025-861b-40e6-b6ca-44d73ec164c7"
+  ]
+}

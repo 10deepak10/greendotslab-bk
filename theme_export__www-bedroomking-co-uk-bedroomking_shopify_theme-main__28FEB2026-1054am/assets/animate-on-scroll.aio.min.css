@@ -1,0 +1,5 @@
+/*
+Generated time: June 18, 2025 14:17
+This file was created by the app developer. Feel free to contact the original developer with any questions. It was minified (compressed) by AVADA. AVADA do NOT own this script.
+*/
+.cc-animate-enabled [data-cc-animate]{opacity:0}@media (prefers-reduced-motion){.cc-animate-enabled [data-cc-animate]{animation:none!important;opacity:1!important}}.no-js .cc-animate-enabled [data-cc-animate]{animation:none!important;opacity:1!important}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}.cc-animate-enabled .fade-in.cc-animate-in,.cc-animate-enabled [data-cc-animate=""].cc-animate-in{animation:fade-in calc(var(--aos-animate-duration,1s) * .8) .3s cubic-bezier(.39,.575,.565,1) both}

@@ -1,0 +1,5 @@
+/*
+Generated time: June 18, 2025 14:17
+This file was created by the app developer. Feel free to contact the original developer with any questions. It was minified (compressed) by AVADA. AVADA do NOT own this script.
+*/
+.product-inventory__indicator{display:block;position:relative;height:5px;margin-top:8px;border-radius:3px;background-color:rgba(var(--text-color)/.1)}.product-inventory__indicator span{position:absolute;top:0;bottom:0;left:0;height:100%;transition:width .3s cubic-bezier(0, .14, .19, 1),background-color .3s;border-radius:inherit;background-color:currentColor}.product-inventory__urgency p{display:inline}

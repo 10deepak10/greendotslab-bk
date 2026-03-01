@@ -1,0 +1,930 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor-sku": {
+          "type": "vendor-sku",
+          "disabled": true,
+          "settings": {
+            "show_vendor": true,
+            "show_sku": true
+          }
+        },
+        "product_labels_bVcqD4": {
+          "type": "product-labels",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "image_dmVCEW": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/rating.webp",
+            "image_width": 1000,
+            "image_align": "justify-start",
+            "url": "https://uk.trustpilot.com/review/bedroomking.co.uk"
+          }
+        },
+        "dividebuy_spread_the_cost_dividebuyproduct_gkt3b8": {
+          "type": "shopify://apps/dividebuy-spread-the-cost/blocks/dividebuyproduct/3ea5bc0e-1a15-490b-b431-d3ea9a2cd3da",
+          "settings": {
+            "finproms_text": "finance_available",
+            "include_cart_total": true,
+            "alignment": "center",
+            "tooltip-alignment": "center",
+            "top_margin": 0,
+            "bottom_margin": 0,
+            "alignment-mobile": "center",
+            "top_margin_mobile": 0,
+            "bottom_margin_mobile": 0,
+            "price_dom_element_selector": ".price .price__current"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false
+          }
+        },
+        "d6af27bf-4aec-41fc-ab17-8878c0a5daa1": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "divider-0": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "spacing": "mt-8 mb-8"
+          }
+        },
+        "variant-picker": {
+          "type": "variant-picker",
+          "disabled": true,
+          "settings": {
+            "selector_style": "dropdown",
+            "enable_dynamic_availability": false,
+            "show_backorder_text": false,
+            "enable_size_chart": false,
+            "size_chart_variant": "Size",
+            "size_chart_page": ""
+          }
+        },
+        "divider-1": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "spacing": "mt-8 mb-8"
+          }
+        },
+        "buy-buttons": {
+          "type": "buy-buttons",
+          "settings": {
+            "show_qty_selector": true,
+            "enable_dynamic_checkout": false,
+            "show_pickup_availability": false
+          }
+        },
+        "message-1": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "icon": "clock",
+            "title": "<p><strong>Popular right now<br/></strong>Lots of people have looked at this recently</p>",
+            "close": "once",
+            "show_over_media": true,
+            "visibility_duration": 4,
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
+          }
+        },
+        "message-2": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "icon": "price_tag",
+            "title": "<p><strong>Selling fast!<br/></strong>Grab yours while you can</p>",
+            "close": "once",
+            "show_over_media": true,
+            "visibility_duration": 5,
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
+          }
+        },
+        "collapsible-content-1": {
+          "type": "collapsible-content",
+          "disabled": true,
+          "settings": {
+            "heading": "Care information",
+            "icon": "heart",
+            "text": "<p>Display general product information or specific product information using metafields.</p>",
+            "page": "",
+            "open": false
+          }
+        },
+        "collapsible-content-2": {
+          "type": "collapsible-content",
+          "disabled": true,
+          "settings": {
+            "heading": "Delivery and Shipping",
+            "icon": "truck",
+            "text": "<p>Add some general information about your delivery and shipping policies.</p>",
+            "page": "",
+            "open": false
+          }
+        },
+        "message-3": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "title": "<p>Add a stand out message for your customers</p>",
+            "close": "once",
+            "show_over_media": false,
+            "visibility_duration": 7,
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
+          }
+        }
+      },
+      "block_order": [
+        "vendor-sku",
+        "product_labels_bVcqD4",
+        "title",
+        "image_dmVCEW",
+        "dividebuy_spread_the_cost_dividebuyproduct_gkt3b8",
+        "price",
+        "d6af27bf-4aec-41fc-ab17-8878c0a5daa1",
+        "divider-0",
+        "variant-picker",
+        "divider-1",
+        "buy-buttons",
+        "message-1",
+        "message-2",
+        "collapsible-content-1",
+        "collapsible-content-2",
+        "message-3"
+      ],
+      "custom_css": [],
+      "settings": {
+        "stick_on_scroll": true,
+        "sticky_atc_panel": true,
+        "sticky_atc_position": "end",
+        "sticky_atc_mobile": false,
+        "media_layout": "slider",
+        "media_size": "default",
+        "media_ratio": "1",
+        "media_crop": "none",
+        "hover_zoom": "off",
+        "enable_video_looping": false,
+        "stacked_scroll": "always",
+        "underline_active": true,
+        "media_thumbs": "desktop",
+        "thumb_ratio": "1",
+        "thumb_crop": "none",
+        "media_arrows": "desktop",
+        "show_slide_count": true,
+        "border_color": "#eeeeee",
+        "bg_color": "#f4f4f4",
+        "enable_media_grouping": false,
+        "media_grouping_option": "Color,Colour,Couleur,Farbe",
+        "demand_badge_text": "In Demand! [number] sold in 7 Days",
+        "demand_badge_bg": "#000000",
+        "demand_badge_text_color": "#ffffff"
+      }
+    },
+    "custom_liquid_r4RJie": {
+      "type": "custom-liquid",
+      "name": "Custom HTML/Liquid",
+      "settings": {
+        "custom_liquid": "",
+        "section_height": "tight",
+        "full_width": true,
+        "dividers": "border-top",
+        "prevent_animation": true
+      }
+    },
+    "details": {
+      "type": "product-details",
+      "blocks": {
+        "5110cdff-395e-47de-8487-7b078bd790c4": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "text": "<h5>Bed Information</h5>{{ product.metafields.custom.bed_features | metafield_tag }}"
+          }
+        },
+        "1ad86b18-90d1-43da-9348-eea609da4102": {
+          "type": "custom-liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<style>\ntable.GeneratedTable {\n  width: 100%;\n  background-color: #ffffff;\n  border-collapse: collapse;\n  border-width: 1px;\n  border-color: #000000;\n  border-style: solid;\n  color: #000000;\n}\n\ntable.GeneratedTable td, table.GeneratedTable th {\n  border-width: 1px;\n  border-color: #3D147E;\n  border-style: solid;\n  padding: 3px;\n}\n\ntable.GeneratedTable thead {\n  background-color: #3D147E;\n color: #FFFFFF;\n}\n</style>\n{% if product.metafields.custom.size_table_true == true %}\n\n  <h5>Bed Frame Size</h5>\n<table class=\"GeneratedTable\">\n  <thead>\n    <tr>\n      <th>BED SIZE</th>\n      <th>FRAME LENGTH</th>\n      <th>HEADBOARD WIDTH</th>\n      <th>FOOTBOARD HEIGHT</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>3FT</td>\n      <td>{{product.metafields.custom.single_frame_length}}</td>\n      <td>{{product.metafields.custom.single_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n    <tr>\n      <td>4FT</td>\n      <td>{{product.metafields.custom.sdouble_frame_length}}</td>\n      <td>{{product.metafields.custom.sdouble_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n    <tr>\n      <td>4FT6</td>\n      <td>{{product.metafields.custom.double_frame_length}}</td>\n      <td>{{product.metafields.custom.double_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n    <tr>\n      <td>5FT</td>\n      <td>{{product.metafields.custom.king_frame_length}}</td>\n      <td>{{product.metafields.custom.king_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n    <tr>\n      <td>6FT</td>\n      <td>{{product.metafields.custom.super_frame_length}}</td>\n      <td>{{product.metafields.custom.super_headboard_width}}</td>\n      <td>{{product.metafields.custom.footboard_height}}</td>\n    </tr>\n  </tbody>\n</table>\n{% endif %}"
+          }
+        },
+        "richtext_A6dAp7": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "text": "<h5>Key Features</h5>{{ product.metafields.custom.bed_features | metafield_tag }}"
+          }
+        },
+        "tabs_3qpbRF": {
+          "type": "tabs",
+          "settings": {
+            "style": "collapsible",
+            "show_description": true,
+            "show_specification": false,
+            "show_reviews": false,
+            "open_first": false,
+            "spec_metafields": "custom.bed_features",
+            "spec_right_align": false,
+            "spec_show_empty_metafields": true,
+            "spec_empty_field_text": "-",
+            "tab_1_title": "Fabric Video Gallery",
+            "tab_1_text": "<p>Click on thumbnail to expand and play video</p>",
+            "tab_1_page": "swatch-material-gallery",
+            "tab_2_title": "",
+            "tab_2_text": "",
+            "tab_2_page": "",
+            "tab_3_title": "",
+            "tab_3_text": "",
+            "tab_3_page": ""
+          }
+        },
+        "payment-methods": {
+          "type": "payment-methods",
+          "disabled": true,
+          "settings": {
+            "title": "Payment & Security",
+            "title1": "Payment methods",
+            "show_payment_icons": true,
+            "text1": "<p>Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.</p>",
+            "title2": "",
+            "text2": ""
+          }
+        },
+        "dec40431-6474-4e6a-8a2b-792a3235e028": {
+          "type": "custom-liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<h5>Fabric Gallery</h5>\n<p>Browse through our material gallery, <a href=\"/products/request-a-swatch\" target=\"_blank\">We advise ordering swatch samples before purchasing, Click to Order Samples</a></p>\n<div class=\"xo-gallery\" data-id=\"1\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "5110cdff-395e-47de-8487-7b078bd790c4",
+        "1ad86b18-90d1-43da-9348-eea609da4102",
+        "richtext_A6dAp7",
+        "tabs_3qpbRF",
+        "payment-methods",
+        "dec40431-6474-4e6a-8a2b-792a3235e028"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "slideshow_kVaR7K": {
+      "type": "slideshow",
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "rich_text_W3xMhW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3trpAA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Key Features of Our Kid’s Bed",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_3trpAA"
+      ],
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "1",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
+    "custom_liquid_Jd4xcj": {
+      "type": "custom-liquid",
+      "name": "Custom HTML/Liquid",
+      "settings": {
+        "custom_liquid": "<style>\n    .bed-details-heading {\n        text-align: center;\n        font-size: 36px;\n        margin-top: 0;\n        margin-bottom: 40px;\n        color: #000000;\n    }\n\n    .bed-details-container {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        gap: 140px;\n    }\n\n    .bed-image {\n        flex: 1;\n        max-width: 400px;\n        display: block !important;\n    }\n\n    .bed-image img {\n        width: 100%;\n        max-width: 400px;\n        height: auto;\n    }\n\n    .specs {\n        flex: 1;\n        max-width: 400px;\n        display: flex;\n        flex-direction: column;\n        /* align-items: center; */\n        justify-content: center;\n    }\n\n    .specs h2 {\n        color: #5e2c83;\n        font-size: 14px;\n        /* text-align: center; */\n    }\n\n    .specs > p {\n        font-size: 18px;\n        margin-bottom: 20px;\n        font-weight: 600;\n        /* text-align: center; */\n    }\n\n    .specs table {\n        width: 100%;\n        border-collapse: collapse;\n        margin-bottom: 20px;\n    }\n\n    .specs table td {\n        padding: 8px 12px;\n        font-size: 14px;\n    }\n\n    .note {\n        font-size: 14px;\n        color: #333;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        gap: 2px;\n        margin-top: 40px;\n    }\n\n    .note span {\n        color: #000;\n        font-size: 18px;\n    }\n\n\n    .bed-size-select-wrapper {\n        display: flex;\n        flex-direction: column;\n        gap: 6px;\n        max-width: 400px;\n        margin-bottom: 30px;\n    }\n\n    .bed-size-select-wrapper label {\n        font-weight: 600;\n        font-size: 14px;\n        color: #333;\n    }\n\n    .bed-size-select-wrapper select {\n        appearance: none;\n        /* Remove default browser arrow */\n        -webkit-appearance: none;\n        -moz-appearance: none;\n        padding: 12px 14px;\n        font-size: 14px;\n        color: #333;\n        border: 1px solid #ccc;\n        border-radius: 6px;\n        background: #fff url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E\") no-repeat right 12px center;\n        background-size: 14px;\n        cursor: pointer;\n        transition: border-color 0.2s, box-shadow 0.2s;\n\n        outline: none;\n        box-shadow: none;\n    }\n\n    /* Prevent Firefox inner focus border */\n    .bed-size-select-wrapper select::-moz-focus-inner {\n        border: 0;\n    }\n\n    /* Prevent IE/Edge arrow quirks */\n    .bed-size-select-wrapper select::-ms-expand {\n        display: none;\n    }\n\n    .bed-size-select-wrapper select:hover {\n        border-color: #888;\n    }\n\n    .bed-size-select-wrapper select:focus {\n        outline: none;\n        border-color: #000;\n        /* Accent color */\n        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);\n    }\n\n    .details-section-right {\n        min-width: 370px;\n    }\n\n    .details-section-right>h3 {\n        color: #5e2c83;\n        font-size: 14px;\n    }\n</style>\n\n<div id=\"bed-dimensions\" class=\"container\">\n    <h2 class=\"bed-details-heading\">Bed Dimensions</h2>\n    <div class=\"bed-details-container\">\n        <div class=\"bed-image\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0267/6346/0696/files/dimension-bed-new.webp?v=1758638692\"\n                alt=\"bed-image\">\n        </div>\n\n        <div class=\"details-section-right\">\n            <!-- <h3>Upholstered Bed Frames</h3> -->\n            <div class=\"bed-size-select-wrapper\">\n                <select id=\"bed-size-select\">\n                    <option value=\"\" selected disabled hidden>Select Size</option>\n                    <option value=\"3ft Single\">3ft Single</option>\n                    <option value=\"4ft Small Double\">4ft Small Double</option>\n                    <option value=\"4ft6 Double\">4ft6 Double</option>\n                    <option value=\"5ft King Size\">5ft King Size</option>\n                    <option value=\"6ft Super King\">6ft Super King</option>\n                </select>\n            </div>\n\n            <div id=\"if-size-3ft\" class=\"specs\">\n            \n            <p><span id=\"prod-size-selected\">3FT Single</span> with FREE Headboard</p>\n            <table>\n                <tr>\n                    <td>A - Frame Length</td>\n                    {% assign len = product.metafields.custom.single_frame_length %}\n                    <td>\n                        {% if len and len != blank %}\n                        {% assign length_cm = len | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if len and len != blank %}\n                        {{ len }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>B - Headboard Width</td>\n                    {% assign hb = product.metafields.custom.single_headboard_width %}\n                    <td>\n                        {% if hb and hb != blank %}\n                        {% assign length_cm = hb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if hb and hb != blank %}\n                        {{ hb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>C - Footboard Height</td>\n                    {% assign fb = product.metafields.custom.footboard_height %}\n                    <td>\n                        {% if fb and fb != blank %}\n                        {% assign length_cm = fb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if fb and fb != blank %}\n                        {{ fb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n\n            </table>\n\n\n        </div>\n        <div id=\"if-size-4ft\" class=\"specs\" style=\"display: none;\">\n            \n            <p><span id=\"prod-size-selected\">4FT Small Double</span> with FREE Headboard</p>\n\n            <table>\n                <tr>\n                    <td>A - Frame Length</td>\n                    {% assign len = product.metafields.custom.sdouble_frame_length %}\n                    <td>\n                        {% if len and len != blank %}\n                        {% assign length_cm = len | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if len and len != blank %}\n                        {{ len }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>B - Headboard Width</td>\n                    {% assign hb = product.metafields.custom.sdouble_headboard_width %}\n                    <td>\n                        {% if hb and hb != blank %}\n                        {% assign length_cm = hb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if hb and hb != blank %}\n                        {{ hb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>C - Footboard Height</td>\n                    {% assign fb = product.metafields.custom.footboard_height %}\n                    <td>\n                        {% if fb and fb != blank %}\n                        {% assign length_cm = fb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if fb and fb != blank %}\n                        {{ fb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n\n            </table>\n\n        </div>\n\n        <div id=\"if-size-4ft6\" class=\"specs\" style=\"display: none;\">\n            \n            <p><span id=\"prod-size-selected\">4FT6 Double</span> with FREE Headboard</p>\n\n            <table>\n                <tr>\n                    <td>A - Frame Length</td>\n                    {% assign len = product.metafields.custom.double_frame_length %}\n                    <td>\n                        {% if len and len != blank %}\n                        {% assign length_cm = len | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if len and len != blank %}\n                        {{ len }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>B - Headboard Width</td>\n                    {% assign hb = product.metafields.custom.double_headboard_width %}\n                    <td>\n                        {% if hb and hb != blank %}\n                        {% assign length_cm = hb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if hb and hb != blank %}\n                        {{ hb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>C - Footboard Height</td>\n                    {% assign fb = product.metafields.custom.footboard_height %}\n                    <td>\n                        {% if fb and fb != blank %}\n                        {% assign length_cm = fb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if fb and fb != blank %}\n                        {{ fb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n\n            </table>\n        </div>\n        <div id=\"if-size-5ft\" class=\"specs\" style=\"display: none;\">\n            \n            <p><span id=\"prod-size-selected\">5FT King Size</span> with FREE Headboard</p>\n\n            <table>\n                <tr>\n                    <td>A - Frame Length</td>\n                    {% assign len = product.metafields.custom.king_frame_length %}\n                    <td>\n                        {% if len and len != blank %}\n                        {% assign length_cm = len | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if len and len != blank %}\n                        {{ len }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>B - Headboard Width</td>\n                    {% assign hb = product.metafields.custom.king_headboard_width %}\n                    <td>\n                        {% if hb and hb != blank %}\n                        {% assign length_cm = hb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if hb and hb != blank %}\n                        {{ hb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>C - Footboard Height</td>\n                    {% assign fb = product.metafields.custom.footboard_height %}\n                    <td>\n                        {% if fb and fb != blank %}\n                        {% assign length_cm = fb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if fb and fb != blank %}\n                        {{ fb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n\n            </table>\n        </div>\n        <div id=\"if-size-6ft\" class=\"specs\" style=\"display: none;\">\n            \n            <p><span id=\"prod-size-selected\">6FT Super King Size</span> with FREE Headboard</p>\n            \n            <table>\n                <tr>\n                    <td>A - Frame Length</td>\n                    {% assign len = product.metafields.custom.super_frame_length %}\n                    <td>\n                        {% if len and len != blank %}\n                        {% assign length_cm = len | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if len and len != blank %}\n                        {{ len }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>B - Headboard Width</td>\n                    {% assign hb = product.metafields.custom.super_headboard_width %}\n                    <td>\n                        {% if hb and hb != blank %}\n                        {% assign length_cm = hb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if hb and hb != blank %}\n                        {{ hb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n                <tr>\n                    <td>C - Footboard Height</td>\n                    {% assign fb = product.metafields.custom.footboard_height %}\n                    <td>\n                        {% if fb and fb != blank %}\n                        {% assign length_cm = fb | plus: 0 %}\n                        {% assign length_in = length_cm | times: 0.393701 %}\n                        {{ length_in | round: 2 }} inch\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                    <td>\n                        {% if fb and fb != blank %}\n                        {{ fb }}\n                        {% else %}\n                        NA\n                        {% endif %}\n                    </td>\n                </tr>\n\n            </table>\n\n        </div>\n        </div>\n    </div>\n\n    <p class=\"note\">\n        <span> <strong>Note:</strong> Headboard and Footboard width is included in the frame length</span>\n        Please allow for a tolerance of +/- 2cm (1 in)\n    </p>\n</div>",
+        "section_height": "default",
+        "full_width": false,
+        "dividers": "border-top border-bottom",
+        "prevent_animation": false
+      }
+    },
+    "slideshow_wXzJWQ": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_gPj46m": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Fast_Delivery_6.png",
+            "image_mobile": "shopify://shop_images/BK_Kids_Bed_Mob.png",
+            "url": "",
+            "overlay_position": "justify-center items-center",
+            "overlay_text_align": "text-center",
+            "mob_center_text": false,
+            "subheading": "",
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": "h0",
+            "heading_h1": false,
+            "text": "",
+            "enlarge_text": true,
+            "button_1_label": "",
+            "button_1_link": "",
+            "button_1_style": "btn btn--primary",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "btn btn--primary",
+            "transparent_content_color": "#ffffff",
+            "countdown_show": false,
+            "countdown_end_date": "",
+            "countdown_end_time": "",
+            "countdown_end_text": "",
+            "enlarge_end_text": false,
+            "countdown_hide_on_end": false,
+            "use_custom_colors": false,
+            "count_color": "#ffffff",
+            "bg_color": "#070707",
+            "bg_grad": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_gPj46m"
+      ],
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "media_with_text_rthHci": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_3VWUdX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Kid's Bed with Drawers",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_wzrdhN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Experience clutter-free living with <a href=\"https://www.bedroomking.co.uk/collections/childrens-beds\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/childrens-beds\">kid's beds</a> that offer great storage. Featuring a bed with drawers, these beds provide a convenient storage solution. Featuring built-in storage drawers underneath, it offers the ideal spot to tuck away toys, clothes, books, or extra bedding.<br/><br/></p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_3VWUdX",
+        "text_wzrdhN"
+      ],
+      "custom_css": [
+        ".section__block.section__block--heading {font-size: 30px; color: #806642;}",
+        ".section__block.reading-width p {line-height: 1.8; font-size: 16px; color: #555;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Kids_Storage_Bed_Slide_1.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_3pEa6U": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_t4C6zN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Kid's Bed with Metal Gas Lift",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_3949fT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tidy room, happy kid! Kid’s Bed with a Metal Gas Lift is the perfect blend of smart storage and everyday comfort. Designed to make the most of smaller bedrooms, it lifts effortlessly to reveal a spacious hidden compartment – ideal for storing toys, bedding, clothes, or anything else that needs a home.</p><p>Built with a sturdy metal gas lift mechanism, it’s easy to use and safe for regular access, even for older children.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_t4C6zN",
+        "text_3949fT"
+      ],
+      "custom_css": [
+        "h2 {font-size: 30px; color: #806642;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Ample_Storage_Space_1_1.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "right",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_qkxk9X": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_9XrhMt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Various Size Options",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_KQ6MME": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Find the perfect bed frame for your child's room with a range of sizes to choose from, whether it's a small single or a spacious double. Options include 3ft single, 4ft small double, 4'6 double, and even a 5ft king-size bed to suit your needs.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9XrhMt",
+        "text_KQ6MME"
+      ],
+      "custom_css": [
+        ".cc-media-with-text {background: #efefef;}",
+        ".section__block.section__block--heading {font-size: 30px; color: #806642;}",
+        ".section__block.reading-width p {line-height: 1.8; font-size: 16px; color: #555;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Kids_Size_02_5.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_g9TFG8": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_3QcJM7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Safety Side Rails",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_3dJ4id": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We value your child's safety and, for that reason, include protective side panels with our children's beds. These safety rails prevent your child from falling out of bed. If you select the safety side rails with your kid's bed, then it will come with an 8\" mattress to provide comfort and convenience.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_3QcJM7",
+        "text_3dJ4id"
+      ],
+      "custom_css": [
+        ".cc-media-with-text {background: #efefef;}",
+        ".section__block.section__block--heading {font-size: 30px; color: #806642;}",
+        ".section__block.reading-width p {line-height: 1.8; font-size: 16px; color: #555;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_89.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "right",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "multi_column_rqr7Nb": {
+      "type": "multi-column",
+      "blocks": {
+        "column_imkqdW": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Fast_Delivery_6_1.png",
+            "media_scale": 100,
+            "heading": "",
+            "text": "<h3>Express Delivery</h3><p>Need your new bed in a hurry? Choose our <em>Express Delivery</em> option at checkout and enjoy faster delivery within just <strong>3 to 5 working days</strong>. Fast, reliable, and stress-free so you can enjoy your new bed sooner than you think.<br/><br/></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_A67d9P": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Fast_Delivery_8.png",
+            "media_scale": 100,
+            "heading": "",
+            "text": "<h3>2 Years Warranty</h3><p>At Bedroomking, we stand behind the quality and craftsmanship of our beds, <a href=\"https://www.bedroomking.co.uk/collections/all-bed-frames\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/all-bed-frames\">bedframes</a> and <a href=\"https://www.bedroomking.co.uk/collections/mattresses\" target=\"_blank\" title=\"https://www.bedroomking.co.uk/collections/mattresses\">mattresses</a>. We provide you with a 2-years warranty when you purchase a new product from our range of divans, bed frames, mattresses, TV beds, bedroom furniture and kid’s beds to<br/>ensure your satisfaction and peace of mind. </p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_imkqdW",
+        "column_A67d9P"
+      ],
+      "settings": {
+        "title": "",
+        "heading_align": "text-center",
+        "button_label": "",
+        "button_link": "",
+        "layout": "grid",
+        "column_size": "medium",
+        "column_align": "center",
+        "image_ratio": "natural",
+        "color_scheme": "1",
+        "button_style": "btn btn--secondary"
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "heading_align": "text-start",
+        "layout": "carousel",
+        "card_size_mobile": "small",
+        "card_size": "small",
+        "products_to_show": 8
+      }
+    },
+    "apps_4C3kRw": {
+      "type": "apps",
+      "blocks": {
+        "air_product_reviews_app_block_review_list_3Y7xYk": {
+          "type": "shopify://apps/air-product-reviews/blocks/app-block-review-list/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
+          "settings": {
+            "air_blockreviews_summaryHeading": "Reviews",
+            "air_blockreviews_layout": "list",
+            "air_blockreviews_singleStarColor": "#16a086",
+            "air_blockreviews_primaryColor": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "air_product_reviews_app_block_review_list_3Y7xYk"
+      ],
+      "settings": {
+        "full_width": false
+      }
+    },
+    "logo_list_HANtTX": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_WT33T8": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/dividebuy-logo-full-colour-rgb.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_74bww8": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Klarna_Payment_Badge_svg.webp",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_9iYVqR": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/CP_logo_badge_6328x2204_blackmint_png.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_4wFwGQ": {
+          "type": "logo",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Logo_Grape-black.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_KFUQ7b": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/shop.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_fzLaRp": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Google-Pay-logo.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_BLCyYb": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/apple-pay-og-twitter.jpg",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_CUDpdU": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/paypal-credit-logo-524CC275C4-seeklogo.com.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_WT33T8",
+        "logo_74bww8",
+        "logo_9iYVqR",
+        "logo_4wFwGQ",
+        "logo_KFUQ7b",
+        "logo_fzLaRp",
+        "logo_BLCyYb",
+        "logo_CUDpdU"
+      ],
+      "settings": {
+        "title": "",
+        "heading_align": "text-center",
+        "button_label": "",
+        "button_link": "",
+        "layout": "grid",
+        "spacing": 40,
+        "logo_grid_align": "justify-center",
+        "color_scheme": "none",
+        "full_width": true
+      }
+    },
+    "slideshow_3xGt3p": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_jg7nUX": {
+          "type": "slide",
+          "settings": {
+            "url": "",
+            "overlay_position": "justify-center items-center",
+            "overlay_text_align": "text-center",
+            "mob_center_text": false,
+            "subheading": "",
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": "h0",
+            "heading_h1": false,
+            "text": "",
+            "enlarge_text": false,
+            "button_1_label": "",
+            "button_1_link": "",
+            "button_1_style": "btn btn--primary",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "btn btn--primary",
+            "transparent_content_color": "#ffffff",
+            "countdown_show": false,
+            "countdown_end_date": "",
+            "countdown_end_time": "",
+            "countdown_end_text": "",
+            "enlarge_end_text": false,
+            "countdown_hide_on_end": false,
+            "use_custom_colors": false,
+            "count_color": "#ffffff",
+            "bg_color": "#070707",
+            "bg_grad": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_jg7nUX"
+      ],
+      "disabled": true,
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 40,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "slideshow_z4dcA8": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_M8HVUY": {
+          "type": "slide",
+          "settings": {
+            "url": "",
+            "overlay_position": "justify-center items-center",
+            "overlay_text_align": "text-center",
+            "mob_center_text": false,
+            "subheading": "",
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": "h0",
+            "heading_h1": false,
+            "text": "",
+            "enlarge_text": false,
+            "button_1_label": "",
+            "button_1_link": "",
+            "button_1_style": "btn btn--primary",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "btn btn--primary",
+            "transparent_content_color": "#ffffff",
+            "countdown_show": false,
+            "countdown_end_date": "",
+            "countdown_end_time": "",
+            "countdown_end_text": "",
+            "enlarge_end_text": false,
+            "countdown_hide_on_end": false,
+            "use_custom_colors": false,
+            "count_color": "#ffffff",
+            "bg_color": "#070707",
+            "bg_grad": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_M8HVUY"
+      ],
+      "disabled": true,
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 40,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "rich_text_AGkJeQ": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_MLwCGR": {
+          "type": "subheading",
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_j7n9qq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Rich text headline",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_MLwCGR",
+        "heading_j7n9qq"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_r4RJie",
+    "details",
+    "slideshow_kVaR7K",
+    "rich_text_W3xMhW",
+    "custom_liquid_Jd4xcj",
+    "slideshow_wXzJWQ",
+    "media_with_text_rthHci",
+    "media_with_text_3pEa6U",
+    "media_with_text_qkxk9X",
+    "media_with_text_g9TFG8",
+    "multi_column_rqr7Nb",
+    "recommendations",
+    "apps_4C3kRw",
+    "logo_list_HANtTX",
+    "slideshow_3xGt3p",
+    "slideshow_z4dcA8",
+    "rich_text_AGkJeQ"
+  ]
+}

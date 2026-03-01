@@ -1,0 +1,40 @@
+<script src="https://angus.finance-calculator.co.uk/js/imm.js"></script>
+<script>
+const promo = new Imm.Promo({
+  apiKey: '8a6e6ef1df61f265d13b4c7bd9fde6c8',
+  pdpCalc: {
+    description: '{{ product.title | remove: "'" }}',
+    insertion: 'after',
+    element: '.product-info__price',
+    amount: '{{ product.price | money_without_currency | remove: ","}}',
+    priceElement: '.product-info__price',
+    priceElementInner: '.product-info__price .price__default > .price__current',
+    financeFilter: getImmFinanceFilter()
+  }
+});
+
+  function getImmFinanceFilter(){
+    var tags = [];
+    var financeTags = [];
+    var financeFilter;
+    {% for tag in product.tags %}
+    tags.push('{{ tag | remove: "'" }}');
+    {% endfor %}
+    if(tags){
+        tags.forEach(function(tagName){
+          if(tagName.indexOf('Finance Option') != -1 || tagName.indexOf('imm-exclude') != -1){
+            financeTags.push(tagName);
+          };
+        });
+    }
+    if(financeTags.includes('imm-exclude')) {
+      financeFilter = 'imm-exclude';
+    }
+    if(financeTags.length == 1){
+    	financeFilter = financeTags[0];
+    } else {
+      financeFilter = 'ALL';
+    }
+    return financeFilter;
+  }
+</script>

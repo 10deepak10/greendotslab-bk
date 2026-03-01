@@ -1,0 +1,1404 @@
+/*  */
+
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.breadcrumbs {
+  display: none !important;
+}
+
+.media-gallery .media img {
+  object-fit: cover;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+}
+
+.main-menu__content {
+  justify-content: center;
+}
+
+.search__form .search__input {
+  background-color: transparent;
+  border: 1px solid #33024b;
+}
+
+.main-menu {
+  background-color: #71308721;
+}
+
+.main-nav__item--primary,
+.secondary-nav__item {
+  margin: 0 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 13px;
+}
+
+.main-nav__item--toggle .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.countdown__number {
+  font-family: var(--heading-font-family);
+  padding: 0.45em 0.25em;
+  font-size: 26px;
+}
+
+.countdown__unit {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.section__header :is(h1, h2, h3, h4, h5, h6) {
+  color: #260039;
+}
+
+.link {
+  color: #260039;
+}
+
+.cc-collection-list .card__title {
+  color: #260039;
+  font-size: 20px;
+  font-family: var(--body-font-family);
+}
+
+.cc-collection-list .card__title a::after {
+  content: none;
+}
+
+.cc-collection-list .card__title + .text-theme-text {
+  text-decoration: underline;
+  text-transform: capitalize;
+  transition: all 0.4s ease-in-out;
+}
+
+.cc-collection-list .card__title + .text-theme-text span {
+  display: none;
+}
+
+.cc-collection-list .card:hover .card__title + .text-theme-text,
+.cc-collection-list .card:focus .card__title + .text-theme-text {
+  transform: scale(1.03);
+  color: #260039;
+}
+
+.section__heading.heading-light {
+  color: #260039;
+  font-weight: bold;
+  font-family: var(--body-font-family);
+}
+
+.featured-collection-products .slider__item .card--product .card__media a {
+  aspect-ratio: 1;
+  max-height: 250px;
+  width: 100%;
+  display: block;
+  padding: initial !important;
+}
+
+.featured-collection-products .slider__item .card--product .card__media a img {
+  object-fit: cover;
+}
+
+.featured-collection-products
+  .slider__item
+  .card--product
+  .card__info-container {
+  background: #fff;
+  padding: 10px 15px;
+}
+.new-collection-2025 .products-grid-container .grid li .card--product {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* .new-collection-2025 .products-grid-container .grid li .card--product .card__title { */
+product-card.card--product .card__title {
+  min-height: 50px;
+  font-size: 16px;
+  max-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card--product .price .price__default .price__current {
+  font-size: 24px;
+  color: #806643;
+  font-family: var(--heading-font-family);
+}
+
+.card--product:hover .price .price__default .price__current,
+.card--product:focus .price .price__default .price__current {
+  color: #713087;
+}
+
+product-card.card--product .card__title a::after {
+  content: none;
+}
+
+/*============================ Code for Collections ========================================== */
+
+.collection-banner {
+  padding: 40px 0;
+}
+
+.collection-banner .collection-banner__heading {
+  font-size: 24px;
+  color: #806642;
+}
+
+.cc-logo-list .section__header h2 {
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+}
+
+/*============================ Code for Collections Ends ========================================== */
+
+/*============================ Code for Product Details ========================================== */
+
+.product-breadcrumbs {
+  display: none;
+}
+
+.product-main .product {
+  display: flex;
+  padding: 50px 0;
+}
+
+.product-main .products-left-content,
+.product-main .product .product-info {
+  width: 50%;
+}
+
+.product-main .product .product-media {
+  width: 100%;
+}
+
+.product-main .product .product-info .product-info__block .product-title {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: var(--body-font-family);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.product-main .product .product-info .product-info__block > div .media a img {
+  max-height: 14px;
+  object-fit: contain;
+  object-position: left !important;
+}
+
+.product-main
+  .product
+  .product-info
+  .product-info__block
+  .product-info__price
+  .price
+  .price__current {
+  font-family: var(--heading-font-family);
+  font-size: 30px;
+  color: #806642;
+}
+
+/* Custom style for Accordion  */
+
+/* Horizontal tab bar */
+
+.has_dpo_accordion #itoris_dynamicproductoptions {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+#custom-tabs {
+  display: grid;
+  gap: 1px;
+  overflow-x: auto;
+  white-space: nowrap;
+  grid-template-columns: repeat(10, 1fr);
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* WebKit (Chrome, Edge, Safari) scrollbar customization */
+#custom-tabs::-webkit-scrollbar {
+  height: 1px;
+}
+
+#custom-tabs::-webkit-scrollbar-track,
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#custom-tabs::-webkit-scrollbar-thumb,
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: none;
+}
+
+#custom-tabs .tab-button {
+  padding: 25px 12px 10px;
+  /* background: #e6d6ff; */
+  border: 1px solid #000;
+  /* border-right: none; */
+  cursor: pointer;
+  /* border-left: 0.5px solid #c090dd;
+  border-right: 0.5px solid #c090dd; */
+  position: relative;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.2;
+  word-wrap: break-word;
+  white-space: normal;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+}
+
+#custom-tabs .tab-button .tab-selection-title {
+  font-weight: lighter;
+  font-size: 12px;
+  color: #444;
+}
+
+#custom-tabs .tab-button::before {
+  content: "";
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+#custom-tabs .tab-button:last-child {
+  border-right: 1px solid #000;
+}
+
+/* #custom-tabs .tab-button:first-child::before {
+  background-image: url('https://cdn.shopify.com/s/files/1/0267/6346/0696/files/bed-size-icon.png?v=1745228856');
+} */
+
+#custom-tabs .tab-button[data-original-text="Frame Size"]::before, #custom-tabs .tab-button[data-original-text="Frame size"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/bed-size-icon.png?v=1745228856");
+  width: 28px;
+}
+#custom-tabs .tab-button[data-original-text="Material & colour"]::before,
+#custom-tabs .tab-button[data-original-text="Material & Colour"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/color-pallete.png?v=1745228857");
+}
+#custom-tabs .tab-button[data-original-text="Base Type"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/bed-storage-icon.png?v=1745228856");
+}
+#custom-tabs .tab-button[data-original-text="Headboard Height"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/headboard-height-icon.png?v=1745228856");
+}
+#custom-tabs .tab-button[data-original-text="Split Headboard"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/split-headboard.png?v=1745228856");
+}
+#custom-tabs .tab-button[data-original-text="Ottoman Box"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/ottoman-box-icon.png?v=1745228857");
+}
+
+#custom-tabs .tab-button[data-original-text="Beading"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/bed-beading.png?v=1745409997");
+}
+
+#custom-tabs .tab-button[data-original-text="Strip Colour"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/stripe-colors.svg?v=1745843413");
+}
+
+#custom-tabs .tab-button[data-original-text="Piping Colour"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/bed-piping.svg?v=1746536875");
+}
+
+#custom-tabs .tab-button[data-original-text="Buttons"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/bed-buttons.svg?v=1746536875");
+}
+
+#custom-tabs .tab-button[data-original-text="Mattress Configuration"]::before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/mattress-config.svg?v=1747046744");
+}
+
+#custom-tabs .tab-button.dpo-error {
+  color: #999;
+  border-left-color: #b82a30;
+  border-right-color: #b82a30;
+  position: relative;
+}
+
+#custom-tabs .tab-button.dpo-error::before {
+  /* filter: invert(17%) sepia(89%) saturate(6542%) hue-rotate(-5deg)
+    brightness(85%) contrast(105%); */
+}
+
+#custom-tabs .tab-button.dpo-error::after {
+  content: "Field is required";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 99%;
+  height: 18px;
+  font-size: 10px;
+  font-weight: 300;
+  color: #fff;
+  background: #cc1616;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 100%; */
+  padding: 3px;
+}
+
+#custom-tabs .tab-button:last-child {
+  /* border-right-color: transparent; */
+}
+
+#custom-tabs .tab-button:hover {
+  background-color: #eeeeee;
+}
+
+#custom-tabs .tab-button.active {
+  /* background-color: #f4edff; */
+  color: #000;
+}
+
+/* Hide all sections by default */
+.custom-dpo-tabs .fieldset-section {
+  display: block !important;
+  height: 0;
+  visibility: hidden;
+  padding: 0 !important;
+}
+
+.custom-dpo-tabs .fieldset-section.active {
+  display: block !important;
+  visibility: visible;
+  height: auto !important;
+  width: auto !important;
+}
+
+.custom-dpo-tabs .fieldset-section .fields td > .field {
+  width: 100% !important;
+  max-height: 360px;
+  margin: 0 !important;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.custom-dpo-tabs .fieldset-section .fields td.headboard-height > .field {
+  width: 98% !important;
+}
+
+.custom-dpo-tabs .fieldset-section .fields .field > label {
+  display: none;
+}
+
+.custom-dpo-tabs .fieldset-section .fields .field .options-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field {
+  border: 1px solid #806642;
+  border-radius: 5px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: auto !important;
+  overflow: visible;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  #options-1012-list {
+  grid-template-columns: repeat(2, 120px);
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  #options-1012-list
+  .field.admin__field-option
+  label {
+  display: block;
+  border: none;
+  background: transparent;
+  padding: 10px 15px;
+  margin: 0;
+  text-align: center;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  #options-1012-list
+  .field.admin__field-option
+  label:hover,
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  #options-1012-list
+  .field.admin__field-option
+  label:focus {
+  background: #000;
+  color: #fff;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field:hover,
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field.selected-radio-parent {
+  border-color: #444;
+  position: relative;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field
+  img {
+  border: 0;
+  padding: 0;
+  border-radius: 5px 5px 0 0;
+  box-shadow: none;
+  max-height: 75px;
+  object-fit: scale-down;
+  mix-blend-mode: multiply;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .bed-color
+  .field
+  .options-list
+  .field
+  img {
+  object-fit: cover;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .blanket-box
+  .field
+  .options-list
+  .field
+  img, #itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .bed-storage
+  .field
+  .options-list
+  .field
+  img {
+    padding: 5px;
+  }
+
+#itoris_dynamicproductoptions .price-notice {
+  color: #b82a30;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field
+  .dpo_title {
+  padding: 3px 8px;
+}
+
+#itoris_dynamicproductoptions
+  .fieldset-section
+  .fields
+  .field
+  .options-list
+  .field.selected-radio-parent::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: #806642
+    url("https://cdn.shopify.com/s/files/1/0267/6346/0696/files/icon-check.png?v=1745257271")
+    center no-repeat;
+  background-size: 50%;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  z-index: 10;
+}
+
+.has_dpo_accordion #itoris_dynamicproductoptions .next-btn {
+  display: none;
+}
+
+.more-product-options {
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.more-features-box {
+  border: 2px solid #806642;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.more-features-box .content-left {
+  max-width: 55%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.more-features-box .content-left .feature-icon img {
+  max-width: 65px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.more-features-box .content-left .feature-details h4 {
+  color: #806642;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.more-features-box .content-left .feature-details p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.more-features-box .btn-right {
+  /* max-width: 200px; */
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-features-box .btn-right .assembly-price {
+  font-family: var(--heading-font-family);
+  color: #806642;
+  font-size: 22px;
+  text-align: center;
+}
+
+.more-features-box .btn-right .btn,
+.more-features-box .btn-right select {
+  padding: 12px;
+  text-align: center;
+  border-color: #000;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.in-stock {
+  color: #855717;
+  font-size: 14px;
+}
+.in-stock svg {
+  max-width: 20px;
+  margin-right: 6px;
+  fill: #855717;
+  position: relative;
+  top: 5px;
+}
+
+/* Stepper Code Starts  */
+
+.timeline-widget {
+  margin-bottom: 25px;
+}
+
+.timeline-text {
+  text-align: center;
+  padding-top: 15px;
+  color: #333;
+  font-size: 14px;
+}
+.my-shipping-timeline {
+  margin-top: 40px;
+  position: relative;
+}
+.my-shipping-timeline::before {
+  content: "";
+  position: absolute;
+  top: 36%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #47351c;
+  z-index: 0;
+  /*  transform: translateY(-50%); */
+}
+.my-shipping-timeline .step-26032025 {
+  flex: 1;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.my-shipping-timeline .step-26032025::before {
+  /*   content: ""; */
+  display: block;
+  margin: 0 auto 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+.step-26032025 .step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #27003f;
+  padding: 12px;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  margin-bottom: 15px;
+}
+.step-26032025 .step-title {
+  font-weight: 600;
+  line-height: 1;
+}
+.step-26032025 .step-date {
+  color: #806642;
+  font-size: 14px;
+}
+.step-26032025 .step-icon img {
+  filter: invert(1);
+}
+
+/* =================================== Stepper Code Ends =======================================================  */
+
+/*.... Code for Mattress Selection  */
+
+#addon-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+  transition: opacity 0.8s ease; /* slightly slower */
+}
+
+.mattress-drawer-content {
+  background: #fff;
+  width: 550px;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.8s ease; /* slowed down */
+  position: relative;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+#addon-drawer.show .mattress-drawer-content {
+  transform: translateX(0);
+}
+
+.mattress-drawer.hidden {
+  display: none !important;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mattress-selection {
+  height: 100%;
+  padding: 30px 20px;
+}
+
+.mattress-selection #matt-form {
+  max-height: calc(100% - 120px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.form-heading {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 30px;
+  color: #000;
+}
+
+.mattress-selection form ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0;
+}
+
+.mattress-selection form ul li {
+  width: 100%;
+  /* display: flex; */
+  gap: 10px;
+  /* align-items: center; */
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  /* Image column and content column */
+  column-gap: 1rem;
+  align-items: start;
+}
+
+.mattress-selection form ul li:hover,
+.mattress-selection form ul li:focus {
+  border-color: #c090dd;
+}
+
+.mattress-selection form ul li img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  max-width: 100px;
+  height: 100%;
+  grid-row: span 2;
+}
+
+.mattress-selection form ul li label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px !important;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+  top: 20px;
+  cursor: pointer;
+}
+
+.mattress-selection form ul li .mattress-price {
+  color: #806642;
+  margin-top: 0;
+  position: relative;
+  top: -10px;
+  left: 35px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.mattress-selection form ul li label input[type="radio"] {
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+}
+
+.more-features-box.selected-mattress-box .content-left {
+  max-width: 80%;
+}
+
+.selected-mattress-box .label-container h5 {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: #999;
+  margin: 0 0 8px;
+  font-weight: 400;
+}
+
+.selected-mattress-box .label-container label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.selected-mattress-box .label-container span {
+  display: block;
+  font-size: 24px;
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  color: #806642;
+}
+
+.selected-mattress-box .remove-container span {
+  cursor: pointer;
+  color: #000;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.divide-buy-calculation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.divide-buy-calculation img {
+  position: relative;
+  top: 2px;
+  right: 4px;
+}
+
+/* #itoris_dynamicproductoptions .fieldset-section:last-child{height: auto !important; visibility: visible !important; opacity: 0.01;}
+#itoris_dynamicproductoptions .fieldset-section:last-child .field{padding: 0 !important;} */
+
+/* .tab-button[data-original-text="Delivery Options"], .tab-button[data-original-text="Mattress"] { */
+.tab-button[data-original-text="Delivery Options"],
+.tab-button[data-original-text="Mattress"] {
+  display: none !important;
+}
+
+#mattress-select-box,
+#assembly-select-box {
+  display: none;
+}
+
+.footer__hr {
+  margin-bottom: 10px !important;
+}
+
+.footer__base,
+.footer__meta {
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 13px;
+  justify-content: center !important;
+}
+
+.footer__base {
+  background: #000;
+  margin-top: 5px;
+}
+
+.cart.form {
+  padding: 30px 0;
+}
+
+#insta-feed h2,
+.instafeed-shopify h2 {
+  font-size: 28px !important;
+}
+
+.customer-images-btn {
+  /* position: absolute;
+  top: 100%; */
+  margin: auto;
+  width: max-content;
+  left: 0;
+  right: 0;
+}
+
+#trustpilot-widget-trustbox-0-wrapper {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 10px !important;
+  margin-bottom: 40px !important;
+  max-width: calc(var(--page-width, 1320px) + var(--gutter) * 2);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.main-products-grid__filters #trustpilot-widget-trustbox-0-wrapper,
+#trustpilot-widget-trustbox-1 {
+  display: none !important;
+}
+
+#tp-widget-fallback {
+  display: none !important;
+}
+
+#dividebuy-credit-subject {
+  display: none !important;
+}
+
+.card__rte h3 {
+  color: #806642 !important;
+}
+
+#itoris_dynamicproductoptions:not(.custom-dpo-tabs) > h2 {
+  margin: 20px 0 5px;
+  font-size: 18px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.mattress-required, .assembly-required, .rapid-delivery-required, .both-delivery-required {
+  border-color: #cc1616;
+  position: relative;
+}
+
+.mattress-required::before, .assembly-required::before, .rapid-delivery-required::before, .both-delivery-required::before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: -10px;
+  width: 200px;
+  height: 20px;
+  font-size: 12px;
+  color: #fff;
+  background: #cc1616;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 100%; */
+  padding: 3px;
+}
+
+.mattress-required::before {
+  content: "Mattress required";
+}
+
+.assembly-required::before {
+  content: "Assembly required";
+}
+
+.rapid-delivery-required::before {
+  content: "Rapid Delivery required";
+}
+
+.both-delivery-required::before {
+  content: "Delivery options required";
+}
+
+.bed-details-container .specs table tr td:nth-child(2) {
+  display: none;
+}
+
+.cc-main-page .article-content iframe {
+  height: 1620px;
+}
+
+.page-static {
+  margin-bottom: 50px;
+}
+
+.page-static .page__content.reading-width .page-title > h3 {
+  display: none;
+}
+
+#main-content .shopify-section.cc-main-blog {
+  padding: 60px 0;
+}
+
+.footer-two-col {
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+
+.footer-two-col {
+  flex-direction: row;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
+.social-icon-block {
+  gap: 10px;
+}
+
+/* ------- responsive code -------  */
+
+@media screen and (max-width: 1366px) {
+  .mattress-selection #matt-form {
+    padding-bottom: 80px;
+  }
+}
+
+
+@media screen and (max-width: 990px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header-top .logo {
+    min-width: 60px;
+  }
+
+  .header__grid {
+    flex-wrap: nowrap;
+  }
+
+  .header-top {
+    width: 70%;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .main-menu {
+    background-color: transparent;
+  }
+
+  .slideshow__text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .text-overlay__block.subheading {
+    margin-bottom: 5px;
+  }
+
+  .text-overlay__heading {
+    font-size: 24px !important;
+  }
+  .text-overlay__block {
+    margin-bottom: 0 !important;
+  }
+  .text-overlay__buttons .btn--primary {
+    font-size: 12px;
+  }
+
+  .cc-countdown-timer .section {
+    margin: 15px 0;
+  }
+
+  .cc-countdown-timer .section .section__block {
+    margin-bottom: 0;
+  }
+
+  .cc-icons-with-text .slider__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .cc-collection-list .card__title {
+    font-size: 16px;
+  }
+
+  .featured-collection-text {
+    margin-top: 0;
+  }
+
+  .featured-collection-text .section__heading,
+  .featured-collection-text .grow {
+    text-align: center;
+  }
+
+  .divide-buy-calculation {
+    flex-wrap: wrap;
+  }
+
+  .divide-buy-calculation img {
+    top: -5px;
+    min-width: 100px;
+    right: auto;
+    left: 0;
+  }
+
+  /* ------- Product Details Mobile ---------  */
+
+  .product-main .product {
+    flex-direction: column;
+    padding: 10px 0 40px;
+  }
+
+  .product-main .products-left-content,
+  .product-main .product .product-info {
+    width: 100%;
+  }
+
+  .product-main .product .product-info .product-info__sticky {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .has_dpo_options .product-info__price {
+    text-align: center;
+  }
+
+  .product-main .product .product-info .product-info__block .product-title {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-top: 10px;
+  }
+
+  .product-main .product .product-info .product-info__block > div .media a img {
+    object-position: center !important;
+  }
+
+  .shopify-app-block {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  /*-- Products main Right Section  */
+  .product-main .product .product-info {
+    order: 1;
+  }
+
+  /* Products main left section */
+  .product-main .products-left-content {
+    order: 9;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* require order last  */
+  .timeline-widget + .product-info__block {
+    order: 8;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* require order second last  */
+  .timeline-widget {
+    order: 7;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* This requires to be below DPO options  */
+  .more-product-options {
+    order: 6;
+    margin: 20px 0 0;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .more-features-box {
+    flex-direction: column;
+  }
+
+  .more-features-box .content-left,
+  .more-features-box .btn-right {
+    max-width: 100%;
+    /* width: 100%; */
+  }
+
+  /* This is DPO and requires to be below product price  */
+  .more-product-options + .product-info__block {
+    order: 5;
+  }
+
+  /* This is product price, requires to be below rating image  */
+  .product-price {
+    order: 4;
+  }
+
+  /* This is product Media, requires to be after product title  */
+  .product-media {
+    order: 3;
+  }
+
+  /* This is rating image, requires to be below product title  */
+  .product-info__title + .product-info__block {
+    order: 2;
+  }
+
+  /* This is product title, requires to be at 1st order  */
+  .product-info__title {
+    order: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* --- Fixing add to cart btn to bottom  */
+
+  .product-info__add-to-cart {
+    position: fixed;
+    bottom: 60px;
+    width: 100vw;
+    left: 0;
+    /* right: 0; */
+    /* margin: 0 auto; */
+    /* background: #fff; */
+    padding: 10px;
+    z-index: 99999;
+  }
+
+  /* ---- Customizing DPO UI ----  */
+
+  .custom-dpo-tabs .fieldset-section .fields .field .options-list {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 15px;
+  }
+
+  .bed-details-container {
+    gap: 20px !important;
+    flex-direction: column;
+  }
+
+  .bed-details-container + .note {
+    margin-top: 0;
+    font-size: 13px;
+  }
+
+  .bed-details-container + .note span {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .media-with-text__text .text-start h2 {
+    text-align: center !important;
+  }
+
+  .carousel .slider .logo-list {
+    grid-template-columns: repeat(5, 80px) !important;
+    justify-content: flex-start !important;
+    align-items: flex-start;
+  }
+
+  .my-shipping-timeline {
+    gap: 20px !important;
+    margin-top: 20px;
+  }
+
+  .my-shipping-timeline .step-26032025 {
+    top: 6px;
+  }
+
+  .section__block.h3 {
+    padding: 0;
+    font-size: 20px;
+  }
+
+  .section .container .container:not(.products-grid-container) {
+    padding: 0;
+  }
+
+  .step-26032025 .step-title {
+    font-size: 14px;
+  }
+  .step-26032025 .step-date {
+    font-size: 11px;
+  }
+
+  .specs table td {
+    padding: 8px !important;
+    font-size: 13px !important;
+  }
+
+  .card__rte h3,
+  .section__block.h2 {
+    font-size: 20px !important;
+  }
+
+  #addon-drawer.mattress-drawer {
+    z-index: 999999;
+  }
+
+  .mattress-selection form ul li img {
+   width: 80px;
+    height: 80px;
+  }
+
+  .mattress-selection form ul li label {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .mattress-selection form ul li .mattress-price {
+    font-size: 18px;
+    margin-top: 12px;
+    top: 0;
+  }
+
+  .cc-main-page .article-content iframe {
+    height: 2350px;
+  }
+
+  .slideshow .slideshow__slide .slideshow__text {
+    position: relative;
+  }
+
+  .slideshow .slideshow__slide .slideshow__text::before {
+    content: '';
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .slideshow .slideshow__slide .slideshow__text .text-overlay p, .slideshow .slideshow__slide .slideshow__text .text-overlay h2 {
+    color: #fff;
+  }
+
+  
+}

@@ -1,0 +1,1001 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor-sku": {
+          "type": "vendor-sku",
+          "disabled": true,
+          "settings": {
+            "show_vendor": true,
+            "show_sku": true
+          }
+        },
+        "product_labels_Rqamzi": {
+          "type": "product-labels",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "image_f8RwMh": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/rating.webp",
+            "image_width": 1000,
+            "image_align": "justify-start",
+            "url": "https://uk.trustpilot.com/review/bedroomking.co.uk"
+          }
+        },
+        "dividebuy_spread_the_cost_dividebuyproduct_BU8UaJ": {
+          "type": "shopify://apps/dividebuy-spread-the-cost/blocks/dividebuyproduct/3ea5bc0e-1a15-490b-b431-d3ea9a2cd3da",
+          "settings": {
+            "finproms_text": "finance_available",
+            "include_cart_total": true,
+            "alignment": "center",
+            "tooltip-alignment": "center",
+            "top_margin": 0,
+            "bottom_margin": 0,
+            "alignment-mobile": "center",
+            "top_margin_mobile": 0,
+            "bottom_margin_mobile": 0,
+            "price_dom_element_selector": ".price .price__current"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false
+          }
+        },
+        "d6af27bf-4aec-41fc-ab17-8878c0a5daa1": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "divider-0": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "spacing": "mt-8 mb-8"
+          }
+        },
+        "variant-picker": {
+          "type": "variant-picker",
+          "disabled": true,
+          "settings": {
+            "selector_style": "dropdown",
+            "enable_dynamic_availability": false,
+            "show_backorder_text": false,
+            "enable_size_chart": false,
+            "size_chart_variant": "Size",
+            "size_chart_page": ""
+          }
+        },
+        "divider-1": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "spacing": "mt-8 mb-8"
+          }
+        },
+        "buy-buttons": {
+          "type": "buy-buttons",
+          "settings": {
+            "show_qty_selector": true,
+            "enable_dynamic_checkout": false,
+            "show_pickup_availability": false
+          }
+        },
+        "message-1": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "icon": "clock",
+            "title": "<p><strong>Popular right now<br/></strong>Lots of people have looked at this recently</p>",
+            "close": "once",
+            "show_over_media": true,
+            "visibility_duration": 4,
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
+          }
+        },
+        "message-2": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "icon": "price_tag",
+            "title": "<p><strong>Selling fast!<br/></strong>Grab yours while you can</p>",
+            "close": "once",
+            "show_over_media": true,
+            "visibility_duration": 5,
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
+          }
+        },
+        "collapsible-content-1": {
+          "type": "collapsible-content",
+          "disabled": true,
+          "settings": {
+            "heading": "Care information",
+            "icon": "heart",
+            "text": "<p>Display general product information or specific product information using metafields.</p>",
+            "page": "",
+            "open": false
+          }
+        },
+        "collapsible-content-2": {
+          "type": "collapsible-content",
+          "disabled": true,
+          "settings": {
+            "heading": "Delivery and Shipping",
+            "icon": "truck",
+            "text": "<p>Add some general information about your delivery and shipping policies.</p>",
+            "page": "",
+            "open": false
+          }
+        },
+        "message-3": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "title": "<p>Add a stand out message for your customers</p>",
+            "close": "once",
+            "show_over_media": false,
+            "visibility_duration": 7,
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
+          }
+        }
+      },
+      "block_order": [
+        "vendor-sku",
+        "product_labels_Rqamzi",
+        "title",
+        "image_f8RwMh",
+        "dividebuy_spread_the_cost_dividebuyproduct_BU8UaJ",
+        "price",
+        "d6af27bf-4aec-41fc-ab17-8878c0a5daa1",
+        "divider-0",
+        "variant-picker",
+        "divider-1",
+        "buy-buttons",
+        "message-1",
+        "message-2",
+        "collapsible-content-1",
+        "collapsible-content-2",
+        "message-3"
+      ],
+      "settings": {
+        "stick_on_scroll": true,
+        "sticky_atc_panel": true,
+        "sticky_atc_position": "end",
+        "sticky_atc_mobile": false,
+        "media_layout": "slider",
+        "media_size": "default",
+        "media_ratio": "1",
+        "media_crop": "none",
+        "hover_zoom": "off",
+        "enable_video_looping": false,
+        "stacked_scroll": "always",
+        "underline_active": true,
+        "media_thumbs": "desktop",
+        "thumb_ratio": "1",
+        "thumb_crop": "none",
+        "media_arrows": "desktop",
+        "show_slide_count": true,
+        "border_color": "#eeeeee",
+        "bg_color": "#f4f4f4",
+        "enable_media_grouping": false,
+        "media_grouping_option": "Color,Colour,Couleur,Farbe",
+        "demand_badge_text": "In Demand! [number] sold in 7 Days",
+        "demand_badge_bg": "#000000",
+        "demand_badge_text_color": "#ffffff"
+      }
+    },
+    "custom_liquid_7haiMG": {
+      "type": "custom-liquid",
+      "name": "Custom HTML/Liquid",
+      "settings": {
+        "custom_liquid": "",
+        "section_height": "tight",
+        "full_width": true,
+        "dividers": "border-top",
+        "prevent_animation": true
+      }
+    },
+    "details": {
+      "type": "product-details",
+      "blocks": {
+        "richtext_4PipiB": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "text": "<h4>Key Features</h4>{{ product.metafields.custom.bed_features | metafield_tag }}"
+          }
+        },
+        "tabs_T6kxqR": {
+          "type": "tabs",
+          "settings": {
+            "style": "collapsible",
+            "show_description": true,
+            "show_specification": false,
+            "show_reviews": false,
+            "open_first": false,
+            "spec_metafields": "custom.bed_features",
+            "spec_right_align": false,
+            "spec_show_empty_metafields": true,
+            "spec_empty_field_text": "-",
+            "tab_1_title": "Fabric Video Gallery",
+            "tab_1_text": "<p>Click on thumbnail to expand and play video</p>",
+            "tab_1_page": "swatch-material-gallery",
+            "tab_2_title": "",
+            "tab_2_text": "",
+            "tab_2_page": "",
+            "tab_3_title": "",
+            "tab_3_text": "",
+            "tab_3_page": ""
+          }
+        },
+        "payment-methods": {
+          "type": "payment-methods",
+          "disabled": true,
+          "settings": {
+            "title": "Payment & Security",
+            "title1": "Payment methods",
+            "show_payment_icons": true,
+            "text1": "<p>Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.</p>",
+            "title2": "",
+            "text2": ""
+          }
+        },
+        "dec40431-6474-4e6a-8a2b-792a3235e028": {
+          "type": "custom-liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<h5>Fabric Gallery</h5>\n<p>Browse through our material gallery, <a href=\"/products/request-a-swatch\" target=\"_blank\">We advise ordering swatch samples before purchasing, Click to Order Samples</a></p>\n<div class=\"xo-gallery\" data-id=\"1\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_4PipiB",
+        "tabs_T6kxqR",
+        "payment-methods",
+        "dec40431-6474-4e6a-8a2b-792a3235e028"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "slideshow_QhUtrD": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_y7YkjP": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Banner.webp",
+            "image_mobile": "shopify://shop_images/banner-mobile.webp",
+            "url": "",
+            "overlay_position": "justify-center items-center",
+            "overlay_text_align": "text-center",
+            "mob_center_text": false,
+            "subheading": "",
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": "h0",
+            "heading_h1": false,
+            "text": "",
+            "enlarge_text": true,
+            "button_1_label": "",
+            "button_1_link": "",
+            "button_1_style": "btn btn--primary",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "btn btn--primary",
+            "transparent_content_color": "#ffffff",
+            "countdown_show": false,
+            "countdown_end_date": "",
+            "countdown_end_time": "",
+            "countdown_end_text": "",
+            "enlarge_end_text": false,
+            "countdown_hide_on_end": false,
+            "use_custom_colors": false,
+            "count_color": "#ffffff",
+            "bg_color": "#070707",
+            "bg_grad": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_y7YkjP"
+      ],
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "slideshow_3xGt3p": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_jg7nUX": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/bedroom_king_1800900_3_1.png",
+            "image_mobile": "shopify://shop_images/bedroom_king_10801350_3_1.png",
+            "url": "",
+            "overlay_position": "justify-center items-center",
+            "overlay_text_align": "text-center",
+            "mob_center_text": false,
+            "subheading": "",
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": "h0",
+            "heading_h1": false,
+            "text": "",
+            "enlarge_text": false,
+            "button_1_label": "",
+            "button_1_link": "",
+            "button_1_style": "btn btn--primary",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "btn btn--primary",
+            "transparent_content_color": "#ffffff",
+            "countdown_show": false,
+            "countdown_end_date": "",
+            "countdown_end_time": "",
+            "countdown_end_text": "",
+            "enlarge_end_text": false,
+            "countdown_hide_on_end": false,
+            "use_custom_colors": false,
+            "count_color": "#ffffff",
+            "bg_color": "#070707",
+            "bg_grad": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_jg7nUX"
+      ],
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "slideshow_z4dcA8": {
+      "type": "slideshow",
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 40,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "rich_text_AGkJeQ": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_MLwCGR": {
+          "type": "subheading",
+          "settings": {
+            "text": "The Ultimate Sleeping Experience"
+          }
+        },
+        "heading_j7n9qq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Key Features of BedroomKing Accessories",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_MLwCGR",
+        "heading_j7n9qq"
+      ],
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "color_scheme": "1",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
+    "media_with_text_CFa3Yf": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_yCjzBK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Versatile Bedroom Accessories",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_npdQX7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Elevate the style and functionality of your bedroom with our range of bedroom accessories. From ottoman boxes to footstools and pouffes, we offer a variety of options to enhance your space.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yCjzBK",
+        "text_npdQX7"
+      ],
+      "custom_css": [
+        ".section__block.section__block--heading {font-size: 30px; color: #806642;}",
+        ".section__block.reading-width p {line-height: 1.8; font-size: 16px; color: #555;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/8_c953a04d-aebe-4016-a136-7e15d59814e7.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_E3RYih": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_Kf9UJV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stylish Pouffes",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_mminyJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p> Add a pop of personality to your bedroom with our leather pouffe, crafted from high-quality materials for durability and style. Whether used as extra seating or as a decorative accent, our pouffes enhance the ambiance of any room.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Kf9UJV",
+        "text_mminyJ"
+      ],
+      "custom_css": [
+        ".cc-media-with-text {background: #efefef;}",
+        ".section__block.section__block--heading {font-size: 30px; color: #806642;}",
+        ".section__block.reading-width p {line-height: 1.8; font-size: 16px; color: #555;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/2_1.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "right",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "slideshow_X4kMk3": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_AM6cyR": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Desktop_-_1_22.png",
+            "url": "",
+            "overlay_position": "justify-center items-center",
+            "overlay_text_align": "text-center",
+            "mob_center_text": false,
+            "subheading": "",
+            "heading": "",
+            "heading_color": "#ffffff",
+            "heading_size": "h0",
+            "heading_h1": false,
+            "text": "",
+            "enlarge_text": true,
+            "button_1_label": "",
+            "button_1_link": "",
+            "button_1_style": "btn btn--primary",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "btn btn--primary",
+            "transparent_content_color": "#ffffff",
+            "countdown_show": false,
+            "countdown_end_date": "",
+            "countdown_end_time": "",
+            "countdown_end_text": "",
+            "enlarge_end_text": false,
+            "countdown_hide_on_end": false,
+            "use_custom_colors": false,
+            "count_color": "#ffffff",
+            "bg_color": "#070707",
+            "bg_grad": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_AM6cyR"
+      ],
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "media_with_text_xBRXRJ": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_fCYR39": {
+          "type": "heading",
+          "settings": {
+            "heading": "Multi-Purpose Design",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_AHQNPj": {
+          "type": "text",
+          "settings": {
+            "text": "<p> Our bedroom accessories are designed with versatility in mind, allowing you to use them in various ways throughout your home. Whether as extra seating in the living room, a footrest in the bedroom, or storage in the hallway, our accessories adapt to your needs.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_fCYR39",
+        "text_AHQNPj"
+      ],
+      "custom_css": [
+        ".section__block.section__block--heading {font-size: 30px; color: #806642;}",
+        ".section__block.reading-width p {line-height: 1.8; font-size: 16px; color: #555;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/6_1.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "left",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "media_with_text_RriDC7": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_aK6HTy": {
+          "type": "heading",
+          "settings": {
+            "heading": "Easy Assembly",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_idntkd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Enjoy hassle-free setup with our bedroom accessories that require minimal assembly. Clear instructions and included hardware make putting together your new ottoman box, footstool, or pouffe a breeze.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_aK6HTy",
+        "text_idntkd"
+      ],
+      "custom_css": [
+        ".cc-media-with-text {background: #efefef;}",
+        ".section__block.section__block--heading {font-size: 30px; color: #806642;}",
+        ".section__block.reading-width p {line-height: 1.8; font-size: 16px; color: #555;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/1_1_3210f33c-73a6-432a-840f-2b88e0ea8505.png",
+        "video_external": "",
+        "video_description": "",
+        "video_autoplay": false,
+        "layout": "right",
+        "image_fit": "contain",
+        "media_width": 50,
+        "media_scale": 100,
+        "text_align": "text-start",
+        "color_scheme": "none"
+      }
+    },
+    "slideshow_pn7pW8": {
+      "type": "slideshow",
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "multi_column_dPjVXz": {
+      "type": "multi-column",
+      "blocks": {
+        "column_EFNq4e": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/5_1.png",
+            "media_scale": 100,
+            "heading": "",
+            "text": "<h3>Aesthetic Addition</h3><p>Conceal clutter and elevate the visual appeal of your bedroom with our bedroom accessories featuring hidden storage compartments. Our Footstool with storage not only keeps your space organized, but also serves as an aesthetic addition.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_hqDMWY": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/5_2.png",
+            "media_scale": 100,
+            "heading": "",
+            "text": "<h3>Quality Craftsmanship</h3><p>Rest assured that our bedroom accessories are crafted with the highest standards of quality and durability in mind. Each piece is meticulously constructed to withstand daily use while maintaining its beauty and functionality over time.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_EFNq4e",
+        "column_hqDMWY"
+      ],
+      "settings": {
+        "title": "",
+        "heading_align": "text-center",
+        "button_label": "",
+        "button_link": "",
+        "layout": "grid",
+        "column_size": "large",
+        "column_align": "center",
+        "image_ratio": "1",
+        "color_scheme": "1",
+        "button_style": "btn btn--secondary"
+      }
+    },
+    "testimonials_BMBqHK": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_VEX6Hj": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>I recently purchased the Ottoman Box, and I must say, it's a game-changer for my bedroom organization. The quality is superb, and it adds a touch of elegance to the room. Highly recommend!</p>",
+            "author": "Alexandra N.",
+            "author_info": "",
+            "show_star_rating": true,
+            "star_rating": 5
+          }
+        },
+        "testimonial_UEQiWp": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>My Footstool from this store exceeded my expectations. It's not just a footrest; it's a statement piece. The cushioning is plush, and the design is sleek. Very satisfied with my purchase!</p>",
+            "author": "Liam G.",
+            "author_info": "",
+            "show_star_rating": true,
+            "star_rating": 5
+          }
+        },
+        "testimonial_HKYFQP": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>The Ottoman Box I received is not only functional but also beautifully crafted. It's spacious enough to store extra blankets and pillows, yet stylish enough to double as a seating option when needed. Couldn't be happier with my purchase.</p>",
+            "author": "Daniel H.",
+            "author_info": "",
+            "show_star_rating": true,
+            "star_rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_VEX6Hj",
+        "testimonial_UEQiWp",
+        "testimonial_HKYFQP"
+      ],
+      "custom_css": [
+        ".section__header h2 {color: #fff; font-size: 28px;}"
+      ],
+      "settings": {
+        "heading": "Customer Reviews",
+        "show_quotes": true,
+        "testimonial_size": "h5",
+        "text_position": "justify-center",
+        "text_align": "text-center justify-center",
+        "nav_style": "slideshow_nav_lines",
+        "transition": "slide-fade",
+        "autoplay": false,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "2",
+        "full_width": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "YOU MAY ALSO LIKE",
+        "heading_align": "text-center",
+        "layout": "carousel",
+        "card_size_mobile": "small",
+        "card_size": "small",
+        "products_to_show": 8
+      }
+    },
+    "faq_fkhDtR": {
+      "type": "faq",
+      "blocks": {
+        "question_8pi4YA": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "What materials are used in your accessories?",
+            "text": "<p>Our accessories are crafted from high-quality materials such as durable fabrics, genuine leather, and sturdy wood frames to ensure longevity and comfort.</p>"
+          }
+        },
+        "question_cNbFNa": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Can I purchase accessories separately or as part of a bedroom set?",
+            "text": "<p>You have the flexibility to purchase accessories individually to mix and match according to your preference, or as part of a coordinated bedroom set for a cohesive look.</p>"
+          }
+        },
+        "question_rzLeQ3": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "heading": "Are the accessories delivered fully assembled?",
+            "text": "<p>The assembly requirements vary depending on the product. While some accessories may arrive fully assembled, others may require minor assembly. Detailed assembly instructions are provided with each purchase for your convenience.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_8pi4YA",
+        "question_cNbFNa",
+        "question_rzLeQ3"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "heading_align": "text-center",
+        "color_scheme": "1",
+        "full_width": true
+      }
+    },
+    "slideshow_9i3XJC": {
+      "type": "slideshow",
+      "settings": {
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "mobile_stacked": false,
+        "nav_style": "slideshow_nav_lines",
+        "pagination_color": "#ffffff",
+        "nav_position": "justify-center",
+        "transition": "slide-fade",
+        "autoplay": true,
+        "slider_pause": false,
+        "autoplay_speed": 5,
+        "color_scheme": "white",
+        "full_width": true,
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "accessibility_info": "",
+        "prevent_animation": true
+      }
+    },
+    "logo_list_xKnjiw": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_nDxPiL": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/dividebuy-logo-full-colour-rgb.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_pqzt6G": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Klarna_Payment_Badge_svg.webp",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_zGqQdq": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/CP_logo_badge_6328x2204_blackmint_png.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_AFfaQk": {
+          "type": "logo",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Logo_Grape-black.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_hG4FpN": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/shop.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_e9tcxe": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Google-Pay-logo.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_G4KtME": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/apple-pay-og-twitter.jpg",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        },
+        "logo_HcfUbA": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/paypal-credit-logo-524CC275C4-seeklogo.com.png",
+            "url": "",
+            "logo_width": 120,
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_nDxPiL",
+        "logo_pqzt6G",
+        "logo_zGqQdq",
+        "logo_AFfaQk",
+        "logo_hG4FpN",
+        "logo_e9tcxe",
+        "logo_G4KtME",
+        "logo_HcfUbA"
+      ],
+      "settings": {
+        "title": "",
+        "heading_align": "text-center",
+        "button_label": "",
+        "button_link": "",
+        "layout": "grid",
+        "spacing": 40,
+        "logo_grid_align": "justify-center",
+        "color_scheme": "none",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_7haiMG",
+    "details",
+    "slideshow_QhUtrD",
+    "slideshow_3xGt3p",
+    "slideshow_z4dcA8",
+    "rich_text_AGkJeQ",
+    "media_with_text_CFa3Yf",
+    "media_with_text_E3RYih",
+    "slideshow_X4kMk3",
+    "media_with_text_xBRXRJ",
+    "media_with_text_RriDC7",
+    "slideshow_pn7pW8",
+    "multi_column_dPjVXz",
+    "testimonials_BMBqHK",
+    "recommendations",
+    "faq_fkhDtR",
+    "slideshow_9i3XJC",
+    "logo_list_xKnjiw"
+  ]
+}
