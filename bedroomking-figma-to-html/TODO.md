@@ -3,6 +3,7 @@
 ## 1.  Figma to HTML Phase (Current)
 - [ ] **Complete Static Pages:**
   - [x] Homepage (`index.html`) - *Base layout complete*
+    - [ ] Separate sections into different components
     - [ ] Refine product cards to perfectly match Figma (Add to Cart buttons, Klarna/Clearpay tags)
   - [ ] Collection / Category Page
   - [ ] Product Details Page (PDP)
