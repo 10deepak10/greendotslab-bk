@@ -213,31 +213,51 @@
 </header>
 
 <!-- ============================================================
-     SECTION: HERO BANNER
+     SECTION: FEATURED BLOGS
      ============================================================ -->
-<section class="hero-bg relative h-[350px] md:h-[480px] lg:h-[575px] flex pt-[60px] md:pt-[100px]">
-    <!-- Dark overlay — full width on mobile, partial on desktop -->
-    <div class="absolute left-0 top-0 h-full w-full md:w-2/3 lg:w-[827px] bg-brand-dark/70 z-0"></div>
+<section class="max-w-7xl mx-auto px-4 py-12">
 
-    <!-- Content -->
-    <div class="relative z-10 px-4 md:px-16 lg:px-[100px] max-w-2xl">
-      <h1 class="text-[28px] md:text-[40px] lg:text-[60px] font-extrabold leading-[1.05] mb-3 md:mb-5 tracking-tight uppercase font-serif text-white">
-        MASTERPIECES<br/>CRAFTED FROM<br/>SOLID WOOD
-      </h1>
-      <p class="text-white/80 text-sm md:text-base mb-5 md:mb-7 w-full md:max-w-lg lg:max-w-[600px] leading-relaxed font-urbanist">
-        Our company is happy to take up production of custom-made wooden furniture according to individual sizes.
-      </p>
-      <a
-        href="#"
-        class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-primary transition-colors duration-200 text-white px-5 md:px-6 py-2 md:py-3 text-xs font-bold uppercase rounded-full"
-      >
-        EXPLORE
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-        </svg>
-      </a>
-    </div>
-  </section>
+  <!-- Section header -->
+  <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-6">Featured Blogs</h2>
+
+  <!-- Blog cards grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Blog 1 -->
+    <article class="rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition">
+      <div class="aspect-video overflow-hidden bg-gray-100">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Designed for Lasting Comfort" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+      </div>
+      <div class="p-4">
+        <h3 class="font-bold text-gray-900 mb-2">Designed for Lasting Comfort</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Your home should feel as good as it looks. Our furniture is ergonomically crafted to provide maximum comfort, whether you're working, relaxing, or resting.</p>
+      </div>
+    </article>
+
+    <!-- Blog 2 -->
+    <article class="rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition">
+      <div class="aspect-video overflow-hidden bg-gray-100">
+        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80" alt="Crafted Timeless Materials" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+      </div>
+      <div class="p-4">
+        <h3 class="font-bold text-gray-900 mb-2">Crafted Timeless Materials</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">We only use high quality, sustainably sourced materials—solid oak, teak linen, and premium materials—ensuring durability and elegance that stand the test of time.</p>
+      </div>
+    </article>
+
+    <!-- Blog 3 -->
+    <article class="rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition">
+      <div class="aspect-video overflow-hidden bg-gray-100">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Effortless Assembly Design" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+      </div>
+      <div class="p-4">
+        <h3 class="font-bold text-gray-900 mb-2">Effortless Assembly Design</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">No stress, no tools. Our furniture is designed with intuitive assembly in mind so you can set up your space quickly and enjoy it for years to come.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
 
 
 <footer class="bg-brand-green-dark text-white pt-12 pb-6">

@@ -7,7 +7,8 @@
   "scripts": {
     "build:css": "pnpm exec postcss src/input.css -o dist/styles.css",
     "watch:css": "pnpm exec postcss src/input.css -o dist/styles.css --watch",
-    "build": "pnpm build:css"
+    "build": "pnpm build:css",
+    "split-sections": "node scripts/split-sections.js"
   },
   "keywords": [],
   "author": "",
