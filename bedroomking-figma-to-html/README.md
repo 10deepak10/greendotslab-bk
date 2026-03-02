@@ -48,3 +48,9 @@ To do a one-time build of the CSS without watching for changes, run:
 ```bash
 pnpm run build
 ```
+
+5. **command fro split**
+To do a one-time split:
+```bash
+pnpm run split-sections
+```

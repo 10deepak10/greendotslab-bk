@@ -14,18 +14,31 @@ const headerStartMatch = content.match(/<!-- Announcement Bar -->|<header/);
 const headerEndMatch = content.match(/<\/header>/);
 const header = content.substring(headerStartMatch.index, headerEndMatch.index + 9);
 
-// 3. Mobile Menu + Scripts (from end of file)
-const mobileMenuMatch = content.match(/<!-- Mobile Menu Overlay -->[\s\S]*?<\/aside>/);
-const scriptsMatch = content.match(/<script>[\s\S]*?<\/script>[\s\S]*?<\/body>[\s\S]*?<\/html>/);
-
+// 3. Global Scripts & Footer
 const footerMatch = content.match(/<footer[\s\S]*?<\/footer>/);
 const footer = footerMatch ? footerMatch[0] : '';
 
-const mobileMenu = mobileMenuMatch ? mobileMenuMatch[0] : '';
-const scripts = scriptsMatch ? scriptsMatch[0] : '</body></html>';
+const globalScriptsMatch = content.match(
+  /<!-- GLOBAL SCRIPTS START -->([\s\S]*?)<!-- GLOBAL SCRIPTS END -->/,
+);
+const globalScriptsRaw = globalScriptsMatch ? globalScriptsMatch[1].trim() : "";
+// Remove <script> tags for the external file
+const globalScripts = globalScriptsRaw
+  .replace(/<script>|<\/script>/g, "")
+  .trim();
+
+// Ensure dist directory exists and write global.js
+if (!fs.existsSync("dist")) fs.mkdirSync("dist");
+fs.writeFileSync("dist/global.js", globalScripts);
+console.log("Generated: dist/global.js");
+
+const mobileMenuMatch = content.match(
+  /<!-- Mobile Menu Overlay -->[\s\S]*?<\/aside>/,
+);
+const mobileMenu = mobileMenuMatch ? mobileMenuMatch[0] : "";
 
 const boilerplateStart = `${head}\n<body class="bg-white text-gray-800 overflow-x-hidden">\n${header}`;
-const boilerplateEnd = `\n${footer}\n${mobileMenu}\n${scripts}`;
+const boilerplateEnd = `\n${footer}\n${mobileMenu}\n<script src="dist/global.js"></script>\n</body>\n</html>`;
 
 // --- Define Sections to Extract ---
 // Using stricter regex to avoid matching across multiple section blocks
