@@ -1,7 +1,0 @@
-{
-  "name": "section-trending",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "postcss trending-input.css -o trending.css"
-  }
-}

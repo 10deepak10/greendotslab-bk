@@ -1,7 +1,0 @@
-{
-  "name": "section-childrens",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "postcss childrens-input.css -o childrens.css"
-  }
-}

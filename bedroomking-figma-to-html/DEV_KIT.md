@@ -47,19 +47,17 @@ const sectionDefinitions = [
 
 From the root directory, run:
 ```bash
-node scripts/prepare-demo.js
+pnpm run build:demo-css
 ```
 This will:
 - Create `demo/sections/my-new-section/`.
-- Extract the HTML and generate an initial CSS file.
-- Generate a `package.json` for the section.
-- Update `demo/index.html` with a placeholder link.
+- Extract the HTML snippet.
+- **Regenerate the unified `demo/main.css`** by scanning all sections.
 
 ## Step 4: Build and Verify
 
-Ensure all CSS is properly optimized and the demo is updated:
+Ensure the demo server is running:
 ```bash
-pnpm run build:demo-css
 pnpm run serve:demo
 ```
 Access [http://localhost:3001](http://localhost:3001) to verify layout and styles.
@@ -68,7 +66,7 @@ Access [http://localhost:3001](http://localhost:3001) to verify layout and style
 
 ### CSS not appearing?
 - Check that the classes used in the HTML match those in `src/input.css`.
-- Ensure the `@source` directive in the generated `[section]-input.css` points correctly to the extracted HTML.
+- The build script `@source "./sections/**/*.html"` must include your new file.
 
 ### Section overlapping?
 - Verify your `start` and `end` regex markers don't overlap with other sections in a way that captures more than intended.

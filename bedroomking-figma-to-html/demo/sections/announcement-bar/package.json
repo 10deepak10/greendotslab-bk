@@ -1,7 +1,0 @@
-{
-  "name": "section-announcement-bar",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "postcss announcement-bar-input.css -o announcement-bar.css"
-  }
-}
