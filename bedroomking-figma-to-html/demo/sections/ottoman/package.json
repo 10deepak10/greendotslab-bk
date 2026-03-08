@@ -1,0 +1,7 @@
+{
+  "name": "section-ottoman",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss ottoman-input.css -o ottoman.css"
+  }
+}

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@source "./trending.html";
+@theme {
+  --color-brand-primary: #001C19;
+  --color-brand-green: #0F3F3A;
+  --color-brand-light-green: #0F3F3A1A;
+  --color-brand-gold: #BF923D;
+  --color-brand-dark: #212121;
+  --color-brand-cream: #F9F7F2;
+  --color-brand-green-dark: #0A2F2B;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+  --font-serif: 'Inria Serif', serif;
+  --font-urbanist: 'Urbanist', sans-serif;
+}

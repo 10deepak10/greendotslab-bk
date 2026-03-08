@@ -1,0 +1,7 @@
+{
+  "name": "section-luxury",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss luxury-input.css -o luxury.css"
+  }
+}

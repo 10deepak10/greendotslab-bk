@@ -1,0 +1,7 @@
+{
+  "name": "section-payment",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss payment-input.css -o payment.css"
+  }
+}

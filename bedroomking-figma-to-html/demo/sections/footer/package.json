@@ -1,0 +1,7 @@
+{
+  "name": "section-footer",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss footer-input.css -o footer.css"
+  }
+}

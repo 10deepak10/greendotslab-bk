@@ -1,0 +1,7 @@
+{
+  "name": "section-value-props",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss value-props-input.css -o value-props.css"
+  }
+}

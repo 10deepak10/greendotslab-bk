@@ -1,0 +1,7 @@
+{
+  "name": "section-header",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss header-input.css -o header.css"
+  }
+}

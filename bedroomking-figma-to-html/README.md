@@ -22,9 +22,16 @@ npm install -g pnpm
 
 2. **Start the CSS Compiler (Watch Mode)**
    To compile Tailwind CSS and watch for changes in `src/input.css`, run:
-   ```bash
-   pnpm run watch:css
-   ```
+ ## Local Development
+
+- `pnpm run watch:css`: Watch and build main CSS.
+- `pnpm run build:demo-css`: Build all extracted section CSS.
+- `pnpm run serve:demo`: Serve the modular demo at port 3001.
+
+---
+
+### [Developer Kit: Adding New Sections](./DEV_KIT.md)
+Check out the developer kit for instructions on how to isolate and add new sections to the demo environment.
    *This will continuously output the compiled CSS to `dist/styles.css`.*
 
 3. **Serve the HTML files**

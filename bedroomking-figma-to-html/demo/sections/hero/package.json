@@ -1,0 +1,7 @@
+{
+  "name": "section-hero",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss hero-input.css -o hero.css"
+  }
+}

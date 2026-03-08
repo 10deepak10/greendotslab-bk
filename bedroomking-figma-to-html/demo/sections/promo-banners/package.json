@@ -1,0 +1,7 @@
+{
+  "name": "section-promo-banners",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss promo-banners-input.css -o promo-banners.css"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "section-mobile-menu",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss mobile-menu-input.css -o mobile-menu.css"
+  }
+}

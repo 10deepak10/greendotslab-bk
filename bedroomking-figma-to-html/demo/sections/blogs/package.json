@@ -1,0 +1,7 @@
+{
+  "name": "section-blogs",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "postcss blogs-input.css -o blogs.css"
+  }
+}
