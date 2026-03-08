@@ -53,14 +53,11 @@
 <!-- SECTION: footer -->
 <div data-include="sections/footer/footer.html"></div>
 
-<!-- GLOBAL SCRIPTS -->
-<script src="../dist/global.js"></script>
-
 <!-- SECTION LOADER -->
 <script>
   async function loadSections() {
     const includes = document.querySelectorAll('[data-include]');
-    for (const el of includes) {
+    const promises = Array.from(includes).map(async (el) => {
       const url = el.getAttribute('data-include');
       try {
         const response = await fetch(url);
@@ -72,7 +69,15 @@
       } catch (err) {
         el.innerHTML = 'Fetch error: ' + err.message;
       }
-    }
+    });
+
+    await Promise.all(promises);
+    
+    // Once all sections are loaded, load the global JS
+    console.log('All sections loaded. Initializing global JS...');
+    const script = document.createElement('script');
+    script.src = 'global.js';
+    document.body.appendChild(script);
   }
   loadSections();
 </script>

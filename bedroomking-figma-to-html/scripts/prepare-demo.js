@@ -7,6 +7,14 @@ const demoDir = 'demo';
 const sectionsDir = path.join(demoDir, 'sections');
 const content = fs.readFileSync(inputFile, 'utf8');
 
+// Extract internal styles from <style> block
+const styleMatch = content.match(/<style>([\s\S]*?)<\/style>/);
+const internalStyles = styleMatch ? styleMatch[1].trim() : '';
+
+// Extract global scripts from <!-- GLOBAL SCRIPTS START -->
+const scriptMatch = content.match(/<!-- GLOBAL SCRIPTS START -->[\s\S]*?<script>([\s\S]*?)<\/script>[\s\S]*?<!-- GLOBAL SCRIPTS END -->/);
+const globalScripts = scriptMatch ? scriptMatch[1].trim() : '';
+
 // Ensure directories exist
 if (!fs.existsSync(demoDir)) fs.mkdirSync(demoDir);
 if (!fs.existsSync(sectionsDir)) fs.mkdirSync(sectionsDir);
@@ -86,6 +94,9 @@ const mainCssOutputPath = path.join(demoDir, 'main.css');
 const mainCssInput = `@import "tailwindcss";
 @source "./sections/**/*.html";
 ${themeBlock}
+
+/* Internal Styles from index.html */
+${internalStyles}
 `;
 fs.writeFileSync(mainCssInputPath, mainCssInput);
 
@@ -100,15 +111,14 @@ try {
   console.error("Error building unified CSS:", error.message);
 }
 
-masterHtml += `
-<!-- GLOBAL SCRIPTS -->
-<script src="../dist/global.js"></script>
+fs.writeFileSync(path.join(demoDir, "global.js"), globalScripts);
 
+masterHtml += `
 <!-- SECTION LOADER -->
 <script>
   async function loadSections() {
     const includes = document.querySelectorAll('[data-include]');
-    for (const el of includes) {
+    const promises = Array.from(includes).map(async (el) => {
       const url = el.getAttribute('data-include');
       try {
         const response = await fetch(url);
@@ -120,7 +130,15 @@ masterHtml += `
       } catch (err) {
         el.innerHTML = 'Fetch error: ' + err.message;
       }
-    }
+    });
+
+    await Promise.all(promises);
+    
+    // Once all sections are loaded, load the global JS
+    console.log('All sections loaded. Initializing global JS...');
+    const script = document.createElement('script');
+    script.src = 'global.js';
+    document.body.appendChild(script);
   }
   loadSections();
 </script>
