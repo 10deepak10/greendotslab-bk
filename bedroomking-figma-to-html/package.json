@@ -2,15 +2,11 @@
   "name": "bedroomking-new",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build:css": "pnpm exec postcss src/input.css -o dist/styles.css",
-    "watch:css": "postcss src/input.css -o dist/style.css --watch",
-    "build:demo-css": "node scripts/prepare-demo.js",
-    "serve:demo": "npx serve demo -l 3001",
-    "build": "pnpm build:css",
-    "split-sections": "node scripts/split-sections.js"
+    "build:css": "postcss src/input.css -o demo/main.css",
+    "watch:css": "postcss src/input.css -o demo/main.css --watch",
+    "serve:demo": "npx serve demo -l 3001"
   },
   "keywords": [],
   "author": "",

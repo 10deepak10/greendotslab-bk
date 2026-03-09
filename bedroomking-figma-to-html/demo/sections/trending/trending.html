@@ -18,7 +18,8 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
 
     <!-- Product 1 -->
-    <article class="product-card bg-white rounded-[20px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[1.5px] border-transparent flex flex-col group">
+    <article
+      class="product-card bg-white rounded-[20px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[1.5px] border-transparent hover:border-brand-green flex flex-col group transition-colors duration-300">
       <div class="bg-brand-green text-white text-center text-[12px] py-1.5 font-medium tracking-wide">New year sale</div>
       
       <div class="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
@@ -33,7 +34,7 @@
             30+ Color
           </span>
           <span class="bg-white/95 text-gray-800 text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-            <svg class="w-3.5 h-3.5 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 12v6m18-6v6M5 12V8a2 2 0 012-2h10a2 2 0 012 2v4M6 18v2m12-2v2M8 15h8"/></svg>
+            <img src="/assets/icons/bed.svg" alt="" width="1.5" class="w-3.5 h-3.5 text-brand-green">
             Storage available
           </span>
         </div>
@@ -48,30 +49,38 @@
         
         <div class="flex items-center gap-1.5 mb-3.5">
           <div class="flex text-brand-green">
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
           </div>
           <span class="text-[12px] text-gray-500">3.4/5 (520 Reviews)</span>
         </div>
 
         <ul class="space-y-1.5 mb-4 flex-1">
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             24" Luxury Side Rails
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Headboard attaches to bed sides not wall
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Mattress sits at 55cm
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Headboard in image is 95" high
           </li>
         </ul>
@@ -89,7 +98,8 @@
     </article>
 
     <!-- Product 2 -->
-    <article class="product-card bg-white rounded-[20px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[1.5px] border-transparent flex flex-col group">
+    <article
+      class="product-card bg-white rounded-[20px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[1.5px] border-transparent hover:border-brand-green flex flex-col group transition-colors duration-300">
       <div class="bg-brand-green text-white text-center text-[12px] py-1.5 font-medium tracking-wide">New year sale</div>
       
       <div class="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
@@ -104,7 +114,7 @@
             30+ Color
           </span>
           <span class="bg-white/95 text-gray-800 text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-            <svg class="w-3.5 h-3.5 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 12v6m18-6v6M5 12V8a2 2 0 012-2h10a2 2 0 012 2v4M6 18v2m12-2v2M8 15h8"/></svg>
+            <img src="/assets/icons/bed.svg" alt="" width="1.5" class="w-3.5 h-3.5 text-brand-green">
             Storage available
           </span>
         </div>
@@ -120,30 +130,38 @@
         
         <div class="flex items-center gap-1.5 mb-3.5">
           <div class="flex text-brand-green">
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
           </div>
           <span class="text-[12px] text-gray-500">3.4/5 (520 Reviews)</span>
         </div>
 
         <ul class="space-y-1.5 mb-4 flex-1">
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             24" Luxury Side Rails
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Headboard attaches to bed sides not wall
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Mattress sits at 55cm
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Headboard in image is 95" high
           </li>
         </ul>
@@ -161,7 +179,8 @@
     </article>
 
     <!-- Product 3 -->
-    <article class="product-card bg-white rounded-[20px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[1.5px] border-transparent flex flex-col group">
+    <article
+      class="product-card bg-white rounded-[20px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[1.5px] border-transparent hover:border-brand-green flex flex-col group transition-colors duration-300">
       <div class="bg-brand-green text-white text-center text-[12px] py-1.5 font-medium tracking-wide">New year sale</div>
       
       <div class="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
@@ -176,7 +195,7 @@
             30+ Color
           </span>
           <span class="bg-white/95 text-gray-800 text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-            <svg class="w-3.5 h-3.5 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 12v6m18-6v6M5 12V8a2 2 0 012-2h10a2 2 0 012 2v4M6 18v2m12-2v2M8 15h8"/></svg>
+            <img src="/assets/icons/bed.svg" alt="" width="1.5" class="w-3.5 h-3.5 text-brand-green">
             Storage available
           </span>
         </div>
@@ -192,30 +211,38 @@
         
         <div class="flex items-center gap-1.5 mb-3.5">
           <div class="flex text-brand-green">
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
           </div>
           <span class="text-[12px] text-gray-500">3.4/5 (520 Reviews)</span>
         </div>
 
         <ul class="space-y-1.5 mb-4 flex-1">
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             24" Luxury Side Rails
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Headboard attaches to bed sides not wall
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Mattress sits at 55cm
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Headboard in image is 95" high
           </li>
         </ul>
@@ -233,7 +260,8 @@
     </article>
 
     <!-- Product 4 -->
-    <article class="product-card bg-white rounded-[20px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[1.5px] border-transparent flex flex-col group">
+    <article
+      class="product-card bg-white rounded-[20px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-[1.5px] border-transparent hover:border-brand-green flex flex-col group transition-colors duration-300">
       <div class="bg-brand-green text-white text-center text-[12px] py-1.5 font-medium tracking-wide">New year sale</div>
       
       <div class="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
@@ -248,7 +276,7 @@
             30+ Color
           </span>
           <span class="bg-white/95 text-gray-800 text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-            <svg class="w-3.5 h-3.5 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 12v6m18-6v6M5 12V8a2 2 0 012-2h10a2 2 0 012 2v4M6 18v2m12-2v2M8 15h8"/></svg>
+            <img src="/assets/icons/bed.svg" alt="" width="1.5" class="w-3.5 h-3.5 text-brand-green">
             Storage available
           </span>
         </div>
@@ -263,30 +291,38 @@
         
         <div class="flex items-center gap-1.5 mb-3.5">
           <div class="flex text-brand-green">
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M13.3994 6.13672L20 7.63965L15.5 12.9346L16.1807 20L10 17.1367L3.81934 20L4.5 12.9346L0 7.63965L6.60059 6.13672L10 0L13.3994 6.13672Z"/></svg>
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+            <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
           </div>
           <span class="text-[12px] text-gray-500">3.4/5 (520 Reviews)</span>
         </div>
 
         <ul class="space-y-1.5 mb-4 flex-1">
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             24" Luxury Side Rails
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Headboard attaches to bed sides not wall
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Mattress sits at 55cm
           </li>
           <li class="flex items-start gap-2 text-[12px] text-gray-700 leading-tight">
-            <span class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span
+              class="mt-0.5 bg-[#f0f3f3] text-brand-green rounded-full w-3.5 h-3.5 flex items-center justify-center shrink-0"><img
+                src="/assets/icons/check.svg" alt="" width="3" class="w-2.5 h-2.5"></span>
             Headboard in image is 95" high
           </li>
         </ul>

@@ -61,13 +61,12 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-urbanist: 'Urbanist', sans-serif;
     --color-brand-primary: #001C19;
     --color-brand-green: #0F3F3A;
     --color-brand-light-green: #0F3F3A1A;
     --color-brand-dark: #212121;
     --color-brand-green-dark: #0A2F2B;
-    --font-display: 'Playfair Display', serif;
-    --font-urbanist: 'Urbanist', sans-serif;
   }
 }
 @layer base {
@@ -379,6 +378,9 @@
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -463,9 +465,6 @@
   .grow {
     flex-grow: 1;
   }
-  .transform {
-    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -492,9 +491,6 @@
   }
   .justify-center {
     justify-content: center;
-  }
-  .gap-0\.5 {
-    gap: calc(var(--spacing) * 0.5);
   }
   .gap-1 {
     gap: calc(var(--spacing) * 1);
@@ -570,9 +566,6 @@
   .rounded {
     border-radius: 0.25rem;
   }
-  .rounded-\[4px\] {
-    border-radius: 4px;
-  }
   .rounded-\[6px\] {
     border-radius: 6px;
   }
@@ -614,9 +607,6 @@
     --tw-border-style: dashed;
     border-style: dashed;
   }
-  .border-black {
-    border-color: var(--color-black);
-  }
   .border-brand-green {
     border-color: var(--color-brand-green);
   }
@@ -647,17 +637,11 @@
       border-color: color-mix(in oklab, var(--color-white) 20%, transparent);
     }
   }
-  .bg-\[\#5A31F4\] {
-    background-color: #5A31F4;
-  }
   .bg-\[\#8C8F70\] {
     background-color: #8C8F70;
   }
   .bg-\[\#113A49\] {
     background-color: #113A49;
-  }
-  .bg-\[\#B2FCE4\] {
-    background-color: #B2FCE4;
   }
   .bg-\[\#CAEFD7\] {
     background-color: #CAEFD7;
@@ -742,6 +726,10 @@
   }
   .fill-current {
     fill: currentcolor;
+  }
+  .object-contain {
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .object-cover {
     -o-object-fit: cover;
@@ -854,9 +842,6 @@
   }
   .text-center {
     text-align: center;
-  }
-  .font-display {
-    font-family: var(--font-display);
   }
   .font-serif {
     font-family: var(--font-serif);
@@ -998,23 +983,8 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
-  .text-\[\#00AEEF\] {
-    color: #00AEEF;
-  }
   .text-\[\#001D11\] {
     color: #001D11;
-  }
-  .text-\[\#003B5C\] {
-    color: #003B5C;
-  }
-  .text-\[\#5A31F4\] {
-    color: #5A31F4;
-  }
-  .text-\[\#009CDE\] {
-    color: #009CDE;
-  }
-  .text-\[\#003087\] {
-    color: #003087;
   }
   .text-brand-green {
     color: var(--color-brand-green);
@@ -1091,9 +1061,6 @@
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .filter {
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
@@ -1557,123 +1524,6 @@
     }
   }
 }
-body {
-  font-family: 'Lato', sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -webkit-overflow-scrolling: touch;
-}
-.font-display {
-  font-family: 'Playfair Display', serif;
-}
-.font-serif {
-  font-family: 'Inria Serif', serif;
-}
-.font-urbanist {
-  font-family: 'Urbanist', sans-serif;
-}
-.promo-bar {
-  background: brand-primary;
-}
-.hero-bg {
-  background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80');
-  background-size: cover;
-  background-position: center;
-}
-@media (min-width: 768px) {
-  .hero-bg {
-    background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1600&q=80');
-  }
-}
-.product-card {
-  border: 1.5px solid transparent;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-.product-card:hover {
-  border-color: var(--color-brand-green) !important;
-  box-shadow: 0 8px 30px rgba(15, 63, 58, 0.15);
-  transform: translateY(-2px);
-}
-.see-details-btn {
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-.product-card:hover .see-details-btn {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (max-width: 768px) {
-  .see-details-btn {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-}
-.badge-sale {
-  background: brand-green;
-  color: #fff;
-}
-.badge-new {
-  background: brand-green;
-  color: #fff;
-}
-.badge-urgent {
-  background: brand-primary;
-  color: #fff;
-}
-.stars {
-  color: brand-gold;
-}
-.pay-logo {
-  filter: grayscale(40%);
-}
-.nav-scroll::-webkit-scrollbar {
-  display: none;
-}
-.nav-scroll {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.mobile-menu {
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-}
-.mobile-menu.active {
-  transform: translateX(0);
-}
-.mobile-menu-overlay {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.mobile-menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-@supports (padding-top: env(safe-area-inset-top)) {
-  .safe-area-top {
-    padding-top: env(safe-area-inset-top);
-  }
-}
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-space-y-reverse {
   syntax: "*";
   inherits: false;
@@ -1771,59 +1621,6 @@ body {
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-blur {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-brightness {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-contrast {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-grayscale {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-hue-rotate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-invert {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-opacity {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-saturate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-sepia {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-drop-shadow-size {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -1866,11 +1663,6 @@ body {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-rotate-x: initial;
-      --tw-rotate-y: initial;
-      --tw-rotate-z: initial;
-      --tw-skew-x: initial;
-      --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
       --tw-divide-y-reverse: 0;
@@ -1892,19 +1684,6 @@ body {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-blur: initial;
-      --tw-brightness: initial;
-      --tw-contrast: initial;
-      --tw-grayscale: initial;
-      --tw-hue-rotate: initial;
-      --tw-invert: initial;
-      --tw-opacity: initial;
-      --tw-saturate: initial;
-      --tw-sepia: initial;
-      --tw-drop-shadow: initial;
-      --tw-drop-shadow-color: initial;
-      --tw-drop-shadow-alpha: 100%;
-      --tw-drop-shadow-size: initial;
       --tw-duration: initial;
       --tw-scale-x: 1;
       --tw-scale-y: 1;
