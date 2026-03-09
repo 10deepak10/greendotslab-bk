@@ -291,6 +291,9 @@
   .z-50 {
     z-index: 50;
   }
+  .z-\[1\] {
+    z-index: 1;
+  }
   .mx-4 {
     margin-inline: calc(var(--spacing) * 4);
   }
