@@ -1,12 +1,15 @@
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu-overlay" class="mobile-menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+<div id="mobile-menu-overlay"
+  class="fixed inset-0 bg-black/50 z-40 md:hidden opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out">
+</div>
 
 <!-- Mobile Menu Drawer -->
-<aside id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-[280px] bg-white z-50 md:hidden shadow-xl">
+<aside id="mobile-menu"
+  class="fixed top-0 right-0 h-full w-[280px] bg-white z-50 md:hidden shadow-xl translate-x-full transition-transform duration-300 ease-in-out">
   <div class="flex items-center justify-between p-4 border-b border-gray-200">
     <span class="font-serif text-lg font-medium text-brand-green">Menu</span>
     <button id="mobile-menu-close" class="p-2 text-gray-600 hover:text-brand-green transition">
-      <img src="/assets/icons/mobile-menu-mobile-menu.svg" alt="" width="24" height="24">
+      <img src="/assets/icons/close.svg" alt="Close Menu" width="24" height="24">
     </button>
   </div>
   <nav class="font-serif">
@@ -14,7 +17,7 @@
       <li>
         <a href="#" class="flex items-center justify-between px-4 py-3 text-brand-green border-b border-gray-100 transition">
           Bed Frames
-          <img src="/assets/icons/mobile-menu-mobile-menu-2.svg" alt="" width="2" class="w-4 h-4">
+          <img src="/assets/icons/chevron-right.svg" alt="" width="2" class="w-4 h-4">
         </a>
       </li>
       <li><a href="#" class="block px-4 py-3 text-brand-green border-b border-gray-100 transition">Divan Beds</a></li>

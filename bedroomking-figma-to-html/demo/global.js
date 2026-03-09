@@ -5,14 +5,22 @@
   const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 
   function openMobileMenu() {
-    mobileMenu.classList.add('active');
-    mobileMenuOverlay.classList.add('active');
+    mobileMenu.classList.remove("translate-x-full");
+    mobileMenu.classList.add("translate-x-0");
+
+    mobileMenuOverlay.classList.remove("opacity-0", "pointer-events-none");
+    mobileMenuOverlay.classList.add("opacity-100", "pointer-events-auto");
+    
     document.body.style.overflow = 'hidden';
   }
 
   function closeMobileMenu() {
-    mobileMenu.classList.remove('active');
-    mobileMenuOverlay.classList.remove('active');
+    mobileMenu.classList.remove("translate-x-0");
+    mobileMenu.classList.add("translate-x-full");
+
+    mobileMenuOverlay.classList.remove("opacity-100", "pointer-events-auto");
+    mobileMenuOverlay.classList.add("opacity-0", "pointer-events-none");
+    
     document.body.style.overflow = '';
   }
 
