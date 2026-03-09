@@ -12,3 +12,9 @@
   --color-brand-dark: #212121;
   --color-brand-green-dark: #0A2F2B;
 }
+
+@layer base {
+  a, button, [role="button"], input[type="button"], input[type="submit"], input[type="reset"], label, select, .product-card {
+    cursor: pointer;
+  }
+}

@@ -75,11 +75,12 @@ function hideActiveSearchDropdown() {
   window.activeSearchDropdown = null;
 }
 
-function setupSearchDropdown(inputId, dropdownId, containerId, clearId) {
+function setupSearchDropdown(inputId, dropdownId, containerId, clearId, micId) {
   const input = document.getElementById(inputId);
   const dropdown = document.getElementById(dropdownId);
   const container = document.getElementById(containerId);
   const clearBtn = document.getElementById(clearId);
+  const micBtn = document.getElementById(micId);
 
   if (!input || !dropdown || !container) return;
 
@@ -123,6 +124,49 @@ function setupSearchDropdown(inputId, dropdownId, containerId, clearId) {
     input.focus();
     hideActiveSearchDropdown();
   });
+
+  // Voice Search Logic (Web Speech API)
+  if (micBtn) {
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = "en-US";
+
+      micBtn.addEventListener("click", () => {
+        micBtn.classList.add("text-brand-green", "animate-pulse");
+        const img = micBtn.querySelector("img");
+        if (img) img.src = "/assets/icons/mic-active.svg";
+        recognition.start();
+      });
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        input.value = transcript;
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+      };
+
+      recognition.onspeechend = () => {
+        recognition.stop();
+        micBtn.classList.remove("text-brand-green", "animate-pulse");
+        const img = micBtn.querySelector("img");
+        if (img) img.src = "/assets/icons/mic.svg";
+      };
+
+      recognition.onerror = (event) => {
+        console.error("Speech recognition error:", event.error);
+        micBtn.classList.remove("text-brand-green", "animate-pulse");
+        const img = micBtn.querySelector("img");
+        if (img) img.src = "/assets/icons/mic.svg";
+      };
+    } else {
+      micBtn.style.display = "none";
+      console.warn("Speech Recognition API is not supported in this browser.");
+    }
+  }
 }
 
 setupSearchDropdown(
@@ -130,12 +174,14 @@ setupSearchDropdown(
   "desktop-search-dropdown",
   "desktop-search-container",
   "desktop-search-clear",
+  "desktop-search-mic",
 );
 setupSearchDropdown(
   "mobile-search-input",
   "mobile-search-dropdown",
   "mobile-search-container",
   "mobile-search-clear",
+  "mobile-search-mic",
 );
 
 // Close search dropdown when clicking outside the content
