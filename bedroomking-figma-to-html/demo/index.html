@@ -55,31 +55,39 @@
 
 <!-- SECTION LOADER -->
 <script>
-  async function loadSections() {
-    const includes = document.querySelectorAll('[data-include]');
+    async function loadSections(container = document) {
+      const includes = container.querySelectorAll('[data-include]');
+      if (includes.length === 0) return;
+
     const promises = Array.from(includes).map(async (el) => {
       const url = el.getAttribute('data-include');
       try {
         const response = await fetch(url);
         if (response.ok) {
           el.innerHTML = await response.text();
+          // Recursively load any new includes inside the fetched content
+          await loadSections(el);
         } else {
           el.innerHTML = 'Error loading section: ' + url;
         }
       } catch (err) {
         el.innerHTML = 'Fetch error: ' + err.message;
       }
+
+      // Remove attribute so it's not processed again if called globally
+      el.removeAttribute('data-include');
     });
 
     await Promise.all(promises);
-    
-    // Once all sections are loaded, load the global JS
+  }
+
+    // Initial load
+    loadSections().then(() => {
     console.log('All sections loaded. Initializing global JS...');
     const script = document.createElement('script');
     script.src = 'global.js';
     document.body.appendChild(script);
-  }
-  loadSections();
+  });
 </script>
 </body>
 </html>

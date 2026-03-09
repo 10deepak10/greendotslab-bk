@@ -1,0 +1,155 @@
+<!-- Mega Menu Dropdown -->
+<!-- 
+  The "group-hover" classes applied alongside the absolute positioning ensure 
+  this full-width menu appears seamlessly when hovering over its parent `<li>` 
+  in `header.html`
+-->
+<div 
+  class="absolute top-full left-0 w-screen bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50 border-t border-gray-100 pb-12 pt-8"
+>
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="flex gap-8">
+      
+      <!-- Left Sidebar (Shop By Categories) -->
+      <div class="w-[280px] shrink-0">
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href="#" class="flex items-center justify-between p-4 bg-[#F8F9FA] hover:bg-gray-100 rounded-md transition text-[16px] font-bold text-gray-900">
+              Shop by Bed Type
+              <img src="/assets/icons/chevron-right.svg" alt="" width="2" class="w-3.5 h-3.5 opacity-50">
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center justify-between p-4 bg-transparent hover:bg-[#F8F9FA] rounded-md transition text-[16px] font-bold text-gray-900">
+              Shop by Bed Size
+              <img src="/assets/icons/chevron-right.svg" alt="" width="2" class="w-3.5 h-3.5 opacity-50">
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center justify-between p-4 bg-transparent hover:bg-[#F8F9FA] rounded-md transition text-[16px] font-bold text-gray-900 border-b border-gray-100 pb-6">
+              Shop by Colour
+              <img src="/assets/icons/chevron-right.svg" alt="" width="2" class="w-3.5 h-3.5 opacity-50">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right Content Area (Image Grid) -->
+      <div class="flex-1 grid grid-cols-4 gap-6">
+        
+        <!-- Category 1 -->
+        <a href="#" class="group/item flex flex-col gap-3">
+          <div class="w-full aspect-[4/3] bg-gray-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400&q=80" 
+              alt="View All Bed Frames" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
+            >
+          </div>
+          <p class="text-[14px] text-gray-800 transition group-hover/item:text-brand-green group-hover/item:underline underline-offset-4">
+            View All Bed Frames
+          </p>
+        </a>
+
+        <!-- Category 2 -->
+        <a href="#" class="group/item flex flex-col gap-3">
+          <div class="w-full aspect-[4/3] bg-gray-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&q=80" 
+              alt="Upholstered Fabric Bed Frames" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
+            >
+          </div>
+          <p class="text-[14px] text-gray-800 transition group-hover/item:text-brand-green group-hover/item:underline underline-offset-4">
+            Upholstered Fabric Bed Frames
+          </p>
+        </a>
+
+        <!-- Category 3 -->
+        <a href="#" class="group/item flex flex-col gap-3">
+          <div class="w-full aspect-[4/3] bg-gray-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1522771731535-6ac2c040dcc2?w=400&q=80" 
+              alt="Wingback Bed Frames" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
+            >
+          </div>
+          <p class="text-[14px] text-gray-800 transition group-hover/item:text-brand-green group-hover/item:underline underline-offset-4">
+            Wingback Bed Frames
+          </p>
+        </a>
+
+        <!-- Category 4 -->
+        <a href="#" class="group/item flex flex-col gap-3">
+          <div class="w-full aspect-[4/3] bg-gray-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=400&q=80" 
+              alt="Sleigh Bed Frames" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
+            >
+          </div>
+          <p class="text-[14px] text-gray-800 transition group-hover/item:text-brand-green group-hover/item:underline underline-offset-4">
+            Sleigh Bed Frames
+          </p>
+        </a>
+        
+        <!-- Category 5 -->
+        <a href="#" class="group/item flex flex-col gap-3">
+          <div class="w-full aspect-[4/3] bg-gray-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=400&q=80" 
+              alt="Deep Button Bed Frames" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
+            >
+          </div>
+          <p class="text-[14px] text-gray-800 transition group-hover/item:text-brand-green group-hover/item:underline underline-offset-4">
+            Deep Button Bed Frames
+          </p>
+        </a>
+
+        <!-- Category 6 -->
+        <a href="#" class="group/item flex flex-col gap-3">
+          <div class="w-full aspect-[4/3] bg-gray-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&q=80" 
+              alt="Chesterfield Bed Frames" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
+            >
+          </div>
+          <p class="text-[14px] text-gray-800 transition group-hover/item:text-brand-green group-hover/item:underline underline-offset-4">
+            Chesterfield Bed Frames
+          </p>
+        </a>
+
+        <!-- Category 7 -->
+        <a href="#" class="group/item flex flex-col gap-3">
+          <div class="w-full aspect-[4/3] bg-gray-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80" 
+              alt="Panel Bed Frames" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
+            >
+          </div>
+          <p class="text-[14px] text-gray-800 transition group-hover/item:text-brand-green group-hover/item:underline underline-offset-4">
+            Panel Bed Frames
+          </p>
+        </a>
+
+        <!-- Category 8 -->
+        <a href="#" class="group/item flex flex-col gap-3">
+          <div class="w-full aspect-[4/3] bg-gray-100 overflow-hidden relative">
+            <img 
+              src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=400&q=80" 
+              alt="Tough Bed Frames" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
+            >
+          </div>
+          <p class="text-[14px] text-gray-800 transition group-hover/item:text-brand-green group-hover/item:underline underline-offset-4">
+            Tough Bed Frames
+          </p>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>

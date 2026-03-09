@@ -7,13 +7,9 @@
       <a href="#" class="shrink-0">
         <img src="/assets/logo.png" alt="Bedroom King" class="w-[106px]" />
       </a>
-      <!-- Search -->
-      <div class="grow max-w-2xl mx-4 md:mx-10 font-serif h-[48px]">
-        <div class="flex items-center border border-brand-green rounded-full h-full overflow-hidden pl-4 pr-1 py-1 bg-white w-full md:max-w-xl lg:max-w-[686px]">
-          <input type="text" placeholder="Search for collections" class="flex-1 text-sm placeholder:text-[16px] text-gray-500 outline-none bg-transparent line-[24px]" />
-          <button class="bg-brand-green w-[105px] h-[40px] text-white text-[18px] font-thin px-5 rounded-full hover:bg-brand-primary transition">Search</button>
-        </div>
-      </div>
+      <!-- Search Component -->
+      <div class="grow max-w-[800px] mx-4 md:mx-10 font-serif h-[48px] relative z-[60]"
+        data-include="sections/search/desktop-search.html"></div>
     </div>
     <!-- Right Icons -->
     <div class="flex items-center gap-2 text-gray-600 shrink-0 px-8">
@@ -58,22 +54,21 @@
     </div>
   </div>
 
-  <!-- Mobile Search Bar -->
-  <div class="md:hidden px-4 pb-2">
-    <div class="flex items-center border border-brand-green rounded-full h-10 overflow-hidden pl-3 pr-1 bg-white w-full">
-      <input type="text" placeholder="Search for collections" class="flex-1 text-sm placeholder:text-sm text-gray-500 outline-none bg-transparent" />
-      <button class="bg-brand-green h-8 px-4 text-white text-sm rounded-full hover:bg-brand-primary transition">Search</button>
-    </div>
+  <!-- Mobile Search Bar Component -->
+  <div class="md:hidden px-4 pb-4 z-[60]">
+    <div class="relative w-full h-[40px]" data-include="sections/search/mobile-search.html"></div>
   </div>
 
   <!-- Desktop Navigation -->
   <nav class="font-serif bg-brand-light-green border-t border-gray-200 overflow-x-auto hidden md:block">
     <ul class="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center font-medium text-[16px] text-brand-green whitespace-nowrap">
-      <li>
+      <li class="group">
         <a href="#" class="flex items-center gap-1 py-3 transition">
           Bed Frames
           <img src="/assets/icons/chevron-down.svg" alt="" width="2" class="w-4 h-4">
         </a>
+        <!-- Mega Menu Dropdown Injected Here -->
+        <div data-include="sections/header/mega-menu.html"></div>
       </li>
       <li><a href="#" class="block px-3 py-3 transition">Divan Beds</a></li>
       <li><a href="#" class="block px-3 py-3 transition">Kid Beds</a></li>
@@ -86,4 +81,7 @@
       <li><a href="#" class="block px-3 py-3 transition">Accessories</a></li>
     </ul>
   </nav>
+  <!-- Search Modal Overlay -->
+  <div id="search-modal-overlay"
+    class="fixed inset-0 bg-black/50 z-[55] opacity-0 pointer-events-none transition-opacity duration-300"></div>
 </header>

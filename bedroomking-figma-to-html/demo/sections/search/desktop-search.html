@@ -1,0 +1,73 @@
+<!-- Expanded Box (Modal Dropdown) -->
+<div id="desktop-search-dropdown"
+  class="absolute -top-[20px] -left-[20px] -right-[20px] bg-white rounded-[20px] shadow-2xl opacity-0 pointer-events-none translate-y-2 transition-all duration-300 z-[59] flex flex-col hidden">
+  <div class="h-[88px]"></div> <!-- Spacer for search bar -->
+
+  <!-- Tabs -->
+  <div class="flex items-center gap-6 border-b border-gray-200 mb-4 px-6">
+    <button class="text-brand-green font-bold border-b-2 border-brand-green pb-2">Products</button>
+    <button class="text-gray-500 hover:text-brand-green transition font-medium pb-2">Collections</button>
+  </div>
+
+  <!-- Search Results -->
+  <div class="max-h-[60vh] overflow-y-auto px-6 pb-6">
+    <ul class="space-y-4">
+      <li class="flex items-center gap-4 hover:bg-gray-50 p-2 rounded-lg transition cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=100&q=80" alt="Product"
+          class="w-[60px] h-[60px] object-cover rounded shadow-sm">
+        <div>
+          <p class="font-bold text-sm text-gray-900 leading-tight">Nightingale Ambassador Bed Frame</p>
+          <p class="text-[13px] text-gray-600 mt-1">£529.99 <span class="line-through text-gray-400">£699.00</span>
+          </p>
+        </div>
+      </li>
+      <li class="flex items-center gap-4 hover:bg-gray-50 p-2 rounded-lg transition cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=100&q=80" alt="Product"
+          class="w-[60px] h-[60px] object-cover rounded shadow-sm">
+        <div>
+          <p class="font-bold text-sm text-gray-900 leading-tight">Calvin Divan Drawer Storage Bed With Footboard</p>
+          <p class="text-[13px] text-gray-600 mt-1">£279.99 <span class="line-through text-gray-400">£499.00</span>
+          </p>
+        </div>
+      </li>
+      <li class="flex items-center gap-4 hover:bg-gray-50 p-2 rounded-lg transition cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=100&q=80" alt="Product"
+          class="w-[60px] h-[60px] object-cover rounded shadow-sm">
+        <div>
+          <p class="font-bold text-sm text-gray-900 leading-tight">Leymond Panelled Wingback Bed Frame</p>
+          <p class="text-[13px] text-gray-600 mt-1">£329.99 <span class="line-through text-gray-400">£499.00</span>
+          </p>
+        </div>
+      </li>
+      <li class="flex items-center gap-4 hover:bg-gray-50 p-2 rounded-lg transition cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=100&q=80" alt="Product"
+          class="w-[60px] h-[60px] object-cover rounded shadow-sm">
+        <div>
+          <p class="font-bold text-sm text-gray-900 leading-tight">Sueno Bed Frame Available With Storage</p>
+          <p class="text-[13px] text-gray-600 mt-1">£309.99 <span class="line-through text-gray-400">£499.00</span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Actual Search Bar (On top) -->
+<div class="relative w-full h-[48px] z-[60]">
+  <div
+    class="flex items-center border border-gray-800 rounded-full h-full overflow-hidden px-4 bg-white w-full transition-all duration-300"
+    id="desktop-search-container">
+    <img src="/assets/icons/search.svg" alt="Search" class="w-5 h-5 text-gray-500 mr-2">
+    <input id="desktop-search-input" type="text" placeholder="Search for collections"
+      class="flex-1 text-[16px] placeholder:text-gray-500 text-gray-800 outline-none bg-transparent h-full min-w-0"
+      autocomplete="off" />
+    <button id="desktop-search-clear"
+      class="p-1 hover:text-brand-green transition opacity-0 pointer-events-none mx-1">
+      <img src="/assets/icons/close.svg" alt="Clear" width="18" height="18">
+    </button>
+    <span class="text-gray-300 mx-1">|</span>
+    <button class="p-1 hover:text-brand-green transition ml-1">
+      <img src="/assets/icons/mic.svg" alt="Voice Search" width="18" height="18">
+    </button>
+  </div>
+</div>
