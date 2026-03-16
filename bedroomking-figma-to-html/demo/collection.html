@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - Bedroom King</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body { font-family: 'Lato', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#F1F4F4]/50 text-gray-800 overflow-x-hidden">
+
+<!-- SECTION: announcement-bar -->
+<div data-include="sections/announcement-bar/announcement-bar.html"></div>
+
+<!-- SECTION: header -->
+<div data-include="sections/header/header.html"></div>
+
+<!-- SECTION: mobile-menu -->
+<div data-include="sections/mobile-menu/mobile-menu.html"></div>
+
+<main>
+    <!-- SECTION: page-banner -->
+    <div data-include="sections/common/page-banner.html"></div>
+
+    <!-- SECTION: collection-grid -->
+    <div data-include="sections/collection/collection-grid.html"></div>
+</main>
+
+<!-- SECTION: footer -->
+<div data-include="sections/footer/footer.html"></div>
+
+<!-- SECTION LOADER -->
+<script>
+    async function loadSections(container = document) {
+      const includes = container.querySelectorAll('[data-include]');
+      if (includes.length === 0) return;
+
+    const promises = Array.from(includes).map(async (el) => {
+      const url = el.getAttribute('data-include');
+      try {
+        const response = await fetch(url);
+        if (response.ok) {
+          el.innerHTML = await response.text();
+          // Recursively load any new includes inside the fetched content
+          await loadSections(el);
+        } else {
+          el.innerHTML = 'Error loading section: ' + url;
+        }
+      } catch (err) {
+        el.innerHTML = 'Fetch error: ' + err.message;
+      }
+
+      // Remove attribute so it's not processed again if called globally
+      el.removeAttribute('data-include');
+    });
+
+    await Promise.all(promises);
+  }
+
+    // Initial load
+    loadSections().then(() => {
+    console.log('All sections loaded. Initializing global JS...');
+    const script = document.createElement('script');
+    script.src = 'global.js';
+    document.body.appendChild(script);
+  });
+</script>
+</body>
+</html>

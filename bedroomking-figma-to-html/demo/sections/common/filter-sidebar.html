@@ -1,0 +1,157 @@
+<!-- ============================================================
+     SECTION: REUSABLE FILTER SIDEBAR 
+     ============================================================ -->
+<aside class="w-full md:w-[300px] shrink-0 md:sticky md:top-8 self-start">
+  <div class="bg-white rounded-[24px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 overflow-hidden">
+    
+    <!-- Sidebar Header -->
+    <div class="flex items-center justify-between mb-10">
+      <h2 class="font-serif text-[28px] text-brand-green-dark">Filters</h2>
+      <button 
+        type="button"
+        onclick="resetFilters()"
+        class="text-[14px] font-semibold text-gray-400 hover:text-brand-green transition underline underline-offset-4"
+      >
+        Clear All
+      </button>
+    </div>
+
+    <!-- Filter Groups (Styled as Accordions) -->
+    <div class="space-y-4 font-urbanist" id="filter-accordion">
+      
+      <!-- Filter Group: Sort By -->
+      <details class="group border-b border-gray-100 pb-4" open>
+        <summary class="flex items-center justify-between w-full cursor-pointer list-none py-2">
+          <span class="text-[18px] font-bold text-gray-800">Sort By</span>
+          <img src="/assets/icons/chevron-down.svg" alt="" class="w-5 h-5 text-gray-400 transition-transform duration-300 group-open:rotate-180">
+        </summary>
+        <div class="mt-4 space-y-4 px-1">
+          <label class="flex items-center gap-4 cursor-pointer group/label">
+            <input type="radio" name="sort_by" value="best-selling" class="w-5 h-5 border-gray-300 text-brand-green focus:ring-brand-green">
+            <span class="text-[15px] text-gray-600 group-hover/label:text-brand-green transition">Best Selling</span>
+          </label>
+          <label class="flex items-center gap-4 cursor-pointer group/label">
+            <input type="radio" name="sort_by" value="new-arrivals" class="w-5 h-5 border-gray-300 text-brand-green focus:ring-brand-green" checked>
+            <span class="text-[15px] text-brand-green font-semibold">New Arrivals</span>
+          </label>
+          <label class="flex items-center gap-4 cursor-pointer group/label">
+            <input type="radio" name="sort_by" value="price-low-high" class="w-5 h-5 border-gray-300 text-brand-green focus:ring-brand-green">
+            <span class="text-[15px] text-gray-600 group-hover/label:text-brand-green transition">Price: Low to High</span>
+          </label>
+        </div>
+      </details>
+
+      <!-- Filter Group: Price Range -->
+      <details class="group border-b border-gray-100 pb-4">
+        <summary class="flex items-center justify-between w-full cursor-pointer list-none py-2">
+          <span class="text-[18px] font-bold text-gray-800">Price</span>
+          <img src="/assets/icons/chevron-down.svg" alt="" class="w-5 h-5 text-gray-400 transition-transform duration-300 group-open:rotate-180">
+        </summary>
+        <div class="mt-6 px-1">
+          <div class="flex items-center gap-4">
+            <div class="relative flex-1">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-[14px]">£</span>
+              <input type="number" placeholder="Min" class="w-full pl-7 pr-3 py-2.5 rounded-xl border border-gray-200 text-[14px] focus:ring-1 focus:ring-brand-green focus:border-brand-green outline-none">
+            </div>
+            <div class="relative flex-1">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-[14px]">£</span>
+              <input type="number" placeholder="Max" class="w-full pl-7 pr-3 py-2.5 rounded-xl border border-gray-200 text-[14px] focus:ring-1 focus:ring-brand-green focus:border-brand-green outline-none">
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- Filter Group: Bed Type -->
+      <details class="group border-b border-gray-100 pb-4" open>
+        <summary class="flex items-center justify-between w-full cursor-pointer list-none py-2">
+          <span class="text-[18px] font-bold text-gray-800">Bed Type</span>
+          <img src="/assets/icons/chevron-down.svg" alt="" class="w-5 h-5 text-gray-400 transition-transform duration-300 group-open:rotate-180">
+        </summary>
+        <div class="mt-4 space-y-4 px-1">
+          <label class="flex items-center gap-4 cursor-pointer group/label">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-brand-green focus:ring-brand-green">
+            <span class="text-[15px] text-gray-600 group-hover/label:text-brand-green transition">Divan Beds</span>
+            <span class="ml-auto text-[13px] text-gray-400">32</span>
+          </label>
+          <label class="flex items-center gap-4 cursor-pointer group/label">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-brand-green focus:ring-brand-green">
+            <span class="text-[15px] text-gray-600 group-hover/label:text-brand-green transition">Ottoman Beds</span>
+            <span class="ml-auto text-[13px] text-gray-400">28</span>
+          </label>
+        </div>
+      </details>
+
+      <!-- Filter Group: Fabric Color -->
+      <details class="group pb-2" open>
+        <summary class="flex items-center justify-between w-full cursor-pointer list-none py-2">
+          <span class="text-[18px] font-bold text-gray-800">Fabric Color</span>
+          <img src="/assets/icons/chevron-down.svg" alt="" class="w-5 h-5 text-gray-400 transition-transform duration-300 group-open:rotate-180">
+        </summary>
+        <div class="mt-6 grid grid-cols-5 gap-3 px-1">
+          <button type="button" class="w-9 h-9 rounded-full bg-[#113A49] border-2 border-transparent hover:border-brand-green transition shadow-sm" title="Teal"></button>
+          <button type="button" class="w-9 h-9 rounded-full bg-[#8C8F70] border-2 border-transparent hover:border-brand-green transition shadow-sm" title="Olive"></button>
+          <button type="button" class="w-9 h-9 rounded-full bg-[#D4A373] border-2 border-white ring-2 ring-brand-green shadow-sm" title="Tan"></button>
+          <button type="button" class="w-9 h-9 rounded-full bg-[#E9DED4] border-2 border-transparent hover:border-brand-green transition shadow-sm" title="Beige"></button>
+          <button type="button" class="w-9 h-9 rounded-full bg-[#2C2C2C] border-2 border-transparent hover:border-brand-green transition shadow-sm" title="Charcoal"></button>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</aside>
+
+<!-- Simple Script for UX & Dynamic Behavior -->
+<script>
+  /**
+   * Reset all filters to their default state
+   */
+  function resetFilters() {
+    const sidebar = document.querySelector('#filter-accordion');
+    if (!sidebar) return;
+
+    // Reset checkboxes and radios
+    sidebar.querySelectorAll('input').forEach(input => {
+      if (input.type === 'checkbox' || input.type === 'radio') {
+        input.checked = false;
+        // Optionally trigger a change event if you have a live search
+        // input.dispatchEvent(new Event('change'));
+      }
+      if (input.type === 'number') {
+        input.value = '';
+      }
+    });
+
+    // Close all accordions except the first two (standard behavior)
+    sidebar.querySelectorAll('details').forEach((details, index) => {
+      if (index > 1) {
+        details.removeAttribute('open');
+      } else {
+        details.setAttribute('open', '');
+      }
+    });
+
+    console.log('Filters reset');
+  }
+
+  /**
+   * Future Liquid logic placeholder:
+   * When transpiling to liquid, the structure above can be wrapped in:
+   * {% for filter in collection.filters %} ... {% endfor %}
+   * The 'details' pattern is standard for Shopify 2.0 themes.
+   */
+</script>
+
+<style>
+  /* Remove default arrows for details/summary */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
+  }
+  
+  /* Prevent background flickering on mobile tap */
+  summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+</style>
