@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alma Wingback Bed Frame With High Sides - Bedroom King</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-[#F1F4F4]/50 text-gray-800 overflow-x-hidden font-lato">
+
+<!-- SECTION: announcement-bar -->
+<div data-include="sections/announcement-bar/announcement-bar.html"></div>
+
+<!-- SECTION: header -->
+<div data-include="sections/header/header.html"></div>
+
+<!-- SECTION: mobile-menu -->
+<div data-include="sections/mobile-menu/mobile-menu.html"></div>
+
+<main>
+    <!-- BREADCRUMBS -->
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8 py-6 font-urbanist">
+        <nav class="flex text-[13px] font-medium text-gray-500 uppercase tracking-wide gap-2">
+            <a href="/" class="hover:text-collection-green transition-colors">Home</a>
+            <span>&gt;</span>
+            <a href="/collection.html" class="hover:text-collection-green transition-colors">Shop</a>
+            <span>&gt;</span>
+            <span class="text-gray-900 font-bold">Beds</span>
+        </nav>
+    </div>
+
+    <!-- SECTION: product-main -->
+    <div data-include="sections/product/product-main.html"></div>
+
+    <!-- SECTION: product-tabs -->
+    <div data-include="sections/product/product-tabs.html"></div>
+
+    <!-- SECTION: product-reviews -->
+    <div data-include="sections/product/product-reviews.html"></div>
+
+    <!-- SECTION: product-features -->
+    <div data-include="sections/product/product-features.html"></div>
+
+    <!-- SECTION: trending-products (Reusing Trending section for cross-selling) -->
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8 mt-24 mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif text-gray-900 mb-8 tracking-tight">Trending Products</h2>
+        <div data-include="sections/trending/trending.html"></div>
+    </div>
+
+    <!-- SECTION: payment-banner -->
+    <div data-include="sections/common/payment-banner.html"></div>
+</main>
+
+<!-- SECTION: footer -->
+<div data-include="sections/footer/footer.html"></div>
+
+<!-- SECTION LOADER -->
+<script>
+    async function loadSections(container = document) {
+      const includes = container.querySelectorAll('[data-include]');
+      if (includes.length === 0) return;
+
+    const promises = Array.from(includes).map(async (el) => {
+      const url = el.getAttribute('data-include');
+      try {
+        const response = await fetch(url);
+        if (response.ok) {
+          el.innerHTML = await response.text();
+          await loadSections(el);
+        } else {
+          el.innerHTML = 'Error loading section: ' + url;
+        }
+      } catch (err) {
+        el.innerHTML = 'Fetch error: ' + err.message;
+      }
+
+      el.removeAttribute('data-include');
+    });
+
+    await Promise.all(promises);
+  }
+
+  loadSections().then(() => {
+    console.log('All sections loaded. Initializing global JS...');
+    const script = document.createElement('script');
+    script.src = 'global.js';
+    document.body.appendChild(script);
+  });
+</script>
+</body>
+</html>

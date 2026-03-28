@@ -1,0 +1,244 @@
+<!-- ============================================================
+     SECTION: PRODUCT MAIN (Gallery & Configurator)
+     ============================================================ -->
+<section class="max-w-[1440px] mx-auto px-4 md:px-8 pb-16 pt-4 flex flex-col lg:flex-row gap-12 lg:gap-16 font-urbanist">
+    
+    <!-- LEFT: Image Gallery -->
+    <div class="w-full lg:w-[55%] flex flex-col gap-4">
+        <!-- Main Large Image -->
+        <div class="w-full aspect-[4/3] rounded-[24px] overflow-hidden bg-gray-50 border border-gray-100 shadow-sm relative">
+            <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=1200&q=80" alt="Alma Wingback Bed Frame" class="w-full h-full object-cover">
+        </div>
+        <!-- Thumbnails -->
+        <div class="grid grid-cols-4 gap-4">
+            <div class="aspect-[4/3] rounded-[16px] overflow-hidden border-2 border-collection-green cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400&q=80" alt="Thumb 1" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[4/3] rounded-[16px] overflow-hidden border border-gray-200 cursor-pointer hover:border-gray-400 transition-colors">
+                <img src="https://images.unsplash.com/photo-1582582621959-48d27397dc69?w=400&q=80" alt="Thumb 2" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[4/3] rounded-[16px] overflow-hidden border border-gray-200 cursor-pointer hover:border-gray-400 transition-colors">
+                <img src="https://images.unsplash.com/photo-1522771731478-44eb10e5c926?w=400&q=80" alt="Thumb 3" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[4/3] rounded-[16px] overflow-hidden border border-gray-200 cursor-pointer hover:border-gray-400 transition-colors">
+                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&q=80" alt="Thumb 4" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: Product Info & Configurator -->
+    <div class="w-full lg:w-[45%] flex flex-col">
+        
+        <!-- Ratings -->
+        <div class="flex items-center gap-2 mb-3">
+            <div class="flex items-center text-[#123A31]">
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5 opacity-40" alt="Star half" />
+            </div>
+            <span class="text-[13px] text-gray-700 font-medium">4.8 <span class="text-gray-400 font-normal">(120 Reviews)</span></span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="font-serif text-[42px] leading-[1.15] text-gray-900 mb-5 tracking-tight">Alma Wingback Bed<br>Frame With High Sides</h1>
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-1.5 bg-[#123A31] text-white px-3 py-1.5 rounded-[4px] text-[12px] font-semibold tracking-wide w-max mb-8">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Choose Standard Size
+        </div>
+
+        <!-- Configurator Accordions -->
+        <div class="flex flex-col gap-3 mb-8">
+            
+            <!-- Material & Color (Open) -->
+            <details class="group bg-gray-50/70 border border-gray-200 rounded-[12px] overflow-hidden" open>
+                <summary class="flex items-center justify-between p-5 cursor-pointer list-none select-none">
+                    <span class="font-semibold text-gray-900 text-[15px]">Material & Color</span>
+                    <div class="flex items-center gap-3">
+                        <span class="text-[13px] text-gray-500 font-medium px-3 py-1 bg-white border border-gray-200 rounded-full flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-[#A3968F] shrink-0"></span> Plush Velvet - Mink
+                        </span>
+                        <img src="/assets/icons/chevron-down.svg" alt="Toggle" class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 opacity-60">
+                    </div>
+                </summary>
+                <div class="p-5 pt-0 border-t border-gray-100 bg-white">
+                    <div class="grid grid-cols-4 sm:grid-cols-5 gap-3 mt-4">
+                        <!-- Swatch Item Selected -->
+                        <div class="flex flex-col items-center gap-2 group/swatch cursor-pointer">
+                            <div class="w-full aspect-square rounded-[8px] border-[2px] border-[#123A31] bg-[#A3968F] shadow-sm relative overflow-hidden">
+                                <!-- Swatch specific image snippet placeholder -->
+                                <img src="https://images.unsplash.com/photo-1582582621959-48d27397dc69?w=100&q=80" alt="Plush Velvet - Mink" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-[10px] text-center font-bold text-gray-900 leading-tight">Plush Velvet -<br>Mink</span>
+                        </div>
+                        <!-- Swatch Item -->
+                        <div class="flex flex-col items-center gap-2 group/swatch cursor-pointer">
+                            <div class="w-full aspect-square rounded-[8px] border border-gray-200 bg-[#E8DCC4] shadow-sm group-hover/swatch:border-gray-400 transition-colors overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=100&q=80" alt="Naples Velvet - Cream" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-[10px] text-center font-medium text-gray-500 leading-tight group-hover/swatch:text-gray-900">Naples Velvet -<br>Cream</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group/swatch cursor-pointer">
+                            <div class="w-full aspect-square rounded-[8px] border border-gray-200 bg-[#5C4B3C] shadow-sm group-hover/swatch:border-gray-400 transition-colors overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1584346851614-722a45050fbd?w=100&q=80" alt="Chenille - Mocha" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-[10px] text-center font-medium text-gray-500 leading-tight group-hover/swatch:text-gray-900">Chenille -<br>Mocha</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group/swatch cursor-pointer">
+                            <div class="w-full aspect-square rounded-[8px] border border-gray-200 bg-[#C3B299] shadow-sm group-hover/swatch:border-gray-400 transition-colors overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1522771731478-44eb10e5c926?w=100&q=80" alt="Linen - Sand" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-[10px] text-center font-medium text-gray-500 leading-tight group-hover/swatch:text-gray-900">Linen -<br>Sand</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group/swatch cursor-pointer">
+                            <div class="w-full aspect-square rounded-[8px] border border-gray-200 bg-[#123A31] shadow-sm group-hover/swatch:border-gray-400 transition-colors overflow-hidden">
+                                <div class="w-full h-full bg-[#123A31]"></div>
+                            </div>
+                            <span class="text-[10px] text-center font-medium text-gray-500 leading-tight group-hover/swatch:text-gray-900">Velvet -<br>Emerald</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group/swatch cursor-pointer">
+                            <div class="w-full aspect-square rounded-[8px] border border-gray-200 bg-[#2b2b2b] shadow-sm group-hover/swatch:border-gray-400 transition-colors overflow-hidden">
+                                <div class="w-full h-full bg-[#8A7961]"></div>
+                            </div>
+                            <span class="text-[10px] text-center font-medium text-gray-500 leading-tight group-hover/swatch:text-gray-900">Chenille -<br>Taupe</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group/swatch cursor-pointer">
+                            <div class="w-full aspect-square rounded-[8px] border border-gray-200 bg-[#ffffff] shadow-sm group-hover/swatch:border-gray-400 transition-colors overflow-hidden">
+                                <div class="w-full h-full bg-[#EAE8E3]"></div>
+                            </div>
+                            <span class="text-[10px] text-center font-medium text-gray-500 leading-tight group-hover/swatch:text-gray-900">Plush Velvet -<br>Latte</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group/swatch cursor-pointer">
+                            <div class="w-full aspect-square rounded-[8px] border border-gray-200 bg-[#3b3a36] shadow-sm group-hover/swatch:border-gray-400 transition-colors overflow-hidden">
+                                <div class="w-full h-full bg-[#3b3a36]"></div>
+                            </div>
+                            <span class="text-[10px] text-center font-medium text-gray-500 leading-tight group-hover/swatch:text-gray-900">Plush Velvet -<br>Charcoal</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group/swatch cursor-pointer">
+                            <div class="w-full aspect-square rounded-[8px] border border-gray-200 bg-[#000] shadow-sm group-hover/swatch:border-gray-400 transition-colors overflow-hidden">
+                                <div class="w-full h-full bg-black"></div>
+                            </div>
+                            <span class="text-[10px] text-center font-medium text-gray-500 leading-tight group-hover/swatch:text-gray-900">Plush Velvet -<br>Black</span>
+                        </div>
+                         <div class="flex flex-col items-center justify-center gap-2 group/swatch cursor-pointer">
+                            <span class="text-[12px] text-[#123A31] font-bold mt-2 underline underline-offset-2">View all</span>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Base Size -->
+            <details class="group bg-white border border-gray-200 rounded-[12px]">
+                <summary class="flex items-center justify-between p-4 px-5 cursor-pointer list-none select-none">
+                    <span class="font-semibold text-gray-900 text-[15px]">Base Size</span>
+                    <div class="flex items-center gap-3">
+                        <span class="text-[13px] text-gray-400 font-medium">Not Selected</span>
+                        <img src="/assets/icons/chevron-down.svg" alt="Toggle" class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 opacity-60">
+                    </div>
+                </summary>
+                <div class="p-5 pt-0 border-t border-gray-100 text-gray-600 text-[14px]">
+                    Dropdown content here
+                </div>
+            </details>
+
+            <!-- Mattress -->
+            <details class="group bg-white border border-gray-200 rounded-[12px]">
+                <summary class="flex items-center justify-between p-4 px-5 cursor-pointer list-none select-none">
+                    <span class="font-semibold text-gray-900 text-[15px]">Mattress</span>
+                    <div class="flex items-center gap-3">
+                        <span class="text-[13px] text-gray-400 font-medium">Not Selected</span>
+                        <img src="/assets/icons/chevron-down.svg" alt="Toggle" class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 opacity-60">
+                    </div>
+                </summary>
+            </details>
+
+            <!-- Headboard Height -->
+            <details class="group bg-white border border-gray-200 rounded-[12px]">
+                <summary class="flex items-center justify-between p-4 px-5 cursor-pointer list-none select-none">
+                    <span class="font-semibold text-gray-900 text-[15px]">Headboard Height</span>
+                    <div class="flex items-center gap-3">
+                        <span class="text-[13px] text-gray-900 font-bold">54"</span>
+                        <img src="/assets/icons/chevron-down.svg" alt="Toggle" class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 opacity-60">
+                    </div>
+                </summary>
+            </details>
+            
+            <!-- Storage Options -->
+            <details class="group bg-white border border-gray-200 rounded-[12px]">
+                <summary class="flex items-center justify-between p-4 px-5 cursor-pointer list-none select-none">
+                    <span class="font-semibold text-gray-900 text-[15px]">Storage Options</span>
+                    <div class="flex items-center gap-3">
+                        <span class="text-[13px] text-gray-400 font-medium">Not Selected</span>
+                        <img src="/assets/icons/chevron-down.svg" alt="Toggle" class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 opacity-60">
+                    </div>
+                </summary>
+            </details>
+            
+            <!-- Delivery Area -->
+            <details class="group bg-white border border-gray-200 rounded-[12px]">
+                <summary class="flex items-center justify-between p-4 px-5 cursor-pointer list-none select-none">
+                    <span class="font-semibold text-gray-900 text-[15px]">Delivery Area</span>
+                    <div class="flex items-center gap-3">
+                        <span class="text-[13px] text-gray-400 font-medium">Not Selected</span>
+                        <img src="/assets/icons/chevron-down.svg" alt="Toggle" class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 opacity-60">
+                    </div>
+                </summary>
+            </details>
+
+            <!-- Assembly -->
+            <details class="group bg-white border border-gray-200 rounded-[12px]">
+                <summary class="flex items-center justify-between p-4 px-5 cursor-pointer list-none select-none">
+                    <span class="font-semibold text-gray-900 text-[15px]">Assembly</span>
+                    <div class="flex items-center gap-3">
+                        <span class="text-[13px] text-gray-400 font-medium">Not Selected</span>
+                        <img src="/assets/icons/chevron-down.svg" alt="Toggle" class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 opacity-60">
+                    </div>
+                </summary>
+            </details>
+
+        </div>
+
+        <!-- Total Price Placeholder -->
+        <div class="flex items-center justify-between mb-4 mt-2">
+            <span class="text-[15px] font-bold text-gray-900">Total</span>
+            <span class="text-[24px] font-serif font-bold text-gray-900">£1,422.00</span>
+        </div>
+
+        <!-- Action Bar (Quantity + Add to Cart) -->
+        <div class="flex gap-4 mb-5">
+            <!-- Quantity Box -->
+            <div class="flex items-center border border-gray-200 rounded-full bg-white px-2 overflow-hidden h-[54px] w-[140px] shrink-0">
+                <button class="w-10 h-full flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg width="12" height="2" viewBox="0 0 12 2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M0 0.5H12V1.5H0V0.5Z"/></svg>
+                </button>
+                <input type="text" value="1" class="w-full h-full text-center text-[15px] font-bold text-gray-900 bg-transparent border-none focus:ring-0 p-0" readonly>
+                <button class="w-10 h-full flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 5.5V0H6.5V5.5H12V6.5H6.5V12H5.5V6.5H0V5.5H5.5Z"/></svg>
+                </button>
+            </div>
+            <!-- Add To Basket Button -->
+            <button class="flex-1 bg-[#123A31] hover:bg-[#0a231d] text-white rounded-full font-bold tracking-wide uppercase text-[15px] h-[54px] transition-all shadow-sm flex items-center justify-center gap-2">
+                ADD TO CART
+                <span class="text-white ml-2">→</span>
+            </button>
+        </div>
+
+        <!-- Safe Checkout Badges -->
+        <div class="bg-gray-50/50 border border-gray-100 rounded-[12px] p-5 flex flex-col items-center justify-center gap-3">
+            <div class="flex items-center gap-2.5 flex-wrap justify-center opacity-80 mix-blend-multiply">
+                <!-- Using inline fallbacks for standard credit providers to mimic standard UX since specific PNGs weren't mapped for Visa etc -->
+                <div class="h-6 w-auto border border-gray-200 bg-white rounded flex items-center px-1"><img src="/assets/payment/Mastercard.png" class="h-4 object-contain"></div>
+                <div class="h-6 w-auto border border-gray-200 bg-white rounded flex items-center px-1"><img src="/assets/payment/g_pay.png" class="h-4 object-contain"></div>
+                <div class="h-6 w-auto border border-gray-200 bg-white rounded flex items-center px-1"><img src="/assets/payment/shop_pay.png" class="h-4 object-contain"></div>
+                <div class="h-6 w-auto border border-gray-200 bg-white rounded flex items-center px-1"><img src="/assets/payment/clearpay.png" class="h-4 object-contain"></div>
+                <div class="h-6 w-auto border border-gray-200 bg-white rounded flex items-center px-1"><img src="/assets/payment/klarna.png" class="h-4 object-contain"></div>
+            </div>
+            <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Guaranteed Safe Checkout</span>
+        </div>
+
+    </div>
+
+</section>
