@@ -11,6 +11,24 @@
   --color-brand-light-green: #0F3F3A1A;
   --color-brand-dark: #212121;
   --color-brand-green-dark: #0A2F2B;
+
+  /* Collection Theme Colors */
+  --color-collection-green: #123A31;
+  --color-collection-green-hover: #0d2a23;
+  --color-collection-gold: #C6A46A;
+  --color-collection-gold-light: #D4A373;
+  --color-collection-beige: #F4EEE6;
+  --color-collection-beige-border: #EBE3D8;
+  --color-collection-delivery-bg: #FDF7EE;
+  --color-collection-delivery-border: #F0E5D3;
+  --color-clearpay: #B2F5D7;
+  --color-klarna: #FFB3C6;
+  --color-collection-swatch-1: #E8DCC4;
+  --color-collection-swatch-2: #5C4B3C;
+  --color-collection-swatch-3: #C3B299;
+  --color-collection-swatch-4: #A3A8A0;
+  --color-collection-swatch-5: #8A7961;
+  --color-collection-swatch-6: #3B3A36;
 }
 
 @layer base {

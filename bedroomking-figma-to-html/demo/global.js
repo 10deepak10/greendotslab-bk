@@ -198,3 +198,70 @@ document.addEventListener("keydown", (e) => {
     hideActiveSearchDropdown();
   }
 });
+
+// ============================================================
+// COLLECTION GRID & FILTER SIDEBAR GLOBALS
+// ============================================================
+
+window.setView = function(view) {
+  const grid = document.getElementById('product-grid');
+  const btnGrid = document.getElementById('btn-grid-view');
+  const btnList = document.getElementById('btn-list-view');
+
+  if (!grid || !btnGrid || !btnList) return;
+  
+  const imgGrid = btnGrid.querySelector('img');
+  const imgList = btnList.querySelector('img');
+
+  if (view === 'list') {
+    grid.classList.add('list-view-active');
+    
+    // Update button styles for list view
+    btnList.classList.remove('text-gray-500', 'bg-transparent');
+    btnList.classList.add('bg-collection-green', 'text-white', 'shadow-sm');
+    btnGrid.classList.remove('bg-collection-green', 'text-white', 'shadow-sm');
+    btnGrid.classList.add('text-gray-500', 'bg-transparent');
+    
+    // Make active icon white
+    if (imgList) imgList.classList.add('brightness-0', 'invert');
+    if (imgGrid) imgGrid.classList.remove('brightness-0', 'invert');
+  } else {
+    grid.classList.remove('list-view-active');
+    
+    // Update button styles for grid view
+    btnGrid.classList.remove('text-gray-500', 'bg-transparent');
+    btnGrid.classList.add('bg-collection-green', 'text-white', 'shadow-sm');
+    btnList.classList.remove('bg-collection-green', 'text-white', 'shadow-sm');
+    btnList.classList.add('text-gray-500', 'bg-transparent');
+    
+    // Make active icon white
+    if (imgGrid) imgGrid.classList.add('brightness-0', 'invert');
+    if (imgList) imgList.classList.remove('brightness-0', 'invert');
+  }
+};
+
+window.resetFilters = function() {
+  const sidebar = document.querySelector('#filter-accordion');
+  if (!sidebar) return;
+
+  // Reset checkboxes and radios
+  sidebar.querySelectorAll('input').forEach(input => {
+    if (input.type === 'checkbox' || input.type === 'radio') {
+      input.checked = false;
+    }
+    if (input.type === 'number') {
+      input.value = '';
+    }
+  });
+
+  // Close all accordions except the first two (standard behavior)
+  sidebar.querySelectorAll('details').forEach((details, index) => {
+    if (index > 1) {
+      details.removeAttribute('open');
+    } else {
+      details.setAttribute('open', '');
+    }
+  });
+
+  console.log('Filters reset');
+};

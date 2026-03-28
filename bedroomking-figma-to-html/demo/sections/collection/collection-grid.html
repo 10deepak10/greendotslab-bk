@@ -1,193 +1,437 @@
 <!-- ============================================================
      SECTION: COLLECTION GRID
      ============================================================ -->
-<section class="max-w-7xl mx-auto px-4 md:px-8 pb-20">
-  <div class="flex flex-col md:flex-row gap-10 items-start">
-    
-    <!-- Sidebar Filters - STICKY -->
-    <div data-include="sections/common/filter-sidebar.html"></div>
+<section class="max-w-[1440px] mx-auto px-4 md:px-8 pb-24 mt-8">
+  <!-- Full-Width Grid Toolbar -->
+  <div class="flex flex-wrap items-center justify-between mb-8 font-urbanist gap-4">
+    <!-- Left: Filter & Sort -->
+    <div class="flex items-center gap-4">
+      <button
+        class="bg-collection-green text-white px-6 py-2.5 rounded-full flex items-center gap-2.5 text-[15px] font-semibold hover:bg-collection-green-hover transition-colors shadow-sm">
+        <img src="/assets/icons/filter.svg" class="w-[16px] h-[16px] opacity-75 brightness-0 invert filter" alt="Filter" />
+        Filter
+      </button>
 
-    <!-- Product Grid Area -->
-    <div class="flex-1">
-      <!-- Grid Toolbar -->
-      <div class="flex items-center justify-between mb-10 font-urbanist">
-        <p class="text-[15px] text-gray-500">Showing <span class="font-bold text-gray-900">48</span> products</p>
-        <div class="flex items-center gap-6">
-          <div class="flex items-center gap-3">
-            <span class="text-[15px] text-gray-500">View:</span>
-            <button class="p-2 text-brand-green bg-white rounded-lg border border-gray-200 shadow-sm">
-              <img src="/assets/icons/grid.svg" alt="" class="w-5 h-5">
-            </button>
-            <button class="p-2 text-gray-400 bg-white rounded-lg border border-gray-200 hover:text-brand-green transition shadow-sm">
-              <img src="/assets/icons/list.svg" alt="" class="w-5 h-5">
-            </button>
-          </div>
-        </div>
+      <div class="relative">
+        <button
+          class="bg-white border border-gray-200 text-gray-600 px-5 py-2.5 rounded-full flex items-center gap-2 text-[15px] font-medium hover:border-gray-300 transition-colors shadow-sm">
+          Sort By Popularity
+          <img src="/assets/icons/chevron-down.svg" class="w-[16px] h-[16px] ml-1 opacity-50" alt="Sort" />
+        </button>
       </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Reusing Product Card Pattern 12 times to fill the grid as per image -->
-        <!-- Product 1 -->
-        <article class="product-card bg-white rounded-[24px] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.03)] border-[1.5px] border-transparent hover:border-brand-green flex flex-col group transition-all duration-300 hover:shadow-xl">
-          <div class="bg-brand-green text-white text-center text-[12px] py-2 font-bold tracking-widest font-urbanist uppercase">Best Seller</div>
-          <div class="relative w-full aspect-[4/3] bg-gray-50 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Lucy High End Bed Frame" class="product-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          </div>
-          <div class="bg-brand-green/5 px-4 py-2.5 flex items-center justify-between">
-            <p class="text-[13px] text-brand-green font-urbanist font-medium flex items-center gap-2">
-               <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
-               Delivery by - 29 January
-            </p>
-          </div>
-          <div class="p-5 flex flex-col flex-1">
-            <h3 class="font-serif text-[17px] font-bold text-brand-green-dark leading-[1.3] mb-3">Lucy High End Bed Frame<br>Pictured With Tall 90" (7ft 5)</h3>
-            <div class="flex items-center gap-1.5 mb-4">
-              <div class="flex text-amber-400">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-              </div>
-              <span class="text-[13px] text-gray-400 font-urbanist">3.4/5 (520 Reviews)</span>
-            </div>
-            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-50">
-              <div class="flex items-baseline gap-2">
-                <span class="text-gray-900 text-[20px] font-bold font-urbanist">£1,422</span>
-                <span class="text-gray-400 text-[13px] line-through font-medium font-urbanist">£1799</span>
-              </div>
-              <button class="bg-brand-green text-white text-[11px] px-4 py-2 rounded-lg font-bold transition-all duration-300 hover:bg-brand-green-dark hover:-translate-y-0.5">
-                See details
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 2 (25% OFF Promo) -->
-        <div class="bg-brand-green-dark rounded-[24px] p-10 flex flex-col items-center justify-center text-center text-white font-urbanist shadow-xl relative overflow-hidden group">
-          <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="uppercase tracking-[0.2em] text-[13px] mb-4 font-bold opacity-70">Flash Sale</span>
-          <h4 class="font-serif text-[54px] font-black leading-none mb-2">25% OFF</h4>
-          <p class="text-[15px] mb-8 font-medium opacity-60">ON ALL BEDS & ACCESSORIES</p>
-          <button class="bg-white text-brand-green-dark px-8 py-3 rounded-full font-black text-[13px] uppercase tracking-wider hover:bg-brand-light-green transition-all shadow-lg hover:scale-105">Shop Now</button>
+      </div>
+      <!-- Right: Results Count & Views -->
+      <div class="flex items-center gap-6">
+      <p class="text-[15px] text-gray-600 font-medium font-serif tracking-wide">
+        Showing 1–10 of 60 results
+      </p>
+      <div class="flex items-center gap-1.5 hidden sm:flex">
+        <button id="btn-grid-view" onclick="setView('grid')"
+          class="w-9 h-9 flex items-center justify-center bg-collection-green text-white rounded-[6px] shadow-sm transition-colors">
+          <img src="/assets/icons/grid-view.svg" class="w-[16px] h-[16px] brightness-0 invert" alt="Grid View" />
+        </button>
+        <button id="btn-list-view" onclick="setView('list')"
+          class="w-9 h-9 flex items-center justify-center text-gray-500 bg-transparent rounded-[6px] hover:text-gray-800 transition-colors">
+          <img src="/assets/icons/list-view.svg" class="w-[18px] h-[18px]" alt="List View" />
+        </button>
+        </div>
+        </div>
         </div>
 
-        <!-- Product 3 -->
-        <article class="product-card bg-white rounded-[24px] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.03)] border-[1.5px] border-transparent hover:border-brand-green flex flex-col group transition-all duration-300 hover:shadow-xl">
-          <div class="bg-brand-green text-white text-center text-[12px] py-2 font-bold tracking-widest font-urbanist uppercase">New year sale</div>
-          <div class="relative w-full aspect-[4/3] bg-gray-50 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80" alt="Lucy High End Bed Frame" class="product-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          </div>
-          <div class="bg-brand-green/5 px-4 py-2.5 flex items-center justify-between">
-            <p class="text-[13px] text-brand-green font-urbanist font-medium flex items-center gap-2">
-               <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
-               Delivery by - 29 January
-            </p>
-          </div>
-          <div class="p-5 flex flex-col flex-1">
-            <h3 class="font-serif text-[17px] font-bold text-brand-green-dark leading-[1.3] mb-3">Lucy High End Bed Frame<br>Pictured With Tall 90" (7ft 5)</h3>
-            <div class="flex items-center gap-1.5 mb-4">
-              <div class="flex text-amber-400">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-              </div>
-              <span class="text-[13px] text-gray-400 font-urbanist">3.4/5 (520 Reviews)</span>
+  <div class="flex flex-col md:flex-row gap-8 items-start">
+    <!-- Sidebar Filters - STICKY -->
+    <div data-include="sections/common/filter-sidebar.html" class="hidden md:block w-[300px]"></div>
+    <!-- Product Grid Area -->
+    <div class="flex-1 w-full">
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300">
+        <!-- Product 1 (Active/Hover State Example) -->
+        <article
+          class="product-card bg-white rounded-[16px] overflow-hidden flex flex-col group transition-all duration-300 shadow-sm hover:shadow-xl border-[2px] border-collection-green relative">
+          <div class="product-media-wrapper flex flex-col shrink-0 w-full">
+            <div class="bg-collection-green text-white text-[13px] py-1.5 font-medium tracking-wide flex justify-center w-full">
+              New year sale
             </div>
-            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-50">
-              <div class="flex items-baseline gap-2">
-                <span class="text-gray-900 text-[20px] font-bold font-urbanist">£1,422</span>
-                <span class="text-gray-400 text-[13px] line-through font-medium font-urbanist">£1799</span>
+            <div class="w-full aspect-[4/3] bg-gray-50 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Lucy High End Bed Frame"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="bg-collection-delivery-bg px-4 py-1.5 border-y border-collection-delivery-border">
+              <p class="text-[12px] text-collection-green font-medium tracking-wide">
+                Delivery by - 29 January
+              </p>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-1 bg-white">
+            <h3 class="font-serif text-[18px] text-gray-900 leading-[1.3] mb-3">
+              Lucy High End Bed Frame<br />Pictured With Tall 90" (7ft 5)
+            </h3>
+            <div class="flex items-center gap-1.5 mb-2">
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-1 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-2 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-3 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-green border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-4 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-5 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-6 border border-gray-200 shadow-sm shrink-0"></span>
+              <span
+                class="text-[10px] text-gray-500 font-medium ml-1 flex items-center justify-center w-[22px] h-[22px] rounded-full border border-gray-200 bg-gray-50 shrink-0">5+</span>
+            </div>
+            <div class="flex items-center gap-1.5 mb-4 mt-2 text-collection-green">
+              <div class="flex">
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
               </div>
-              <button class="bg-brand-green text-white text-[11px] px-4 py-2 rounded-lg font-bold transition-all duration-300 hover:bg-brand-green-dark hover:-translate-y-0.5">
+              <span class="text-[12px] text-gray-600 font-medium tracking-wide">3.4/5
+                <span class="text-gray-400 font-normal">(520 Reviews)</span></span>
+            </div>
+            <ul class="space-y-1.5 mb-4">
+              <li class="flex items-start gap-2">
+                <img src="/assets/icons/check.svg" class="w-4 h-4 mt-[2px] shrink-0 opacity-80" alt="Check" />
+                <span class="text-[13px] text-gray-700 leading-snug font-medium">24" Luxury Side Rails</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <img src="/assets/icons/check.svg" class="w-4 h-4 mt-[2px] shrink-0 opacity-80" alt="Check" />
+                <span class="text-[13px] text-gray-700 leading-snug font-medium">Headboard attaches to bed sides not
+                  wall</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <img src="/assets/icons/check.svg" class="w-4 h-4 mt-[2px] shrink-0 opacity-80" alt="Check" />
+                <span class="text-[13px] text-gray-700 leading-snug font-medium">Mattress sits at 55cm</span>
+              </li>
+            </ul>
+            
+            <div class="mt-auto mb-5">
+              <span
+                class="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 text-[11px] px-2.5 py-1 rounded-[4px] font-semibold tracking-wide">
+                <img src="/assets/icons/storage-box.svg" class="w-[13px] h-[13px]" alt="Storage" />
+                Storage available
+              </span>
+            </div>
+            <div class="flex items-end justify-between border-t border-gray-100 pt-4">
+              <div class="flex items-baseline gap-2">
+                <span class="text-[22px] font-bold text-collection-green leading-none mb-0.5">£1,422</span>
+                <span class="text-[14px] text-gray-400 line-through font-medium">£1799</span>
+              </div>
+              <button
+                class="bg-collection-green text-white text-[13px] px-5 py-2.5 rounded-[8px] font-semibold hover:bg-collection-green-hover transition-colors shadow-sm mt-auto">
                 See details
               </button>
             </div>
           </div>
         </article>
 
-        <!-- Repeated Products for Demo Grid -->
-        <article class="product-card bg-white rounded-[24px] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.03)] border-[1.5px] border-transparent hover:border-brand-green flex flex-col group transition-all duration-300 hover:shadow-xl">
-          <div class="bg-brand-green text-white text-center text-[12px] py-2 font-bold tracking-widest font-urbanist uppercase">Classic</div>
-          <div class="relative w-full aspect-[4/3] bg-gray-50 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Lucy High End Bed Frame" class="product-img w-full h-full object-cover group-hover:scale-105" />
-          </div>
-          <div class="bg-brand-green/5 px-4 py-2.5">
-            <p class="text-[13px] text-brand-green font-urbanist font-medium tracking-tight">Standard Delivery - 3-5 Days</p>
-          </div>
-          <div class="p-5 flex flex-col flex-1">
-            <h3 class="font-serif text-[17px] font-bold text-brand-green-dark leading-[1.3] mb-3">Lucy High End Bed Frame<br>Pictured With Tall 90" (7ft 5)</h3>
-            <div class="flex items-center gap-1.5 mb-4">
-              <div class="flex text-amber-400">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-                <img src="/assets/icons/placeholder.svg" alt="" class="w-3.5 h-3.5 opacity-20">
-              </div>
-              <span class="text-[13px] text-gray-400 font-urbanist">3.4/5 (520 Reviews)</span>
+        <!-- Product 2 (Default State Example / Gold Border) -->
+        <article
+          class="product-card bg-white rounded-[16px] overflow-hidden flex flex-col group transition-all duration-300 shadow-sm hover:shadow-xl border-[2px] border-collection-gold hover:border-collection-green relative">
+          <div class="product-media-wrapper flex flex-col shrink-0 w-full">
+            <div class="bg-collection-green text-white text-[13px] py-1.5 font-medium tracking-wide flex justify-center w-full">
+              New year sale
             </div>
-            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-50">
-              <div class="flex items-baseline gap-2">
-                <span class="text-gray-900 text-[20px] font-bold font-urbanist">£1,422</span>
+            <div class="w-full aspect-[4/3] bg-gray-50 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80" alt="Product 2"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="bg-collection-delivery-bg px-4 py-1.5 border-y border-collection-delivery-border">
+              <p class="text-[12px] text-collection-green font-medium tracking-wide">
+                Delivery by - 29 January
+              </p>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-1 bg-white">
+            <h3 class="font-serif text-[18px] text-gray-900 leading-[1.3] mb-3">
+              Lucy High End Bed Frame<br />Pictured With Tall 90" (7ft 5)
+            </h3>
+          
+            <div class="flex items-center gap-1.5 mb-2">
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-1 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-2 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-3 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-green border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-4 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-5 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-6 border border-gray-200 shadow-sm shrink-0"></span>
+              <span
+                class="text-[10px] text-gray-500 font-medium ml-1 flex items-center justify-center w-[22px] h-[22px] rounded-full border border-gray-200 bg-gray-50 shrink-0">5+</span>
+            </div>
+            <div class="flex items-center gap-1.5 mb-4 mt-2 text-collection-green">
+              <div class="flex">
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
               </div>
-              <button class="bg-brand-green text-white text-[11px] px-4 py-2 rounded-lg font-bold transition-all duration-300 hover:bg-brand-green-dark">
-                See details
-              </button>
+              <span class="text-[12px] text-gray-600 font-medium tracking-wide">3.4/5
+                <span class="text-gray-400 font-normal">(520 Reviews)</span></span>
+            </div>
+            <ul class="space-y-1.5 mb-4">
+              <li class="flex items-start gap-2">
+                <img src="/assets/icons/check.svg" class="w-4 h-4 mt-[2px] shrink-0 opacity-80" alt="Check" />
+                <span class="text-[13px] text-gray-700 leading-snug font-medium">24" Luxury Side Rails</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <img src="/assets/icons/check.svg" class="w-4 h-4 mt-[2px] shrink-0 opacity-80" alt="Check" />
+                <span class="text-[13px] text-gray-700 leading-snug font-medium">Headboard attaches to bed sides not
+                  wall</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <img src="/assets/icons/check.svg" class="w-4 h-4 mt-[2px] shrink-0 opacity-80" alt="Check" />
+                <span class="text-[13px] text-gray-700 leading-snug font-medium">Mattress sits at 55cm</span>
+              </li>
+            </ul>
+          
+            <div class="mt-auto mb-5">
+              <span
+                class="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 text-[11px] px-2.5 py-1 rounded-[4px] font-semibold tracking-wide">
+                <img src="/assets/icons/storage-box.svg" class="w-[13px] h-[13px]" alt="Storage" />
+                Storage available
+              </span>
+            </div>
+            <div class="flex items-end justify-between border-t border-gray-100 pt-4 mt-auto">
+              <div class="flex items-baseline gap-2 mt-auto">
+                <span class="text-[22px] font-bold text-collection-green leading-none mb-0.5">£1,422</span>
+                <span class="text-[14px] text-gray-400 line-through font-medium">£1799</span>
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- Product 5 (35% OFF Promo) -->
-        <div class="bg-[#F4EEE6] rounded-[24px] p-10 flex flex-col items-center justify-center text-center text-brand-green-dark font-urbanist border-2 border-brand-green/10 shadow-lg group">
-          <span class="uppercase tracking-[0.2em] text-[13px] mb-4 font-bold opacity-60">Winter Sale</span>
-          <h4 class="font-serif text-[54px] font-black leading-none mb-2">35% OFF</h4>
-          <p class="text-[15px] mb-8 font-medium opacity-60">EXCLUSIVE ONLINE DEALS</p>
-          <button class="bg-brand-green-dark text-white px-8 py-3 rounded-full font-black text-[13px] uppercase tracking-wider hover:bg-brand-green transition-all shadow-md hover:scale-105">View Collection</button>
-        </div>
-
-        <article class="product-card bg-white rounded-[24px] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.03)] border-[1.5px] border-transparent hover:border-brand-green flex flex-col group transition-all duration-300 hover:shadow-xl">
-          <div class="bg-brand-green text-white text-center text-[12px] py-2 font-bold tracking-widest font-urbanist uppercase">Trending</div>
-          <div class="relative w-full aspect-[4/3] bg-gray-50 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80" alt="Product" class="product-img w-full h-full object-cover group-hover:scale-105" />
-          </div>
-          <div class="bg-brand-green/5 px-4 py-2.5">
-            <p class="text-[13px] text-brand-green font-urbanist font-medium">Ready for dispatch</p>
-          </div>
-          <div class="p-5 flex flex-col flex-1">
-             <h3 class="font-serif text-[17px] font-bold text-brand-green-dark leading-[1.3] mb-3">Lucy High End Bed Frame<br>Pictured With Tall 90" (7ft 5)</h3>
-            <div class="flex items-center gap-1.5 mb-4 text-amber-400">
-               <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-               <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
-               <img src="/assets/icons/star.svg" alt="" class="w-3.5 h-3.5 fill-current">
+        <!-- Product 3 (Default State Example / Gold Border) -->
+        <article
+          class="product-card bg-white rounded-[16px] overflow-hidden flex flex-col group transition-all duration-300 shadow-sm hover:shadow-xl border-[2px] border-collection-gold hover:border-collection-green relative">
+          <div class="product-media-wrapper flex flex-col shrink-0 w-full">
+            <div class="bg-collection-green text-white text-[13px] py-1.5 font-medium tracking-wide flex justify-center w-full">
+              New year sale
             </div>
-            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-50">
-               <span class="text-gray-900 text-[20px] font-bold font-urbanist">£1,422</span>
-               <button class="bg-brand-green text-white text-[11px] px-4 py-2 rounded-lg font-bold">See details</button>
+            <div class="w-full aspect-[4/3] bg-gray-50 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80" alt="Product 3"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="bg-collection-delivery-bg px-4 py-1.5 border-y border-collection-delivery-border">
+              <p class="text-[12px] text-collection-green font-medium tracking-wide">
+                Delivery by - 29 January
+              </p>
             </div>
           </div>
-        </article>
+          <div class="p-5 flex flex-col flex-1 bg-white">
+            <h3 class="font-serif text-[18px] text-gray-900 leading-[1.3] mb-3">
+              Lucy High End Bed Frame<br />Pictured With Tall 90" (7ft 5)
+            </h3>
+          
+            <div class="flex items-center gap-1.5 mb-2">
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-1 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-2 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-3 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-green border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-4 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-5 border border-gray-200 shadow-sm shrink-0"></span>
+              <span class="w-4 h-4 rounded-full bg-collection-swatch-6 border border-gray-200 shadow-sm shrink-0"></span>
+              <span
+                class="text-[10px] text-gray-500 font-medium ml-1 flex items-center justify-center w-[22px] h-[22px] rounded-full border border-gray-200 bg-gray-50 shrink-0">5+</span>
+            </div>
+            <div class="flex items-center gap-1.5 mb-4 mt-2 text-collection-green">
+              <div class="flex">
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+                <img src="/assets/icons/star.svg" class="w-3.5 h-3.5" alt="Star" />
+              </div>
+              <span class="text-[12px] text-gray-600 font-medium tracking-wide">3.4/5
+                <span class="text-gray-400 font-normal">(520 Reviews)</span></span>
+            </div>
+            <ul class="space-y-1.5 mb-4">
+              <li class="flex items-start gap-2">
+                <img src="/assets/icons/check.svg" class="w-4 h-4 mt-[2px] shrink-0 opacity-80" alt="Check" />
+                <span class="text-[13px] text-gray-700 leading-snug font-medium">24" Luxury Side Rails</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <img src="/assets/icons/check.svg" class="w-4 h-4 mt-[2px] shrink-0 opacity-80" alt="Check" />
+                <span class="text-[13px] text-gray-700 leading-snug font-medium">Headboard attaches to bed sides not
+                  wall</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <img src="/assets/icons/check.svg" class="w-4 h-4 mt-[2px] shrink-0 opacity-80" alt="Check" />
+                <span class="text-[13px] text-gray-700 leading-snug font-medium">Mattress sits at 55cm</span>
+              </li>
+            </ul>
 
+            <div class="mt-auto mb-5">
+              <span
+                class="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 text-[11px] px-2.5 py-1 rounded-[4px] font-semibold tracking-wide">
+                <img src="/assets/icons/storage-box.svg" class="w-[13px] h-[13px]" alt="Storage" />
+                Storage available
+              </span>
+            </div>
+
+            <div class="flex items-end justify-between border-t border-gray-100 pt-4 mt-auto">
+              <div class="flex items-baseline gap-2 mt-auto">
+                <span class="text-[22px] font-bold text-collection-green leading-none mb-0.5">£1,422</span>
+                <span class="text-[14px] text-gray-400 line-through font-medium">£1799</span>
+              </div>
+            </div>
+          </div>
+          </article>
+          
+          <!-- Product 4: Promotional Block (Flash Sale/35% OFF) -->
+          <article class="promo-card bg-collection-beige rounded-[16px] overflow-hidden flex flex-col shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-collection-beige-border relative hover:shadow-xl hover:border-collection-green transition-all duration-300">
+            <!-- Top Header -->
+            <div class="bg-collection-green text-white text-[15px] py-3.5 font-medium tracking-wide flex justify-center w-full shrink-0">
+              <span class="underline underline-offset-4 decoration-white/70">New year sale</span>
+            </div>
+            
+            <!-- Content -->
+            <div class="p-8 flex flex-col items-center justify-center flex-1 text-center relative z-10">
+              <div class="promo-text-wrap flex flex-col items-center flex-1 justify-center w-full">
+                <p class="text-[21px] mb-2 font-medium tracking-wide text-gray-700 font-serif">50% OFF RRP</p>
+                <h4 class="text-[76px] font-light leading-none mb-4 italic tracking-tight text-[#111] font-serif">
+                  35% <span class="tracking-normal">OFF</span>
+                </h4>
+                <p class="text-[20px] mb-8 text-gray-800 font-serif">Use code: EXTRA35</p>
+                
+                <button class="bg-collection-green text-white px-8 py-3 rounded-[8px] font-semibold text-[15px] font-urbanist hover:bg-[#0a231d] transition-colors shadow-sm mb-12 w-[160px]">
+                  Shop Now
+                </button>
+              </div>
+
+              <!-- Payment Methods -->
+              <div class="promo-payment-wrap flex items-center justify-center gap-2 sm:gap-3 mt-auto font-urbanist w-full flex-wrap sm:flex-nowrap">
+                <span class="text-gray-500 font-medium text-[16px] mr-1 whitespace-nowrap">Pay Using</span>
+                <!-- Clearpay Badge -->
+                <div class="bg-clearpay px-3.5 py-1.5 rounded-full flex items-center justify-center shrink-0">
+                  <img src="/assets/payment/clearpay.png" alt="Clearpay" class="h-[13px] object-contain" />
+                </div>
+                <!-- Klarna Badge -->
+                <div class="bg-klarna px-3.5 py-1.5 rounded-[4px] flex items-center justify-center shrink-0">
+                  <span class="font-bold text-black tracking-tight text-[13px] leading-none pt-[1px]">Klarna.</span>
+                </div>
+              </div>
+            </div>
+          </article>
       </div>
 
       <!-- Pagination -->
       <div class="flex items-center justify-center gap-3 mt-16 font-urbanist">
-        <button class="w-12 h-12 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:border-brand-green hover:text-brand-green transition shadow-sm">
-          <img src="/assets/icons/chevron-down.svg" alt="" class="w-5 h-5 rotate-90 opacity-50">
+        <button
+          class="w-[42px] h-[42px] flex items-center justify-center rounded-lg border border-gray-200 text-gray-400 hover:border-collection-green hover:text-collection-green transition shadow-sm">
+          <img src="/assets/icons/chevron-left.svg" class="w-[18px] h-[18px] opacity-60" alt="Previous" />
         </button>
-        <button class="w-12 h-12 flex items-center justify-center rounded-full bg-brand-green text-white font-black shadow-lg shadow-brand-green/20">1</button>
-        <button class="w-12 h-12 flex items-center justify-center rounded-full border border-gray-200 text-gray-600 hover:border-brand-green hover:text-brand-green transition shadow-sm">2</button>
-        <button class="w-12 h-12 flex items-center justify-center rounded-full border border-gray-200 text-gray-600 hover:border-brand-green hover:text-brand-green transition shadow-sm">3</button>
-        <span class="px-3 text-gray-300 font-bold">...</span>
-        <button class="w-12 h-12 flex items-center justify-center rounded-full border border-gray-200 text-gray-600 hover:border-brand-green hover:text-brand-green transition shadow-sm">12</button>
-        <button class="w-12 h-12 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:border-brand-green hover:text-brand-green transition shadow-sm">
-          <img src="/assets/icons/chevron-down.svg" alt="" class="w-5 h-5 -rotate-90 opacity-50">
+        <button
+          class="w-[42px] h-[42px] flex items-center justify-center rounded-lg bg-collection-green text-white font-semibold shadow-sm">
+          1
+        </button>
+        <button
+          class="w-[42px] h-[42px] flex items-center justify-center rounded-lg border border-transparent text-gray-600 hover:bg-gray-100 transition">
+          2
+        </button>
+        <button
+          class="w-[42px] h-[42px] flex items-center justify-center rounded-lg border border-transparent text-gray-600 hover:bg-gray-100 transition">
+          3
+        </button>
+        <span class="px-2 text-gray-400 font-bold">...</span>
+        <button
+          class="w-[42px] h-[42px] flex items-center justify-center rounded-lg border border-transparent text-gray-600 hover:bg-gray-100 transition">
+          12
+        </button>
+        <button
+          class="w-[42px] h-[42px] flex items-center justify-center rounded-lg border border-gray-200 text-gray-400 hover:border-collection-green hover:text-collection-green transition shadow-sm">
+          <img src="/assets/icons/chevron-right.svg" class="w-[18px] h-[18px] opacity-60" alt="Next" />
         </button>
       </div>
-
     </div>
   </div>
 </section>
 
+<!-- List View Toggle Styles & Script -->
+<style>
+  /* List View Styles */
+  #product-grid.list-view-active {
+    grid-template-columns: 1fr;
+  }
+
+  /* List view promos stack content or row it */
+  #product-grid.list-view-active .promo-card {
+    flex-direction: column;
+  }
+
+  @media (min-width: 640px) {
+    #product-grid.list-view-active .product-card {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    #product-grid.list-view-active .product-media-wrapper {
+      width: 300px;
+      border-right: 1px solid #f3f4f6;
+    }
+
+    /* Horizontal layout for promo in list view */
+    #product-grid.list-view-active .promo-card > div:last-child {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      padding: 2rem 3rem;
+    }
+    #product-grid.list-view-active .promo-card .promo-text-wrap {
+      align-items: flex-start;
+      margin-bottom: 0;
+      width: auto;
+      flex: 1;
+    }
+    #product-grid.list-view-active .promo-card .promo-text-wrap h4 {
+      margin-bottom: 0.5rem;
+    }
+    #product-grid.list-view-active .promo-card .promo-text-wrap p.mb-8 {
+      margin-bottom: 0;
+    }
+    #product-grid.list-view-active .promo-card .promo-text-wrap button {
+      margin-bottom: 0;
+      margin-top: 1.5rem;
+    }
+    #product-grid.list-view-active .promo-card .promo-payment-wrap {
+      flex-direction: column;
+      align-items: flex-end;
+      width: auto;
+      margin-top: 0;
+      gap: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #product-grid.list-view-active .product-media-wrapper {
+      width: 320px;
+    }
+  }
+</style>
+
+<script>
+  function setView(view) {
+    const grid = document.getElementById("product-grid");
+    const btnGrid = document.getElementById("btn-grid-view");
+    const btnList = document.getElementById("btn-list-view");
+
+    if (!grid || !btnGrid || !btnList) return;
+
+    if (view === "list") {
+      grid.classList.add("list-view-active");
+
+      // Update button styles for list view
+      btnList.classList.remove("text-gray-500", "bg-transparent");
+      btnList.classList.add("bg-collection-green", "text-white", "shadow-sm");
+      btnGrid.classList.remove("bg-collection-green", "text-white", "shadow-sm");
+      btnGrid.classList.add("text-gray-500", "bg-transparent");
+    } else {
+      grid.classList.remove("list-view-active");
+
+            // Update button styles for grid view
+            btnGrid.classList.remove("text-gray-500", "bg-transparent");
+            btnGrid.classList.add("bg-collection-green", "text-white", "shadow-sm");
+            btnList.classList.remove("bg-collection-green", "text-white", "shadow-sm");
+            btnList.classList.add("text-gray-500", "bg-transparent");
+          }
+        }
+      </script>
